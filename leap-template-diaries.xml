@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="leap.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="leap.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="liv_000002">
+    <!-- xml:id attribute value above should be same as the LEAP file name (without .xml suffix) -->
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <!-- Electronic edition's title and author; change title-->
+                <title>Field Diary II, 4 April - 14 May 1866</title>
+                <author>David Livingstone</author>
+                <principal>Adrian S. Wisnicki</principal>
+                <principal>Christopher Lawrence</principal>
+                <!-- One respStmt per person who works on the file -->
+                <respStmt xml:id="AW">
+                    <name>Adrian S. Wisnicki</name>
+                    <!-- One resp per type of responsiblity they do-->
+                    <resp>Transcription</resp>
+                    <resp>Encoding</resp>
+                    <resp>Editorial Decisions</resp>
+                </respStmt>
+                <respStmt xml:id="KS">
+                    <name>Kate Simpson</name>
+                    <resp>Transcription</resp>
+                    <resp>Encoding</resp>
+                </respStmt>
+                <respStmt xml:id="CL">
+                    <name>Christopher Lawrence</name>
+                    <resp>Proofreading</resp>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Livingstone Online</authority>
+                <publisher>UCLA Digital Library</publisher>
+                <pubPlace>Los Angeles, CA, USA</pubPlace>
+                <!-- possible update year -->
+                <date>2014</date>
+                <availability>
+                <!-- possible update license -->
+                    <licence target="https://creativecommons.org/licenses/by-nc/3.0/">
+                        All materials are licensed for use under the 
+                        <ref target="https://creativecommons.org/licenses/by-nc/3.0/">
+                            Creative Commons Attribution-Noncommercial 3.0 Unported License
+                        </ref>. 
+                        (c) Dr. Neil Imray Livingstone Wilson, 2014
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <!-- Add manuscript description with msIdentifier for location and any shelf marks; use DLC Digitisation Masterlist,v3.xlsx -->
+                <msDesc>
+                    <msIdentifier>
+                        <country>United Kingdom</country>
+                        <settlement>Blantyre</settlement>
+                        <repository>David Livingstone Centre</repository>
+                        <idno type="shelfmark">Cat 1123</idno>
+                        <!-- Add the C and C number below -->
+                        <!-- The C and C number can usually be found on Livingstone Online or be provided by the project team -->
+                        <altIdentifier>
+                            <idno type="ccnumber">Field Diaries, 014</idno>
+                        </altIdentifier>
+                    </msIdentifier>
+                    <!-- more manuscript description could be provided here by project if available -->
+                    <!-- for example: handDesc -->
+                    <physDesc>
+                        <handDesc>
+                            <handNote xml:id="U"><label>Unknown Hand</label> This hand is unknown
+                                but thought not David Livingstone's.</handNote>
+                        </handDesc>
+                    </physDesc>
+                </msDesc>
+                <!-- Add bibliographic source metadata  -->
+                <bibl type="sourceMetadata">
+                    <!-- Add title and author; usually the same as the electronic version in titleStmt -->
+                    <title>Field Diary II, 4 April - 14 May 1866</title>
+                    <author xml:id="DL">David Livingstone</author>
+                    <!-- date of composition, if known, in machine and human readable format -->
+                    <date type="composition" from="1866-04-04" to="1866-05-14">4 April - 14 May 1866</date>
+                </bibl>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="en">English</language>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc>
+            <!-- Most recent changes should be at the top; one per major stage of changes -->
+            <change when="2013-04-03" who="#AW">Additional encoding</change>
+            <change when="2013-01-06" who="#CL">Proofreading</change>
+            <change when="2012-12-04" who="#KS">Initial transcription and XML encoding</change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text>
+        <body>
+            <div>
+                <!-- Start each page with pagebreak -->
+                <pb facs="liv_000002_0001.jpg" n="0001"/>
+                
+                <!-- Start each line with linebreak -->              
+                <lb n="1"/><p><!-- Begin transcribed text here --></p>
+
+                <!-- more paragraphs -->
+                
+            </div>
+        </body>
+    </text>
+
+</TEI>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="leap.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="leap.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="liv_000699">
+    <!-- xml:id attribute value above should be same as the LEAP file name (without .xml suffix) -->
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <!-- Electronic edition's title and author; change title-->
+                <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
+                <author>David Livingstone</author>
+                <principal>Adrian S. Wisnicki</principal>
+                <principal>Christopher Lawrence</principal>
+                <!-- One respStmt per person who works on the file -->
+                <respStmt xml:id="AW">
+                    <name>Adrian S. Wisnicki</name>
+                    <!-- One resp per type of responsiblity they do-->
+                    <resp>Transcription</resp>
+                    <resp>Encoding</resp>
+                    <resp>Editorial Decisions</resp>
+                </respStmt>
+                <respStmt xml:id="KS">
+                    <name>Kate Simpson</name>
+                    <resp>Transcription</resp>
+                    <resp>Encoding</resp>
+                </respStmt>
+                <respStmt xml:id="CL">
+                    <name>Christopher Lawrence</name>
+                    <resp>Proofreading</resp>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>Livingstone Online</authority>
+                <publisher>UCLA Digital Library</publisher>
+                <pubPlace>Los Angeles, CA, USA</pubPlace>
+                <!-- possible update year -->
+                <date>2014</date>
+                <availability>
+                <!-- possible update license -->
+                    <licence target="https://creativecommons.org/licenses/by-nc/3.0/">
+                        All materials are licensed for use under the 
+                        <ref target="https://creativecommons.org/licenses/by-nc/3.0/">
+                            Creative Commons Attribution-Noncommercial 3.0 Unported License
+                        </ref>. 
+                        (c) Dr. Neil Imray Livingstone Wilson, 2014
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <!-- Add manuscript description with msIdentifier for location and any shelf marks -->
+                <!-- Location and shelf marks can usually be found on Livingstone Online or provided by the project team -->
+                <msDesc>
+                    <msIdentifier>
+                        <country>United Kingdom</country>
+                        <settlement>Blantyre</settlement>
+                        <repository>David Livingstone Centre</repository>
+                        <idno type="shelfmark">Cat 778</idno>
+                        <!-- Add the C and C number below -->
+                        <!-- The C and C number can usually be found on Livingstone Online or provided by the project team -->
+                        <altIdentifier>
+                            <idno type="ccnumber">0229</idno>
+                        </altIdentifier>
+                    </msIdentifier>
+                    <!-- more manuscript description could be provided here by project if available -->
+                    <!-- for example: handDesc -->
+                    <physDesc>
+                        <handDesc>
+                            <handNote xml:id="U"><label>Unknown Hand</label> This hand is unknown
+                                but thought not David Livingstone's.</handNote>
+                        </handDesc>
+                    </physDesc>
+                </msDesc>
+                <!-- Add bibliographic source metadata  -->
+                <bibl type="sourceMetadata">
+                    <!-- Add title and author; usually the same as the electronic version in titleStmt -->
+                    <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
+                    <author xml:id="DL">David Livingstone</author>
+                    <!-- date of composition, if known, in machine and human readable format -->
+                    <date type="composition" when="1850-08-18">18 August 1850</date>
+                    <!-- place of composition if known, otherwise 'unknown' -->
+                    <placeName type="compositionPlace">Kolobeng</placeName>
+                    <!-- addressee and their location if known, otherwise 'unknown' -->
+                    <persName type="addressee">Rev. D.F. Watt</persName>
+                </bibl>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="en">English</language>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc>
+            <!-- Most recent changes should be at the top; one per major stage of changes -->
+            <change when="2013-04-03" who="#AW">Additional encoding</change>
+            <change when="2013-01-06" who="#CL">Proofreading</change>
+            <change when="2012-12-04" who="#KS">Initial transcription and XML encoding</change>
+        </revisionDesc>
+    </teiHeader>
+
+    <text>
+        <body>
+            <div>
+                <!-- Start each page with pagebreak -->
+                <pb facs="liv_000699_0001.jpg" n="0001"/>
+                <!-- Start each line with linebreak -->
+                <!-- If this is a letter or similar with an opener (with content such as dateline and/or salute) add it. For example: -->
+                <lb n="1"/><opener><dateline rend="right"><placeName>Hadley Green</placeName> <date when="1857-08-22">22 August 
+                <lb n="2"/> 1857</date></dateline>
+                <lb n="3"/>    
+                <lb n="4"/><salute>My Dear Sir,</salute>
+                </opener>
+              
+                <p><!-- Begin transcribed text here --></p>
+
+                <!-- more paragraphs -->
+
+                <!-- If there is a letter or similar with a closer with content such as salute or signed -->
+                <!-- Change the line numbers and information below as appropriate -->
+                <lb n="X"/><closer><salute>I am &amp;</salute>
+                <lb n="X"/><signed><persName>David Livingstone</persName></signed></closer> 
+            </div>
+        </body>
+    </text>
+
+</TEI>
