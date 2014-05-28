@@ -23,12 +23,13 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc status="draft">
+            <change when="2014-05-21" who="#AW">Additional corrections and expansion</change>
             <change when="2014-04-29" who="#JC">Additional corrections and regeneration of schemas</change>
-            <change when="2014-04-10" who="#AW">Corrections and Expansion</change>
-            <change when="2014-04-09" who="#JC">Updating Header Section and Making
-                Corrections</change>
-            <change when="2014-03-22" who="#JC">Adding Documentation</change>
-            <change when="2014-02-12" who="#JC">Initial Creation</change>
+            <change when="2014-04-10" who="#AW">Corrections and expansion</change>
+            <change when="2014-04-09" who="#JC">Updating header section and making
+                corrections</change>
+            <change when="2014-03-22" who="#JC">Adding documentation</change>
+            <change when="2014-02-12" who="#JC">Initial creation</change>
         </revisionDesc>
     </teiHeader>
     <text>
@@ -130,15 +131,13 @@
                                 the "comment out" feature. <label>Original text:</label>
                                 <eg>He called me over.</eg>
                                 <label rend="italics">Marked up:</label>
-                                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">He called me over.<!--Adrian, the text is very illegible here and I've done the best I could. 
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">He called me over.<!-- The text is very illegible here and I've done the best I could. 
 However, this might also be transcribed as "He willed in on me." 
-What should I do? Debbie: 2011-02-19 --></egXML>
+What should I do? DH --></egXML>
                                 In other words the commented out bit begins with <code
                                     rend="comment">&lt;--</code> followed by a space and ends with
-                                    <code rend="comment">--&gt;</code>. Always add your name and the
-                                date of your comment, with YYYY-MM-DD format.
-                                <!-- JC: I'm of the opinion that you should be consistent with the @when values -->
-                            </p>
+                                    <code rend="comment">--&gt;</code>. Always add your initials inside but at the end of the comment.
+                               </p>
                         </item>
                     </list>
                 </div>
@@ -296,7 +295,7 @@ mark any information not known as "unknown" -->
                 <!-- note: nested div below -->
 
                 <div xml:id="header-titleStmt">
-                    <head>The TEI Header: Adding title and responsibilities</head>
+                    <head>The TEI Header: Adding Title and Responsibilities</head>
                     <p>Once you have found the corresponding entry for the item you're transcribing
                         on <hi rend="italic">Livingstone Online</hi>, you will need to modify the
                         template to match this information.</p>
@@ -576,16 +575,15 @@ mark any information not known as "Unknown" -->
             <div xml:id="linebreak">
                 <head>The Beginning of a Manuscript Line</head>
                 <p>Whenever you come to the beginning of a manuscript line, use
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples"><lb n="131"/></egXML> The number
-                    value is the number of the line and should increase with each successive line.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples"><lb/></egXML> 
                     No corresponding tag is needed at the end of the line. <label rend="italic"
                         >Original text:</label>
                     <eg> As we traveled <lb/>I came <lb/>across two men.</eg>
                     <label rend="italic">Marked up:</label>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <lb n="1"/>As we traveled 
-                        <lb n="2"/>I came 
-                        <lb n="3"/>across two men.
+                        <lb/>As we traveled 
+                        <lb/>I came 
+                        <lb/>across two men.
                     </egXML>
                 </p>
                 <p>Definitions of the elements used above are: <specList>
@@ -611,12 +609,14 @@ mark any information not known as "Unknown" -->
                     </egXML>
                     For more information about the <att>rend</att> attribute see <ptr
                         target="#formatting"/>. </p>
-                <p>Note: The default assumption is that a paragraph is indented, so there is no need
+                <p>The default assumption is that a paragraph is indented, so there is no need
                     to mark that. For marking the exceptionally indented first lines of paragraphs
-                    see <ptr target="#extra-space"/>. However, if a paragraph is not indented,
+                    see <ptr target="#extra-space"/>.</p> 
+				<p>However, if a paragraph is not indented,
                     please mark it as follows:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples"><p rend="no-indent">This paragraph is not indented</p></egXML></p>
-                <p>Remember at the end of the paragraph to use the closing paragraph tag
+				<p><hi rend="bold">Note:</hi> It is especially important to use <tag>p rend="no-indent"</tag> when marking new, dated diary entries that Livingstone begins on a new line but does not indent.</p>
+                <p>Also, remember at the end of the paragraph to use the closing paragraph tag
                         <tag>/p</tag>.</p>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="p"/>
@@ -694,10 +694,10 @@ mark any information not known as "Unknown" -->
                 <p>For both the <gi>opener</gi> and <gi>closer</gi>, line breaks should be marked in
                     the fashion described above (see <ptr target="#linebreak"
                     />).<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-<lb n="1"/><opener><dateline rend="right"><placeName>Hadley Green</placeName>
-<lb n="2"/><date when="1857-08-22">22 August<lb/> 1857</date></dateline>
-<lb n="3"/>
-<lb n="4"/><salute>My Dear Sir,</salute></opener>
+<lb/><opener><dateline rend="right"><placeName>Hadley Green</placeName>
+<lb/><date when="1857-08-22">22 August<lb/> 1857</date></dateline>
+<lb/>
+<lb/><salute>My Dear Sir,</salute></opener>
                     </egXML></p>
 
                 <p>Definitions of the elements used above are: <specList>
@@ -743,9 +743,9 @@ mark any information not known as "Unknown" -->
                         the entirety of any postscript added to a letter. Each separate postscript should be contained by its own element. 
                         The <att>n</att> may be used to number successive postscripts.
                         <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-<lb n="1" /><postscript n="1"><label>P.S.</label> Give my regards 
-<lb n="2" />to your children.</postscript>
-<lb n="2" /><postscript n="2"><label>P.P.S.</label> And greet your parents</postscript></egXML>
+<lb/><postscript n="1"><label>P.S.</label> Give my regards 
+<lb/>to your children.</postscript>
+<lb/><postscript n="2"><label>P.P.S.</label> And greet your parents</postscript></egXML>
                     </p>
                     <p>
                         <specList>
@@ -755,8 +755,11 @@ mark any information not known as "Unknown" -->
                     
                 </div>
                 
-
             </div>
+
+            <div xml:id="composition">
+                <head>Marking Authorial Composition Practices</head>
+                <p/>
 
             <div xml:id="headings">
                 <head>Any Type of Heading</head>
@@ -773,11 +776,13 @@ mark any information not known as "Unknown" -->
             </div>
             
             <div xml:id="running-header">
-                <head>Running Header</head>
+                <head>Running Header (including Authorial Page Numbers)</head>
                 
-                <p>Use the <gi>fw</gi> element to contain any type of running head (usually found in the header or footnote of a given page) that appears on a page or series of pages. The <att>rend</att> may be used as needed to mark the location of this element.
+                <p>Use the <gi>fw</gi> element to contain any type of running head (usually, but not always, found in the header or footnote of a given page) that appears on a page or series of pages. The <att>rend</att> may be used as needed to mark the location of this element.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><fw rend="center">1</fw></egXML>
                 </p>
+				<p>For any page numbers instituted by Livingstone himself, use the <gi>fw</gi> element plus <att>n</att> in the following manner:</p>									<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><fw n="heading_XIV">XIV</fw></egXML>
+				<p>In other words, whenever <gi>fw</gi> is used to encode one of Livingstone's page numbers, <att>n</att> value should begin with "heading_" followed by the number Livingstone uses, in the form that he uses it (i.e., Roman or Arabic numeral).</p>
                 <p>
                     <specList>
                         <specDesc key="fw"/>
@@ -785,7 +790,6 @@ mark any information not known as "Unknown" -->
                 </p>
                 
             </div>
-            
 
             <div xml:id="formatting">
                 <head>Textual Formatting</head>
@@ -825,6 +829,83 @@ mark any information not known as "Unknown" -->
                     </specList>
                 </p>
             </div>
+
+            <div xml:id="word-division">
+                <head>A Word Broken Up Over Two Lines</head>
+                <p>Use the <gi>w</gi> element to mark words that Livingstone breaks up over two
+                    lines. You also add the <att>break</att> attribute with the value of
+                        "<val>no</val>" to the <tag>lb/</tag> that falls between the two halves of
+                    the word. For LEAP materials the assumed value for the <att>break</att>
+                    attribute is <val>yes</val>, so you do not need to provide this unless it is an
+                    exceptional circumstance. Use <val>maybe</val> only in those cases when you are
+                    not sure whether a single word apparently broken up over two lines may indeed be
+                    two words.</p>
+                <p>Livingstone's use of hyphens is erratic. Sometimes he hyphenates a word at the
+                    end of the first line, sometimes at the beginning of the second, sometimes in
+                    both places, sometimes in neither. </p>
+                <p>We code each of these instances in the same way, but we also always supply a
+                    hyphen at the end of the line if Livingstone himself has failed to provide it. </p>
+                <p><label>Example #1 (no hyphen at all)</label>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <lb/>I look on the drove they brought <w>un<supplied>-</supplied>
+                            <lb break="no"/>chained</w> with a sort of pleasure after </egXML>
+                </p>
+                <p><label>Example #2 (hyphen only in first line)</label>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <lb/>by one of <persName>Dugumbe</persName>'s people after <w>finish-
+                                <lb break="no"/>ing</w> a piece of work = said he was tired
+                    </egXML>
+                </p>
+                <p><label>Example #3 (hyphen only in second line)</label>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <lb/>sorely needed to be employed <w>him<supplied>-</supplied>
+                            <lb break="no"/>-self</w> in something else than penny </egXML>
+                </p>
+                <p><label>Example #4 (hyphen in both lines)</label>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <lb/>by which the irresponsible <w>con- 
+                            <lb break="no"/>-clave</w> brought the Indian command </egXML>
+                </p>
+                <p>Definitions of the elements used above are: <specList>
+                        <specDesc key="w"/>
+                        <specDesc key="lb" atts="break"/>
+                    </specList>
+                </p>
+            </div>
+
+            <div xml:id="extra-space">
+                <head>More Than One Space between Words</head>
+                <p>If you are encoding text where the author has placed more than one space between
+                    words, do not insert additional space in your transcription. Rather insert only
+                    one space plus the following markup:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <space extent="4" unit="chars"/>
+                    </egXML>
+                </p>
+                <p>The value for the <att>extent</att> attribute will of course be a bit of a
+                    judgment call. The value "<val>chars</val>" stands for "characters"; you can
+                    also use "<val>words</val>". There is a <att>dim</att> attribute on
+                        <gi>space</gi> with allowed values of <val>horiztonal</val> or
+                        <val>vertical</val>. The default assumption in LEAP is that extra space is
+                    horizontal so this does not need to be marked.</p>
+                <p>Definitions of the elements used above are: <specList>
+                        <specDesc key="space" atts="extent unit"/>
+                    </specList>
+                </p>
+            </div>
+
+            <div xml:id="dividing-lines">
+                <head>Dividing Lines Across the Page</head>
+			<p>Livingstone often uses lines that he draws across the page to separate sections of the text. Sometimes he uses a single line that runs across the entire page from left to right; sometimes a double-line; sometimes a single line that only runs across half or a quarter of the page. For all such lines, use the <tag>milestone/</tag> element in the following manner:</p>
+				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><lb/><milestone unit="section" rend="line"/></egXML>
+			<p>As in the example, <tag>milestone/</tag> should always inlcude a <att>unit</att> attribute with the value of "<val>section</val>" and a <att>rend</att> attribute. Possible values for the rend attribute include: "<val>line</val>", "<val>double-line</val>", "<val>triple-line</val>", "<val>half-line</val>", and "<val>quarter-line</val>".</p>
+			<p>
+				<specList>
+                        <specDesc key="milestone"/>
+                </specList>
+			</p>
+            
+			</div>
 
             <div xml:id="text-direction">
                 <head>Textual Directions</head>
@@ -872,67 +953,159 @@ mark any information not known as "Unknown" -->
                 </p>
 
             </div>
-            <div xml:id="word-division">
-                <head>A Word Broken Up Over Two Lines</head>
-                <p>Use the <gi>w</gi> element to mark words that Livingstone breaks up over two
-                    lines. You also add the <att>break</att> attribute with the value of
-                        "<val>no</val>" to the <tag>lb/</tag> that falls between the two halves of
-                    the word. For LEAP materials the assumed value for the <att>break</att>
-                    attribute is <val>yes</val>, so you do not need to provide this unless it is an
-                    exceptional circumstance. Use <val>maybe</val> only in those cases when you are
-                    not sure whether a single word apparently broken up over two lines may indeed be
-                    two words.</p>
-                <p>Livingstone's use of hyphens is erratic. Sometimes he hyphenates a word at the
-                    end of the first line, sometimes at the beginning of the second, sometimes in
-                    both places, sometimes in neither. </p>
-                <p>We code each of these instances in the same way, but we also always supply a
-                    hyphen at the end of the line if Livingstone himself has failed to provide it. </p>
-                <p><label>Example #1 (no hyphen at all)</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <lb n="7"/>I look on the drove they brought <w>un<supplied>-</supplied>
-                            <lb n="8" break="no"/>chained</w> with a sort of pleasure after </egXML>
-                </p>
-                <p><label>Example #2 (hyphen only in first line)</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <lb n="30"/>by one of <persName>Dugumbe</persName>'s people after <w>finish-
-                                <lb n="31" break="no"/>ing</w> a piece of work = said he was tired
-                    </egXML>
-                </p>
-                <p><label>Example #3 (hyphen only in second line)</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <lb n="27"/>sorely needed to be employed <w>him<supplied>-</supplied>
-                            <lb n="28" break="no"/>-self</w> in something else than penny </egXML>
-                </p>
-                <p><label>Example #4 (hyphen in both lines)</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <lb n="27"/>by which the irresponsible <w>con- 
-                            <lb n="28" break="no"/>-clave</w> brought the Indian command </egXML>
-                </p>
-                <p>Definitions of the elements used above are: <specList>
-                        <specDesc key="w"/>
-                        <specDesc key="lb" atts="break"/>
-                    </specList>
-                </p>
+
+            <div xml:id="anonymous-blocks">
+                <head>Text with No Clear Relationship to the Surrounding Text</head>
+			<p>Occasionally Livingstone includes blocks of text on a given manuscript page that have no clear relationship to the main text on that page. Such blocks should be encoded with the <gi>ab</gi> element.</p>
+				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+				<lb/><p><!-- First line of main text -->
+				<lb/><!-- Second line of main text -->
+				<lb/><!-- Last line of main text, etc. --></p>
+				<lb/><ab><!-- First line of text with no clear relation to main text -->
+				<lb/><!-- Second line of text with no clear relation to main text, etc. --></ab>
+				</egXML>
+			<p>Note that, as in the example above, you can use <gi>p</gi> or <gi>ab</gi> to enclose sections of text, but not both.</p>
             </div>
-            <div xml:id="extra-space">
-                <head>More Than One Space between Words</head>
-                <p>If you are encoding text where the author has placed more than one space between
-                    words, do not insert additional space in your transcription. Rather insert only
-                    one space plus the following markup:
+
+            <div xml:id="add-del">
+                <head>Addition to or Deletions from the Original Manuscript</head>
+                <p>If a portion of the text has been added by the author or someone else other than
+                    you (see above), use <gi>add</gi> to mark up that text. The <att>place</att>
+                    attribute has values of: "<val>inline</val>", "<val>above</val>",
+                        "<val>below</val>", "<val>marginleft</val>", "<val>marginright</val>",
+                        "<val>margintop</val>", "<val>marginbottom</val>". <label rend="italic"
+                        >Original text:</label>
+                    <eg>he saw us [in this case it's clear in the ms. that "saw" was added
+                        later]</eg>
+                    <label rend="italic">Marked up:</label>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples"> he <add place="inline">saw</add> us </egXML>
+                </p>
+                <p>If a portion of the text has been deleted by the author or someone else, use
+                        <gi>del</gi> to mark up that text. Use the <att>type</att> attribute to
+                    indicate the type of deletion with values like: "<val>strikethrough</val>"
+                    (deleted with a single line) or "<val>cancelled</val>" (deleted with multiple
+                    lines). <label rend="italic">Original text:</label>
+                    <eg><hi rend="strikethrough">he saw us</hi></eg>
+                    <label rend="italic">Marked up:</label>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <space extent="4" unit="chars"/>
+                        <del type="strikethrough">he saw us</del>
                     </egXML>
                 </p>
-                <p>The value for the <att>extent</att> attribute will of course be a bit of a
-                    judgment call. The value "<val>chars</val>" stands for "characters"; you can
-                    also use "<val>words</val>". There is a <att>dim</att> attribute on
-                        <gi>space</gi> with allowed values of <val>horiztonal</val> or
-                        <val>vertical</val>. The default assumption in LEAP is that extra space is
-                    horizontal so this does not need to be marked.</p>
+                <p>Note: For coding additions and deletions that span more than a few lines of text, please consult the project team.</p>
+                <p>In both the cases of added or deleted text, if you believe that the work has been
+                    done by someone other than Livingstone but cannot identify who that person is,
+                    use the <att>hand</att> attribute with a value of "<val>#U</val>".
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">he <add place="inline" hand="#U">saw</add> us </egXML>
+                    The <val>#U</val> is a pointer to a <gi>handNote</gi> element (in a <gi>handDesc</gi> in a <gi>physDesc</gi> in the <gi>msDesc</gi> in <gi>sourceDesc</gi> in the header). 
+                
+                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+<!-- in the <sourceDesc> in the header -->
+<physDesc>
+    <handDesc>
+        <handNote xml:id="U"><label>Unknown Hand</label> This hand is unknown
+            but thought not David Livingstone's.</handNote>
+    </handDesc>
+</physDesc>
+<!-- later in the text -->
+<lb/>he <add place="inline" hand="#U">saw</add> us
+</egXML></p>
+                    <p>If you can identify individual hands, but not to whom they belong, these values
+                    could be <val>#hand01</val> or <val>#hand02</val> or similar.
+                </p>
+                
+                
+                <p>If it isn't a standalone addition or deletion but you believe a combined deletion
+                    and addition has been done (usually by the author) as a single intervention,
+                    then you may nest the <gi>del</gi> and <gi>add</gi> elements in a <gi>subst</gi>
+                    (substitution) element.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">Then we went <subst><del>towards</del><add>away</add> from the river</subst></egXML>
+                </p>
+                <p> To denote any kind of arrow or other mark that Livingstone uses to indicate
+                    where a bit of add or deleted text should go, use an empty <gi>metamark</gi>
+                    element.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">Then we went towards <metamark/><add place="inline">home</add>.<!-- Livingstone writes "home" in the margin, then uses a long arrow to indicate it should be placed here. AW --></egXML>
+                </p>
+
                 <p>Definitions of the elements used above are: <specList>
-                        <specDesc key="space" atts="extent unit"/>
+                        <specDesc key="add" atts="place"/>
+                        <specDesc key="del" atts="type"/>
+                        <specDesc key="subst"/>
                     </specList>
                 </p>
+
+            </div>
+
+            <div xml:id="notes">
+                <head>Authorial Notes with the Text</head>
+                
+                <p>Use the <gi>note</gi> element anytime Livingstone himself inserts a note, gloss, or footnote outside the body of the main text that explains an item within the main text.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">the whole tribe x <add place="marginleft"><note>if it were necessary for me to seek a <q>character</q> I 
+would confidently refer to the <term type="tribe">Bakwains</term> for it</note></add></egXML>
+                </p>
+                <p>The <gi>note</gi> element combined with the <gi>add</gi> element should also be used to mark the dates that Livingstone periodically adds to the left margin of the <hi rend="italic">Unyanyembe Journal</hi>. These should be marked as they occur, even if that happens in the middle of a sentence:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+                    <lb />I was content
+                    <lb /><note place="marginleft"><date when="1871-05-08">8th</date></note> to take the canoe on any terms -</egXML>
+                </p>
+                <p>
+                    <specList>
+                        <specDesc key="note"/>
+                    </specList>
+                </p>
+                
+            </div>
+	</div>
+
+            <div xml:id="editorial">
+                <head>Recording Editorial Interventions</head>
+                <p/>
+
+            <div xml:id="punctuation">
+                <head>Authorial Punctuation and Capitalization</head>
+				<p>Livingstone limits his punctuation primarily to n-dashes (-), which often shade into m-dashes or even longer dashes, and equal signs (=). He distinctly prefers n-dashes, but he uses these interchangeably with equal signs in places of such punctuation as commas, colons, semicolons, and periods as well as to mark simple pauses in the text. When transcribing an n-dash or equal sign, please adhere to the following guidelines.</p>
+				<p>When Livingstone uses an n-dash for any reason other than hyphenation of a word, place a space before and after the n-dash when trascribing it, even if it looks like Livingstone himself hasn't:</p>
+				<eg>a very old town - country</eg>
+				<p>Likewise, when transcribing an equal sign that Livingstone has used as punctuation, place a space before and after, even if it looks like Livingstone himself hasn't:</p>
+				<eg>tea = coffee</eg>
+				<p>When Livingstone uses an n-dash to introduce or follow a quotation, he places the n-dash directly below the opening or closing quotation marks rather than next to them. However, when transcribing this, you should nonetheless put a space between the dash and the quotation mark:</p>
+				<eg>He said - "I will" - in answer to me.</eg>
+				<p>If Livingstone's n-dash looks like an m-dask or even longer, use two or more n-dashes without any space between them:</p>
+				<eg>poor -- mostly</eg>
+				<p>Livingstone also has a tendency to run the first person pronoun ("I") onto the following word, as in the following: "Iwent". All instances of this should be silently separated when transcribed:</p>
+				<eg>I went</eg>
+				<p>Livingstone is by no means consistent in his use of capitalization and, moreover, it is often even not clear whether a word is capitalized or not. When transcribing, use the following rules of thumb. When a word is capitalized (or not) and the context suggests this is correct, transcribe as is. When a word is capitalized (or not) and the context suggests this is incorrect, transcribe as is but if (in your opinion) it is very important that the capitalization be corrected, use <gi>choice</gi> plus <gi>sic</gi> and <gi>corr</gi> to provide a corrected verison of the word:</p>
+				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">The man spoke to me - <choice><sic>then</sic><corr>Then</corr></choice> he left.</egXML>
+				<p>For use of the <gi>choice</gi>, <gi>sic</gi>, and <gi>corr</gi> elements, see <ptr target="#sic-corr"/>.</p>
+				<p>Finally, if it is not clear whether a word is capitalized and it would therefore be OK to transcribe it either way, allow context to guide your decision as to whether to capialize it or not.</p>
+            </div>
+
+            <div xml:id="sic-corr">
+                <head>Authorial Grammatical, Typographical, and Other Mistakes</head>
+                <p>When you encounter some sort of textual mistake made by the author, mark it with
+                    a combination of the <gi>choice</gi> element and <hi rend="bold">both</hi> the
+                        <gi>sic</gi> (apparent error) and <gi>corr</gi> (correction) elements.
+                        <label rend="italic">Original text:</label>
+                    <eg>I recieved your letter</eg>
+                    <label rend="italic">Marked up:</label>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I <choice><sic>recieved</sic><corr>received</corr></choice> your letter</egXML>
+                </p>
+                <p>If there is an uncertainty as to the correction that you provide use the
+                        <att>cert</att> attribute with values of "<val>low</val>",
+                        "<val>medium</val>", "<val>high</val>" to denote the degree of confidence in
+                    the addition you have made:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><choice><sic>recieved</sic><corr cert="high">received</corr></choice></egXML>
+                </p>
+                <p><hi rend="bold">Please note: </hi> Livingstone tends to leave off his apostrophes
+                    when it comes to his contractions. The proper way to code this is:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><choice><sic>dont</sic><corr>don't</corr></choice></egXML>
+                </p>
+                <p>Definitions of the elements used above are: <specList>
+                        <specDesc key="choice"/>
+                        <specDesc key="sic"/>
+                        <specDesc key="corr" atts="cert"/>
+                    </specList>
+                </p>
+
             </div>
 
             <div xml:id="unclear-text">
@@ -962,16 +1135,15 @@ mark any information not known as "Unknown" -->
                 </p>
             </div>
 
-
             <div xml:id="gaps-and-other-things">
                 <head>Missing Portions of the Manuscript Page or Text that is Illegible</head>
                 <p>We use <gi>gap</gi> to tag text that is wholly illegible due to deletion or some
                     other factor, or missing all together from the manuscript page due to physical
                     damage. The <gi>gap</gi> element never contains text:
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><lb n="18"/><gap extent="6" unit="chars" agent="blot"/> sugar -- candles</egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><lb/><gap extent="6" unit="chars" agent="blot"/> sugar -- candles</egXML>
                 </p>
                 <p>In the <gi>gap</gi> element, the values we use for the <att>agent</att> attribute
-                    include: "<val>blot</val>", "<val>fading</val>", "<val>hole</val>",
+                    include: "<val>blot</val>", "<val>fading</val>", "<val>hole</val>", "<val>illegible</val>",
                         "<val>overwriting</val>", and "<val>stain</val>". </p>
                 <p>The value of the <att>extent</att> attribute is always an approximation.</p>
                 <p>Note: For coding manuscript damage that spans more than a few lines of text, please consult the project team.prp</p>
@@ -1003,81 +1175,10 @@ mark any information not known as "Unknown" -->
                 </p>
             </div>
 
-
-
-
-            <div xml:id="add-del">
-                <head>Additions to or Deletions from the Original Manuscript</head>
-                <p>If a portion of the text has been added by the author or someone else other than
-                    you (see above), use <gi>add</gi> to mark up that text. The <att>place</att>
-                    attribute has values of: "<val>inline</val>", "<val>above</val>",
-                        "<val>below</val>", "<val>marginleft</val>", "<val>marginright</val>",
-                        "<val>margintop</val>", "<val>marginbottom</val>". <label rend="italic"
-                        >Original text:</label>
-                    <eg>he saw us [in this case it's clear in the ms. that "saw" was added
-                        later]</eg>
-                    <label rend="italic">Marked up:</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples"> he <add place="inline">saw</add> us </egXML>
-                </p>
-                <p>If a portion of the text has been deleted by the author or someone else, use
-                        <gi>del</gi> to mark up that text. Use the <att>type</att> attribute to
-                    indicate the type of deletion with values like: "<val>strikethrough</val>"
-                    (deleted with a single line) or "<val>cancelled</val>" (deleted with multiple
-                    lines). <label rend="italic">Original text:</label>
-                    <eg><hi rend="strikethrough">he saw us</hi></eg>
-                    <label rend="italic">Marked up:</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <del type="strikethrough">he saw us</del>
-                    </egXML>
-                </p>
-                <p>Note: For coding additions and deletions that span more than a few lines of text, please consult the project team.</p>
-                <p>In both the cases of added or deleted text, if you believe that the work has been
-                    done by someone other than Livingstone but cannot identify who that person is,
-                    use the <att>hand</att> attribute with a value of "<val>#U</val>".
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">he <add type="inline" hand="#U">saw</add> us </egXML>
-                    The <val>#U</val> is a pointer to a <gi>handNote</gi> element (in a <gi>handDesc</gi> in a <gi>physDesc</gi> in the <gi>msDesc</gi> in <gi>sourceDesc</gi> in the header). 
-                
-                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-<!-- in the <sourceDesc> in the header -->
-<physDesc>
-    <handDesc>
-        <handNote xml:id="U"><label>Unknown Hand</label> This hand is unknown
-            but thought not David Livingstone's.</handNote>
-    </handDesc>
-</physDesc>
-<!-- later in the text -->
-<lb/>he <add type="inline" hand="#U">saw</add> us
-</egXML></p>
-                    <p>If you can identify individual hands, but not to whom they belong, these values
-                    could be <val>#hand01</val> or <val>#hand02</val> or similar.
-                </p>
-                
-                
-                <p>If it isn't a standalone addition or deletion but you believe a combined deletion
-                    and addition has been done (usually by the author) as a single intervention,
-                    then you may nest the <gi>del</gi> and <gi>add</gi> elements in a <gi>subst</gi>
-                    (substitution) element.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">Then we went <subst><del>towards</del><add>away</add> from the river</subst></egXML>
-                </p>
-                <p> To denote any kind of arrow or other mark that Livingstone uses to indicate
-                    where a bit of add or deleted text should go, use an empty <gi>metamark</gi>
-                    element.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">Then we went towards <metamark/><add place="inline">home</add>.<!-- Livingstone writes "home" in the margin, then uses a long arrow to indicate it should be placed here. Adrian 2014-04-25 --></egXML>
-                </p>
-
-                <p>Definitions of the elements used above are: <specList>
-                        <specDesc key="add" atts="place"/>
-                        <specDesc key="del" atts="type"/>
-                        <specDesc key="subst"/>
-                    </specList>
-                </p>
-
-            </div>
-
             <div xml:id="normalized-text">
                 <head>Normalized Text</head>
                 
-                <p>Use the <gi>choice</gi> element plus <gi>org</gi> and <gi>reg</gi> to mark any instances where Livingstone's text, although not incorrect necessarily, is nonetheless normalized or otherwise corrected by you.
+                <p>Use the <gi>choice</gi> element plus <gi>orig</gi> and <gi>reg</gi> to mark any instances where Livingstone's text, although not incorrect necessarily, is nonetheless normalized or otherwise corrected by you.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><choice><orig>shew</orig><reg>show</reg></choice></egXML>
                 </p>
                 <p>
@@ -1087,41 +1188,44 @@ mark any information not known as "Unknown" -->
                         <specDesc key="reg"/>
                     </specList>
                 </p>
-                
-            </div>
-            
-            
+            </div>               
+	</div>
 
-            <div xml:id="sic-corr">
-                <head>Grammatical, Typographical, and Other Mistakes Made by the Author</head>
-                <p>When you encounter some sort of textual mistake made by the author, mark it with
-                    a combination of the <gi>choice</gi> element and <hi rend="bold">both</hi> the
-                        <gi>sic</gi> (apparent error) and <gi>corr</gi> (correction) elements.
-                        <label rend="italic">Original text:</label>
-                    <eg>I recieved your letter</eg>
+            <div xml:id="project-formatting">
+                <head>Project-Specific Formatting Practices</head>
+                <p/>
+
+            <div xml:id="special-characters">
+                <head>The Ampersand and Other Special Characters</head>
+
+                <p>When you transcribe an ampersand, use <code>&amp;amp;</code> instead of an actual
+                    ampersand: <label rend="italic">Original text:</label>
+                    <eg>I saw John &amp; Jim</eg>
                     <label rend="italic">Marked up:</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I <choice><sic>recieved</sic><corr>received</corr></choice> your letter</egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I saw John <?entity amp?> Jim</egXML>
                 </p>
-                <p>If there is an uncertainty as to the correction that you provide use the
-                        <att>cert</att> attribute with values of "<val>low</val>",
-                        "<val>medium</val>", "<val>high</val>" to denote the degree of confidence in
-                    the addition you have made:
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><choice><sic>recieved</sic><corr cert="high">received</corr></choice></egXML>
+
+                <p>If you come across any other unusual characters that are not found within the
+                    "Edit—Insert from Character Map" option from the editing toolbar in oXygen, add
+                    a comment to draw the attention of the project to this location.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples"><!-- Adrian, there is a weird character you need to insert here. Debbie: 2012-05-17 -->
+                    </egXML>
                 </p>
-                <p><hi rend="bold">Please note: </hi> Livingstone tends to leave off his apostrophes
-                    when it comes to his contractions. The proper way to code this is:
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><choice><sic>dont</sic><corr>don't</corr></choice></egXML>
+            </div>
+
+            <div xml:id="quotations">
+                <head>Quotation from Another Source</head>
+                
+                <p>When dealing with a quotation from another source, use the <gi>quote</gi> element.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">As it is stated in the Bible, <quote><q>Neither do men light a candle, and put it under a bushel...</q></quote>.</egXML>
                 </p>
-                <p>Definitions of the elements used above are: <specList>
-                        <specDesc key="choice"/>
-                        <specDesc key="sic"/>
-                        <specDesc key="corr" atts="cert"/>
+                <p>
+                    <specList>
+                        <specDesc key="quote"/>
                     </specList>
                 </p>
-
-
+                
             </div>
-
 
             <div xml:id="abbreviations">
                 <head>Abbreviations</head>
@@ -1139,7 +1243,6 @@ mark any information not known as "Unknown" -->
                     the expansion you have provided.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">my <choice><abbr>no.</abbr><expan cert="high">number</expan></choice></egXML>
                 </p>
-
                 <p><hi rend="bold">Please note: </hi> any prefix pertaining to a personal name, i.e.
                     Dr, Mr, Miss, Rev, <hi rend="underline">need not be expanded</hi>.</p>
                 <p>Definitions of the elements used above are: <specList>
@@ -1149,23 +1252,6 @@ mark any information not known as "Unknown" -->
                     </specList>
                 </p>
             </div>
-
-            <div xml:id="measurements">
-                <head>Measurements</head>
-                
-                <p>Use the <gi>measure</gi> element to mark any quantities that Livingstone cites in the text. If Livingstone provides an obvious group of quantities, the <gi>measureGrp</gi> element can be used.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">The river was <measureGrp><measure>30 feet deep</measure> and <measure>1000 yards across</measure></measureGrp></egXML>
-                </p>
-                <p>
-                    <specList>
-                        <specDesc key="measureGrp"/>
-                        <specDesc key="measure"/>
-                    </specList>
-                </p>
-                
-            </div>
-            
-
 
             <div xml:id="fractions">
                 <head>Fractions</head>
@@ -1181,65 +1267,33 @@ mark any information not known as "Unknown" -->
                 </p>
             </div>
 
-            <div xml:id="special-characters">
-                <head>Quotation Marks, the Ampersand, and Other Special Characters</head>
-
-                <p>When you transcribe quotation marks, use <gi>q</gi>instead of actual quotation
-                    marks: <label rend="italic">Original text:</label>
-                    <eg>the man said, "I have spoken."</eg>
-                    <label rend="italic">Marked up:</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">the man said, <q>I have spoken.</q></egXML>
-                </p>
-                <p>When you transcribe an ampersand, use <code>&amp;amp;</code> instead of an actual
-                    ampersand: <label rend="italic">Original text:</label>
-                    <eg>I saw John &amp; Jim</eg>
-                    <label rend="italic">Marked up:</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I saw John <?entity amp?> Jim</egXML>
-                </p>
-
-                <p>If you come across any other unusual characters that are not found within the
-                    "Edit—Insert from Character Map" option from the editing toolbar in oXygen, add
-                    a comment to draw the attention of the project to this location.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples"><!-- Adrian, there is a weird character you need to insert here. Debbie: 2012-05-17 -->
-                    </egXML>
-                </p>
-            </div>
-
-            <div xml:id="notes">
-                <head>Authorial Notes with the Text</head>
-                
-                <p>Use the <gi>note</gi> element anytime Livingstone himself inserts a note, gloss, or footnote outside the body of the main text that explains an item within the main text.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">the whole tribe x <add place="marginleft"><note>if it were necessary for me to seek a <q>character</q> I 
-would confidently refer to the <term type="tribe">Bakwains</term> for it</note></add></egXML>
-                </p>
-                <p>The <gi>note</gi> element combined with the <gi>add</gi> element should also be used to mark the dates that Livingstone periodically adds to the left margin of the <hi rend="italic">Unyanyembe Journal</hi>. These should be marked as they occur, even if that happens in the middle of a sentence:
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                    <lb />I was content
-                    <lb /><note place="marginleft"><date when="1871-05-08">8th</date></note> to take the canoe on any terms -</egXML>
-                </p>
+            <div xml:id="tagging-order">
+                <head>Notes on Tagging Order</head>
+                <p>Elements recording textual formatting in the original usually surround elements
+                    signifying some semantic category:</p>
                 <p>
-                    <specList>
-                        <specDesc key="note"/>
-                    </specList>
+                    <label rend="italic">Original text:</label>
+                    <eg>the Lualalba </eg>
+                    <label rend="italic">Marked up:</label>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><hi rend="underline"><placeName><geogName type="river">Lualaba</geogName></placeName></hi></egXML>
+                    If one does not wish to provide additional levels of nested elements, one can
+                    also use the <att>rend</att> attribute directly on the elements.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName rend="underline"><geogName type="river">Lualaba</geogName></placeName></egXML>
+                    but if unsure then the former is perfectly acceptable. </p>
+                <p>However, note the following cases: <label rend="italic">Original text:</label>
+                    <eg>Syd bin Majid</eg>
+                    <label rend="italic">Marked up:</label>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><persName><choice><sic>Syd</sic><corr>Syde</corr></choice> bin Majid</persName></egXML>
+                    or <label rend="italic">Original text:</label>
+                    <eg>19<hi rend="superscript"><hi rend="underline">th</hi></hi> May 1871</eg>
+                    <label rend="italic">Marked up:</label>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><date when="1871-05-19">19<hi rend="sup underline">th</hi> May 1871</date></egXML>
                 </p>
-                
+                <p>In other words, if the textual formatting applies to only part of the text coded
+                    by the informational tagging, then the textual formatting can be nested within
+                    the informational formatting.</p>
             </div>
-            
-            <div xml:id="quotations">
-                <head>Quotation from Another Source</head>
-                
-                <p>When dealing with a quotation from another source, use the <gi>quote</gi> element.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">As it is stated in the Bible, <quote><q>Neither do men light a candle, and put it under a bushel...</q></quote>.</egXML>
-                </p>
-                <p>
-                    <specList>
-                        <specDesc key="quote"/>
-                    </specList>
-                </p>
-                
-            </div>
-            
-            
+	</div>                        
 
             <div xml:id="personal-names">
                 <head>Names of People</head>
@@ -1277,7 +1331,13 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                         "<val>lake</val>", "<val>river</val>", etc.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName><geogName type="river">Nile</geogName></placeName></egXML>
                 </p>
-                <p><hi rend="bold">Please note: </hi> When coding "Cape" and "Interior", both should
+				<p>You should also use <gi>geogName</gi> when encoding the full reference to a geographical entity that includes any kind of formal name (which itself would also be separately encoded:</p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName><geogName type="source">sources of the <placeName><geogName type="river">Nile</geogName></placeName></geogName></placeName></egXML>
+				<p>However, if the text refers to a significant or unique geographical entity, but without using a formal name, then you should use <gi>geogFeat</gi> to encode it:</p>
+				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><geogFeat type="fountain">Four fountains</geogFeat> rising so near to each other</egXML>
+				<p><gi>geogFeat</gi> should also be uses in those cases where Livingstone refers to a specific, named geographical entity but opts not to provide the name itself, as in the following example which alludes to Lake Tanganyika:</p>
+				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I looked at the <geogFeat type="lake">Lake</geogFeat></egXML>
+                <p><hi rend="bold">Note: </hi> "Zanzibar", "Cape", and "Interior" should all
                     be encoded with the <gi>region</gi> element (even though technically
                     incorrect)</p>
                 <p>Definitions of the elements used above are: <specList>
@@ -1286,39 +1346,60 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                         <specDesc key="region"/>
                         <specDesc key="country"/>
                         <specDesc key="settlement" atts="type"/>
+                        <specDesc key="geogName"/>
+                        <specDesc key="geogFeat"/>						
                     </specList>
                 </p>
 
-                <div xml:id="coordinates">
-                    <head>Geographical Coordinates</head>
-                    
-                    <p>Use the <gi>geo</gi> element to record any geographical coordinates (such as longitude and latitude) 
-                        provided within the text. Depending on the presentation, these coordinates might also be marked as 
-                        a list and/or table (see <ptr target="#lists"/>). However, if presented in a longer form, such coordinates 
-                            should normally not be transcribed, but only recorded as being present in the text. An editorial comment may be 
-                            added to provide a description of these coordinates.
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><geo/><!-- Livingstone here gives a list of villages in Manyema and provides the geographical coordinates for each of them. Adrian: 2014-04-11 --></egXML>
-                    </p>
-                    <p>
-                        <specList>
-                            <specDesc key="geo"/>
-                        </specList>
-                    </p>
-                </div>
+            <div xml:id="measurements">
+                <head>Geographical Measurements</head>
                 
+                <p>Use the <gi>measure</gi> element to mark any geographical quantities (including geographical coordinates) that Livingstone cites in the text. If Livingstone provides an obvious group of geographical quantities, the <gi>measureGrp</gi> element can be used.</p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">The river was <measureGrp><measure>30 feet deep</measure> and <measure>1000 yards across</measure></measureGrp></egXML>
+				<p>Note, however, that if Livingstone introduces a larger set of geographical coordinates these should normally not be transcribed, but only be recorded as being present in the text with an empty <tag>measure/</tag> tag. An editorial comment may be added to provide a description of these coordinates.</p>
+				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><measure/><!-- Livingstone here gives a list of villages in Manyema and provides the geographical coordinates for each of them. AW --></egXML>
+                <p>
+                    <specList>
+                        <specDesc key="measureGrp"/>
+                        <specDesc key="measure"/>
+                    </specList>
+                </p>
+                
+            </div>                
                 
             </div>
+
+            <div xml:id="weather">
+                <head>Refereces to Weather</head>
+				<p>Use <tag>seg type="weather"</tag> to mark passages in the text where Livingstone refers to the weather.</p>
+				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">We have <seg type="weather">rain in large quantity almost every night</seg></egXML>
+				<p>Such weather references may be loosely made, and it may be difficult to determine where exactly they begin and end. In all cases use the <gi>seg</gi> elment and best judgment to mark such references. Opt for one use of <gi>seg</gi> to mark a longer passage with a series of specific descriptions rather than multiple uses of the <gi>seg</gi> element.</p>
+			    <p>
+                    <specList>
+                        <specDesc key="seg"/>
+                    </specList>
+			    </p>
+			</div>
+
 
 <div xml:id="terms">
     <head>Terms to Mark</head>
 
 
             <div xml:id="animals">
-                <head>Animals</head>
+                <head>Animals (Including Fish), Insects, Plants</head>
                 
-                <p>When dealing with animals, use the <gi>term</gi> element with the
-                    <att>type</att> attribute with a value of "<val>animal</val>".
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="animal">elephant</term></egXML>
+                <p>When dealing with animals, including fish, use the <gi>term</gi> element with the
+                    <att>type</att> attribute with a value of "<val>animal</val>". The value of "animal" in the singular should be used in all cases, even when the text refers to multiple animals of one kind.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="animal">elephants</term></egXML>
+                </p>
+                <p>When dealing with insects, use the <gi>term</gi> element with the
+                    <att>type</att> attribute with a value of "<val>insect</val>". The value of "insect" in the singular should be used in all cases, even when the text refers to multiple insects of one kind.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="insect">tetse</term></egXML>
+                </p>
+                <p>When dealing with specifically named plants, use the <gi>term</gi> element with the
+                    <att>type</att> attribute with a value of "<val>plant</val>". The value of "plant" in the singular should be used in all cases, even when the text refers to multiple plants of one kind.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="plant">Euphorbias</term></egXML>
                 </p>
                 <p>
                     <specList>
@@ -1384,9 +1465,11 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                     <head>Religious Faith</head>
                     
                     <p>Use the <gi>term</gi> element with a <att>type</att>  attribute with a value of "<val>faith</val>" to mark instances in the text 
-                        where religious faith is cited.
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">He was a <term type="faith">Christian</term></egXML>
+                        where religious faith or an organized religion is cited.
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="faith">Christianity</term> and <term type="faith">Islam</term></egXML>
+						<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="faith">Christian</term> values</egXML>
                     </p>
+					<p>However, for practitioners of particular faiths, see <ptr target="#organizations"/>.</p>
                     <p>
                         <specList>
                             <specDesc key="term"/>
@@ -1415,8 +1498,7 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
         <head>Medical Terms</head>
         <p>When marking up a medical reference or term, use <gi>term</gi> plus the
             <att>type</att> attribute and appropriate value, such as
-            "<val>ailment</val>", "<val>prescription</val>", "<val>medicament</val>",
-            "<val>bodypart</val>", or "<val>bodyprocess</val>".
+            "<val>ailment</val>" or <val>medicament</val>".
             <egXML xmlns="http://www.tei-c.org/ns/Examples">I had <term type="ailment">malaria</term> for a month.</egXML>
         </p>
         <p>Definitions of the elements used above are: <specList>
@@ -1425,37 +1507,45 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
         </p>
         
     </div>
-    
+	
+		</div>
     
             <div xml:id="organizations">
-                <head>Organizations and Affiliation</head>
+                <head>Organizations and Other Groups</head>
                 
-                <p>Use the <gi>orgName</gi> element to mark instances in the text where there is mention of an organization 
-                    that is not covered by <ptr target="#nationalities"/>, <ptr target="#people"/>, or <ptr target="#tribes"/>. 
-                    Note, however, that if this organization is presented as being affiliated with one or more individuals, you should instead use 
-                    the <gi>affiliation</gi> element.
+                <p>Use the <gi>orgName</gi> element to mark instances in the text where there is mention of an organization or other type of group (or any reference to an individual as being part of a group) that is not covered by <ptr target="#nationalities"/>, <ptr target="#people"/>, or <ptr target="#tribes"/>. Note that all the following entities should be marked with the <gi>orgName</gi> element: African, Africans, Arab, Arabs, Christian (an individual; for use of "Christian" as an adjective, see <ptr target="#faiths"/>), Christians, Moslem (an individual; for use of "Moselm" as an adjective, see <ptr target="#faiths"/>), and Moslems. For references to organized religions (e.g., Christianity, Islam), see <ptr target="#faiths"/>. 
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">the <orgName>the London Missionary Society</orgName></egXML>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">he was a missionary of the <affiliation>the London Missionary Society</affiliation></egXML>
+					<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><orgName>African</orgName> villages</egXML>
+					<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I spoke with the <orgName>Arab</orgName></egXML>
                 </p>
                 <p>
                     <specList>
                         <specDesc key="orgName"/>
-                        <specDesc key="affiliation"/>
                     </specList>
                 </p>                
-                
-            </div>
     
     
             </div>
 
+            <div xml:id="bibliographical">
+                <head>Bibliographical Elements</head>
+			<p>Use <gi>bibl</gi> to encode any elements of a book, including the title, that Livingstone references:</p>
+			<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><bibl>Genesis</bibl></egXML>
+                <p>
+                    <specList>
+                        <specDesc key="bibl"/>
+                    </specList>
+                </p>                
+
+            </div>
+
             <div xml:id="foreign-words">
-                <head>Words in a foreign language</head>
+                <head>Words in a Foreign Language</head>
                 <p>When dealing with foreign words, there are three steps to complete: <list
                         type="ordered">
                         <item>Find the abbreviation for the foreign language at the following
                             webpage: <ref
-                                target="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"
+                                target="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry _blank"
                                 >https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry</ref>
                         </item>
                         <item>In the header, add in a <gi>langUsage</gi> for the foreign language
@@ -1486,9 +1576,6 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                 </p>
             </div>
 
-
-
-        
             
             <div xml:id="lists">
                 <head>Lists within the Text</head>
@@ -1553,33 +1640,6 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                 </p>
             </div>
 
-
-            <div xml:id="tagging-order">
-                <head>Notes on Tagging Order</head>
-                <p>Elements recording textual formatting in the original usually surround elements
-                    signifying some semantic category:</p>
-                <p>
-                    <label rend="italic">Original text:</label>
-                    <eg>the Lualalba </eg>
-                    <label rend="italic">Marked up:</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><hi rend="underline"><placeName><geogName type="river">Lualaba</geogName></placeName></hi></egXML>
-                    If one does not wish to provide additional levels of nested elements, one can
-                    also use the <att>rend</att> attribute directly on the elements.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName rend="underline"><geogName type="river">Lualaba</geogName></placeName></egXML>
-                    but if unsure then the former is perfectly acceptable. </p>
-                <p>However, note the following cases: <label rend="italic">Original text:</label>
-                    <eg>Syd bin Majid</eg>
-                    <label rend="italic">Marked up:</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><persName><choice><sic>Syd</sic><corr>Syde</corr></choice> bin Majid</persName></egXML>
-                    or <label rend="italic">Original text:</label>
-                    <eg>19<hi rend="superscript"><hi rend="underline">th</hi></hi> May 1871</eg>
-                    <label rend="italic">Marked up:</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><date when="1871-05-19">19<hi rend="sup underline">th</hi> May 1871</date></egXML>
-                </p>
-                <p>In other words, if the textual formatting applies to only part of the text coded
-                    by the informational tagging, then the textual formatting can be nested within
-                    the informational formatting.</p>
-            </div>
         </body>
         <back>
             <div xml:id="element-summary">
@@ -1827,11 +1887,9 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                     <label>Transcription Module</label>
                     <specList>
                         <specDesc key="addSpan"/>
-                        <specDesc key="am"/>
                         <specDesc key="damage"/>
                         <specDesc key="damageSpan"/>
                         <specDesc key="delSpan"/>
-                        <specDesc key="ex"/>
                         <specDesc key="facsimile"/>
                         <specDesc key="fw"/>
                         <specDesc key="handNotes"/>
@@ -1901,7 +1959,7 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                         include="TEI back body closer dateline div front
                         opener postscript salute signed text trailer"/>
                     <moduleRef key="transcr"
-                        include="addSpan am damage damageSpan delSpan ex
+                        include="addSpan damage damageSpan delSpan
                         facsimile fw handNotes   handShift listTranspose metamark mod redo restore
                         retrace space subst supplied surface surfaceGrp surplus transpose undo zone"/>
 
@@ -1920,6 +1978,9 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                                     <valItem ident="hole">
                                         <desc>There is a hole</desc>
                                     </valItem>
+                                    <valItem ident="illegible">
+                                        <desc>There is illegible text</desc>
+                                    </valItem>
                                     <valItem ident="overwriting">
                                         <desc>There is overwriting</desc>
                                     </valItem>
@@ -1929,7 +1990,7 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                                 </valList>
                             </attDef>
 
-                            <attDef ident="reason" mode="change">
+                           <!-- <attDef ident="reason" mode="change">
                                 <valList mode="replace" type="semi" xml:id="gap-reason">
                                     <valItem ident="damage">
                                         <desc>There is a hole</desc>
@@ -1941,7 +2002,7 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                                         <desc>There is fading</desc>
                                     </valItem>
                                 </valList>
-                            </attDef>
+                            </attDef> -->
                         </attList>
 
                     </elementSpec>
@@ -1972,6 +2033,15 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                                         <desc>rendered as drop-cap or illuminated initial</desc>
                                     </valItem>
                                     -->
+                                    <valItem ident="double-line">
+                                        <desc>rendering is of a double line</desc>
+                                    </valItem>
+                                  <valItem ident="double-underline">
+                                        <desc>double-underlined</desc>
+                                    </valItem>
+                                    <valItem ident="half-line">
+                                        <desc>rendering is of a half line</desc>
+                                    </valItem>
                                     <valItem ident="indent">
                                         <desc>rendered as indented (e.g. first line in a
                                             paragraph)</desc>
@@ -2004,6 +2074,9 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                                     <valItem ident="other">
                                         <desc>other rendering</desc>
                                     </valItem>
+                                    <valItem ident="quarter-line">
+                                        <desc>rendering is of a quarter line</desc>
+                                    </valItem>
                                     <valItem ident="right">
                                         <desc>aligned to the right</desc>
                                     </valItem>
@@ -2019,11 +2092,17 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                                     <valItem ident="smallcaps">
                                         <desc>rendered as smallcaps</desc>
                                     </valItem>
+                                    <valItem ident="triple-line">
+                                        <desc>rendering is of a triple line</desc>
+                                    </valItem>
                                     <valItem ident="underline">
                                         <desc>rendered in underline</desc>
                                     </valItem>
-                                    <valItem ident="red">
-                                        <desc>rendered in red</desc>
+                                    <valItem ident="upside-down">
+                                        <desc>rendered upside-down</desc>
+                                    </valItem>
+                                    <valItem ident="vertical">
+                                        <desc>rendered vertically</desc>
                                     </valItem>
 
                                     <valItem ident="black">
@@ -2038,9 +2117,18 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                                         <desc>rendered in brown</desc>
                                     </valItem>
 
+                                    <valItem ident="gray">
+                                        <desc>rendered in gray</desc>
+                                    </valItem>
+
                                     <valItem ident="green">
                                         <desc>rendered in green</desc>
                                     </valItem>
+
+                                    <valItem ident="red">
+                                        <desc>rendered in red</desc>
+                                    </valItem>
+
                                 </valList>
                             </attDef>
                         </attList>
@@ -2066,6 +2154,9 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                                     </valItem>
                                     <valItem ident="pages">
                                         <desc>Pages in the text</desc>
+                                    </valItem>
+                                    <valItem ident="section">
+                                        <desc>Section in the text</desc>
                                     </valItem>
                                 </valList>
                             </attDef>

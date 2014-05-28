@@ -3,7 +3,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-04-30T08:14:11Z. 
+Schema generated from ODD source 2014-05-28T12:23:08Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
@@ -267,6 +267,8 @@ Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Lines in the text</a:documentation>
                <value>pages</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Pages in the text</a:documentation>
+               <value>section</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Section in the text</a:documentation>
             </choice>
          </attribute>
       </optional>
@@ -549,6 +551,12 @@ Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] 
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered as capitals</a:documentation>
                      <value>center</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">aligned in the center</a:documentation>
+                     <value>double-line</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendering is of a double line</a:documentation>
+                     <value>double-underline</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">double-underlined</a:documentation>
+                     <value>half-line</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendering is of a half line</a:documentation>
                      <value>indent</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered as indented (e.g. first line in a paragraph)</a:documentation>
                      <value>italic</value>
@@ -563,6 +571,8 @@ Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] 
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered as not indented</a:documentation>
                      <value>other</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">other rendering</a:documentation>
+                     <value>quarter-line</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendering is of a quarter line</a:documentation>
                      <value>right</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">aligned to the right</a:documentation>
                      <value>sub</value>
@@ -573,18 +583,26 @@ Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] 
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered as smaller</a:documentation>
                      <value>smallcaps</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered as smallcaps</a:documentation>
+                     <value>triple-line</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendering is of a triple line</a:documentation>
                      <value>underline</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered in underline</a:documentation>
-                     <value>red</value>
-                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered in red</a:documentation>
+                     <value>upside-down</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered upside-down</a:documentation>
+                     <value>vertical</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered vertically</a:documentation>
                      <value>black</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered in black</a:documentation>
                      <value>blue</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered in blue</a:documentation>
                      <value>brown</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered in brown</a:documentation>
+                     <value>gray</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered in gray</a:documentation>
                      <value>green</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered in green</a:documentation>
+                     <value>red</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">rendered in red</a:documentation>
                   </choice>
                </oneOrMore>
             </list>
@@ -1437,8 +1455,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="choice"/>
          <ref name="abbr"/>
          <ref name="expan"/>
-         <ref name="ex"/>
-         <ref name="am"/>
          <ref name="subst"/>
       </choice>
    </define>
@@ -1447,8 +1463,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="choice"/>
          <ref name="abbr"/>
          <ref name="expan"/>
-         <ref name="ex"/>
-         <ref name="am"/>
          <ref name="subst"/>
       </choice>
    </define>
@@ -1456,8 +1470,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <ref name="choice"/>
       <ref name="abbr"/>
       <ref name="expan"/>
-      <ref name="ex"/>
-      <ref name="am"/>
       <ref name="subst"/>
    </define>
    <define name="model.pPart.editorial_sequenceOptional">
@@ -1469,12 +1481,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       </optional>
       <optional>
          <ref name="expan"/>
-      </optional>
-      <optional>
-         <ref name="ex"/>
-      </optional>
-      <optional>
-         <ref name="am"/>
       </optional>
       <optional>
          <ref name="subst"/>
@@ -1491,12 +1497,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="expan"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="ex"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="am"/>
-      </zeroOrMore>
-      <zeroOrMore>
          <ref name="subst"/>
       </zeroOrMore>
    </define>
@@ -1509,12 +1509,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       </oneOrMore>
       <oneOrMore>
          <ref name="expan"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="ex"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="am"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="subst"/>
@@ -2448,8 +2442,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="abbr"/>
          <ref name="expan"/>
          <ref name="seg"/>
-         <ref name="ex"/>
-         <ref name="am"/>
       </choice>
    </define>
    <define name="model.imprintPart">
@@ -2959,19 +2951,10 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
          <ref name="att.editLike.attributes"/>
          <optional>
             <attribute name="reason">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives the reason for omission. Sample values include sampling, inaudible, irrelevant, cancelled.
-Suggested values include: 1] damage; 2] deletion; 3] illegible</a:documentation>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives the reason for omission. Sample values include sampling, inaudible, irrelevant, cancelled.</a:documentation>
                <list>
                   <oneOrMore>
-                     <choice>
-                        <value>damage</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">There is a hole</a:documentation>
-                        <value>deletion</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">There is a blotting</a:documentation>
-                        <value>illegible</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">There is fading</a:documentation>
-                        <ref name="data.word"/>
-                     </choice>
+                     <ref name="data.word"/>
                   </oneOrMore>
                </list>
             </attribute>
@@ -2985,7 +2968,7 @@ Suggested values include: 1] damage; 2] deletion; 3] illegible</a:documentation>
          <optional>
             <attribute name="agent">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">in the case of text omitted because of damage, categorizes the cause of the damage, if it can be identified.
-Suggested values include: 1] blot; 2] fading; 3] hole; 4] overwriting; 5] stain</a:documentation>
+Suggested values include: 1] blot; 2] fading; 3] hole; 4] illegible; 5] overwriting; 6] stain</a:documentation>
                <choice>
                   <value>blot</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">There is a blotting</a:documentation>
@@ -2993,6 +2976,8 @@ Suggested values include: 1] blot; 2] fading; 3] hole; 4] overwriting; 5] stain<
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">There is fading</a:documentation>
                   <value>hole</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">There is a hole</a:documentation>
+                  <value>illegible</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">There is illegible text</a:documentation>
                   <value>overwriting</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">There is overwriting</a:documentation>
                   <value>stain</value>
@@ -6958,15 +6943,6 @@ The @spanTo attribute of <name/> is required.</assert>
          <empty/>
       </element>
    </define>
-   <define name="ex">
-      <element name="ex">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(editorial expansion) contains a sequence of letters added by an editor or transcriber when expanding an abbreviation. [11.3.1.2. ]</a:documentation>
-         <ref name="macro.xtext"/>
-         <ref name="att.global.attributes"/>
-         <ref name="att.editLike.attributes"/>
-         <empty/>
-      </element>
-   </define>
    <define name="fw">
       <element name="fw">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(forme work) contains a running head (e.g. a header, footer), catchword, or similar material appearing on the current page. [11.6. ]</a:documentation>
@@ -7006,22 +6982,6 @@ Sample values include: 1] header; 2] footer; 3] pageNum(page number) ; 4] lineNu
                <ref name="data.pointer"/>
             </attribute>
          </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="am">
-      <element name="am">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(abbreviation marker) contains a sequence of letters or signs present in an abbreviation which are omitted or replaced in the expanded form of the abbreviation. [11.3.1.2. ]</a:documentation>
-         <zeroOrMore>
-            <choice>
-               <text/>
-               <ref name="model.gLike"/>
-               <ref name="model.pPart.transcriptional"/>
-            </choice>
-         </zeroOrMore>
-         <ref name="att.global.attributes"/>
-         <ref name="att.typed.attributes"/>
-         <ref name="att.editLike.attributes"/>
          <empty/>
       </element>
    </define>
