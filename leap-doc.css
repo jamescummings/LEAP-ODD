@@ -1412,10 +1412,10 @@ span.lemmawitness {
 /*LEAP Specific Overrides*/
 
 /* oXygen Colours*/
-body {margin:2em!important;}
+body {margin:2em!important;} 
 a.link_ref, span.element, span.tag, span.gi {color:#000096;}
 span.att, span.attribute {color:#F5844C;}
 span.val, span.attributevalue {color:#993300;}
 span.comment {color:#009600;}
 dl.valList {margin-left:5em;}
-
+a.navTOC {text-decoration:none; color:#EEE; margin-right:5px; font-size:12pt;} 

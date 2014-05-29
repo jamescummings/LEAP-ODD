@@ -587,7 +587,7 @@ mark any information not known as "Unknown" -->
                     </egXML>
                 </p>
                 <p>Definitions of the elements used above are: <specList>
-                        <specDesc key="lb" atts="n"/>
+                        <specDesc key="lb"/>
                     </specList>
                 </p>
 
@@ -606,8 +606,8 @@ mark any information not known as "Unknown" -->
                     the page.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <p rend="right">This paragraph is aligned to the right on the page.</p>
-                    </egXML>
-                    For more information about the <att>rend</att> attribute see <ptr
+                    </egXML></p>
+                <p>For more information about the <att>rend</att> attribute see <ptr
                         target="#formatting"/>. </p>
                 <p>The default assumption is that a paragraph is indented, so there is no need
                     to mark that. For marking the exceptionally indented first lines of paragraphs
@@ -717,18 +717,18 @@ mark any information not known as "Unknown" -->
                 <div xml:id="postal-addresses">
                     <head>Postal Address of Letter Recipient</head>
                     
-                    <p>The portion of each letter that contains that postal address of the letter recipient should be enclosed in an <gi>address</gi> element. Each line should be marked with <gi>addrLine</gi> plus an <att>n</att> value.
+                    <p>The portion of each letter that contains that postal address of the letter recipient should be enclosed in an <gi>address</gi> element. Each line should be marked with <gi>addrLine</gi>.
                         
                         <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
 <address>
-<addressLine n="1"/><persName>Bevan Braithwaite</persName>
-<addressLine n="2"/><placeName>3 New Court</placeName>
-<addressLine n="3"/><placeName>Lincoln's Inn</placeName>
+<addressLine/><persName>Bevan Braithwaite</persName>
+<addressLine/><placeName>3 New Court</placeName>
+<addressLine/><placeName>Lincoln's Inn</placeName>
 </address></egXML>
                     </p>
                     <p>
                         <specList>
-                            <specDesc key="addrLine" atts="n"/>
+                            <specDesc key="addrLine"/>
                             <specDesc key="address"/>
                         </specList>
                     </p>
@@ -957,13 +957,14 @@ mark any information not known as "Unknown" -->
             <div xml:id="anonymous-blocks">
                 <head>Text with No Clear Relationship to the Surrounding Text</head>
 			<p>Occasionally Livingstone includes blocks of text on a given manuscript page that have no clear relationship to the main text on that page. Such blocks should be encoded with the <gi>ab</gi> element.</p>
-				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-				<lb/><p><!-- First line of main text -->
-				<lb/><!-- Second line of main text -->
-				<lb/><!-- Last line of main text, etc. --></p>
-				<lb/><ab><!-- First line of text with no clear relation to main text -->
-				<lb/><!-- Second line of text with no clear relation to main text, etc. --></ab>
-				</egXML>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+<lb/><p><!-- First line of main text -->
+<lb/><!-- Second line of main text -->
+<lb/><!-- Last line of main text, etc. --></p>
+
+<lb/><ab><!-- First line of text with no clear relation to main text -->
+<lb/><!-- Second line of text with no clear relation to main text, etc. --></ab>
+</egXML>
 			<p>Note that, as in the example above, you can use <gi>p</gi> or <gi>ab</gi> to enclose sections of text, but not both.</p>
             </div>
 
@@ -992,6 +993,9 @@ mark any information not known as "Unknown" -->
                     </egXML>
                 </p>
                 <p>Note: For coding additions and deletions that span more than a few lines of text, please consult the project team.</p>
+				<p>When Livingstone uses a caret (^) to indicate the place of an addition, use a separate <gi>add</gi> tag for the caret and place a space between the tagged caret and the additional text that Livingstone has added:
+				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><add place="below">^</add> <add place="above">a word</add></egXML>
+				</p>
                 <p>In both the cases of added or deleted text, if you believe that the work has been
                     done by someone other than Livingstone but cannot identify who that person is,
                     use the <att>hand</att> attribute with a value of "<val>#U</val>".
@@ -1036,7 +1040,7 @@ mark any information not known as "Unknown" -->
             </div>
 
             <div xml:id="notes">
-                <head>Authorial Notes with the Text</head>
+                <head>Authorial Notes within the Text</head>
                 
                 <p>Use the <gi>note</gi> element anytime Livingstone himself inserts a note, gloss, or footnote outside the body of the main text that explains an item within the main text.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">the whole tribe x <add place="marginleft"><note>if it were necessary for me to seek a <q>character</q> I 
@@ -1117,7 +1121,7 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                     <egXML xmlns="http://www.tei-c.org/ns/Examples"> he said he would <unclear cert="low">say</unclear> me tomorrow </egXML>
                 </p>
                 <p>Definitions of the elements used above are: <specList>
-                        <specDesc key="unclear" atts="cert extent unit"/>
+                        <specDesc key="unclear" atts="cert"/>
                     </specList>
                 </p>
             </div>
@@ -1146,7 +1150,7 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                     include: "<val>blot</val>", "<val>fading</val>", "<val>hole</val>", "<val>illegible</val>",
                         "<val>overwriting</val>", and "<val>stain</val>". </p>
                 <p>The value of the <att>extent</att> attribute is always an approximation.</p>
-                <p>Note: For coding manuscript damage that spans more than a few lines of text, please consult the project team.prp</p>
+                <p>Note: For coding manuscript damage that spans more than a few lines of text, please consult the project team.</p>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="gap" atts="agent extent unit"/>
                     </specList>
@@ -1208,7 +1212,7 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                 <p>If you come across any other unusual characters that are not found within the
                     "Edit—Insert from Character Map" option from the editing toolbar in oXygen, add
                     a comment to draw the attention of the project to this location.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples"><!-- Adrian, there is a weird character you need to insert here. Debbie: 2012-05-17 -->
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples"><!-- Adrian, there is a weird character you need to insert here. DH -->
                     </egXML>
                 </p>
             </div>
@@ -1266,33 +1270,6 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                     </specList>
                 </p>
             </div>
-
-            <div xml:id="tagging-order">
-                <head>Notes on Tagging Order</head>
-                <p>Elements recording textual formatting in the original usually surround elements
-                    signifying some semantic category:</p>
-                <p>
-                    <label rend="italic">Original text:</label>
-                    <eg>the Lualalba </eg>
-                    <label rend="italic">Marked up:</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><hi rend="underline"><placeName><geogName type="river">Lualaba</geogName></placeName></hi></egXML>
-                    If one does not wish to provide additional levels of nested elements, one can
-                    also use the <att>rend</att> attribute directly on the elements.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName rend="underline"><geogName type="river">Lualaba</geogName></placeName></egXML>
-                    but if unsure then the former is perfectly acceptable. </p>
-                <p>However, note the following cases: <label rend="italic">Original text:</label>
-                    <eg>Syd bin Majid</eg>
-                    <label rend="italic">Marked up:</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><persName><choice><sic>Syd</sic><corr>Syde</corr></choice> bin Majid</persName></egXML>
-                    or <label rend="italic">Original text:</label>
-                    <eg>19<hi rend="superscript"><hi rend="underline">th</hi></hi> May 1871</eg>
-                    <label rend="italic">Marked up:</label>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><date when="1871-05-19">19<hi rend="sup underline">th</hi> May 1871</date></egXML>
-                </p>
-                <p>In other words, if the textual formatting applies to only part of the text coded
-                    by the informational tagging, then the textual formatting can be nested within
-                    the informational formatting.</p>
-            </div>
 	</div>                        
 
             <div xml:id="personal-names">
@@ -1339,7 +1316,7 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
 				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I looked at the <geogFeat type="lake">Lake</geogFeat></egXML>
                 <p><hi rend="bold">Note: </hi> "Zanzibar", "Cape", and "Interior" should all
                     be encoded with the <gi>region</gi> element (even though technically
-                    incorrect)</p>
+                    incorrect).</p>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="placeName"/>
                         <specDesc key="bloc"/>
@@ -1418,8 +1395,6 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                         <att>type</att> attribute with a value of "<val>nationality</val>".
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">the <term type="nationality">English</term> settlements</egXML>
                 </p>
-                <p><hi rend="bold">Please note: </hi> Boer is tagged as a <hi rend="underline"
-                        >nationality</hi> (not a tribe). </p>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="term" atts="type"/>
                     </specList>
@@ -1430,11 +1405,11 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                 <div xml:id="people">
                     <head>People of a Given Nationality</head>
                     
-                    <p>When dealing with people of a given nationality (e.g., Boers, Englishmen, Americans), use the <gi>term</gi> element with the
+                    <p>When dealing with people of a given nationality (e.g., Englishmen, Americans), use the <gi>term</gi> element with the
                         <att>type</att> attribute with a value of "<val>people</val>".
                         <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="people">Englishmen</term></egXML>
                     </p>
-                    <p>If the reference is to just one person of a nationality (e.g., a Boer, Englishman, American), use the <gi>term</gi> element with the
+                    <p>If the reference is to just one person of a nationality (e.g., a Englishman, American), use the <gi>term</gi> element with the
                         <att>type</att> attribute with a value of "<val>person</val>".
                         <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="person">Englishman</term></egXML>
                     </p>
@@ -1452,8 +1427,6 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                         <att>type</att> attribute with a value of "<val>tribe</val>".
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I saw the <term type="tribe">Nyamwezi</term></egXML>
                 </p>
-                <p><hi rend="bold">Please note: </hi> 'Boer' is not tagged as a tribe, but as a
-                        <gi>nationality</gi> (see previous section). </p>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="term" atts="type"/>
                     </specList>
@@ -1513,7 +1486,7 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
             <div xml:id="organizations">
                 <head>Organizations and Other Groups</head>
                 
-                <p>Use the <gi>orgName</gi> element to mark instances in the text where there is mention of an organization or other type of group (or any reference to an individual as being part of a group) that is not covered by <ptr target="#nationalities"/>, <ptr target="#people"/>, or <ptr target="#tribes"/>. Note that all the following entities should be marked with the <gi>orgName</gi> element: African, Africans, Arab, Arabs, Christian (an individual; for use of "Christian" as an adjective, see <ptr target="#faiths"/>), Christians, Moslem (an individual; for use of "Moselm" as an adjective, see <ptr target="#faiths"/>), and Moslems. For references to organized religions (e.g., Christianity, Islam), see <ptr target="#faiths"/>. 
+                <p>Use the <gi>orgName</gi> element to mark instances in the text where there is mention of an organization or other type of group (or any reference to an individual as being part of a group) that is not covered by <ptr target="#nationalities"/>, <ptr target="#people"/>, or <ptr target="#tribes"/>. Note that all the following entities should be marked with the <gi>orgName</gi> element: African, Africans, Arab, Arabs, Boer, Boers, Christian (an individual; for use of "Christian" as an adjective, see <ptr target="#faiths"/>), Christians, Moslem (an individual; for use of "Moselm" as an adjective, see <ptr target="#faiths"/>), and Moslems. For references to organized religions (e.g., Christianity, Islam), see <ptr target="#faiths"/>. 
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">the <orgName>the London Missionary Society</orgName></egXML>
 					<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><orgName>African</orgName> villages</egXML>
 					<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I spoke with the <orgName>Arab</orgName></egXML>
@@ -1544,8 +1517,8 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                 <p>When dealing with foreign words, there are three steps to complete: <list
                         type="ordered">
                         <item>Find the abbreviation for the foreign language at the following
-                            webpage: <ref
-                                target="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry _blank"
+                            webpage: <ref type="newWindow" 
+                                target="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"
                                 >https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry</ref>
                         </item>
                         <item>In the header, add in a <gi>langUsage</gi> for the foreign language
@@ -1629,6 +1602,9 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                         <gi>figure</gi> element. <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure/></egXML>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><figDesc>Drawing of a lion with it's mouth open towards the viewer</figDesc></figure></egXML>
                 </p>
+				<p>If you cite any text that accompanies the figure and that text can be tagged, you can tag it with the <gi>figDesc</gi>:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><figDesc>Drawing of a lion that Livingstone has labeled "<term type="animal">lion</term>" with it's mouth open towards the viewer</figDesc></figure></egXML>
+				</p>
             </div>
 
 
@@ -1636,7 +1612,7 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                 <head>Anything Unusual in the Text</head>
                 <p>If you come across anything unusal in the text that cannot be otherwise encoded,
                     please do not mark it other than leaving a comment to alert the project team.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples"><!-- Adrian: There's a drawing or something strange here. Debbie: 2012-05-06 --></egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples"><!-- Adrian: There's a drawing or something strange here. DH --></egXML>
                 </p>
             </div>
 
