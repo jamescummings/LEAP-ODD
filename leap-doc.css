@@ -1419,3 +1419,4 @@ span.val, span.attributevalue {color:#993300;}
 span.comment {color:#009600;}
 dl.valList {margin-left:5em;}
 a.navTOC {text-decoration:none; color:#EEE; margin-right:5px; font-size:12pt;} 
+a.navTOCRight {text-decoration:none; color:#EEE; margin-right:5px; font-size:12pt; float:right; clear:right;} 

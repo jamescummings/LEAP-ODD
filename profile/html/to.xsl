@@ -22,7 +22,10 @@
   <xsl:param name="attLength">60</xsl:param>
 
    <!-- add return to TOC -->
-<xsl:template name="sectionHeadHook"><a href="#TOP" title="Go to table of contents" class="navTOC">&#x25B2;</a></xsl:template> 
+<xsl:template name="sectionHeadHook">
+<a href="#TOP" title="Go to table of contents" class="navTOC">&#x25B2;</a> 
+<a href="#TOP" title="Go to table of contents" class="navTOCRight">&#x25B2;</a> 
+</xsl:template> 
 
    <!-- add ref opening in new window -->
 <xsl:template name="xrefHook"><xsl:if test="@type='newWindow'"><xsl:attribute name="target">_blank</xsl:attribute></xsl:if></xsl:template>
