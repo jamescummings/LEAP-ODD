@@ -23,6 +23,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc status="draft">
+			<change when="2014-08-01" who="#AW">Additional corrections and expansion</change>
             <change when="2014-05-21" who="#AW">Additional corrections and expansion</change>
             <change when="2014-04-29" who="#JC">Additional corrections and regeneration of schemas</change>
             <change when="2014-04-10" who="#AW">Corrections and expansion</change>
@@ -525,7 +526,7 @@ mark any information not known as "Unknown" -->
                     so in most cases a transcription will only have 
                     one <gi>div</gi> elment that opens and closes the text. 
                     However, there are some cases where a second <gi>div</gi> element should be used. 
-                    See <ptr target="#front-back"/> and <ptr target="#text-direction"/>.</p>
+                    See <ptr target="#front-back"/>, <ptr target="#colors"/>, and <ptr target="#text-direction"/>.</p>
                 <p>
                     <specList>
                         <specDesc key="div"/>
@@ -537,9 +538,17 @@ mark any information not known as "Unknown" -->
             <div xml:id="front-back">
                 <head>Front and Back Matter</head>
                 
-                <p>Use <gi>div</gi> plus the <gi>front</gi> and <gi>back</gi> elements (siblings of the <gi>body</gi> element) to contain to any material that, respectively, precedes (e.g., a table of contents) 
+                <p>Use <gi>front</gi> and <gi>back</gi> elements (siblings of the <gi>body</gi> element) to contain to any material that, respectively, precedes (e.g., a table of contents) 
                     or succeeds (e.g. an appendix) the main text being encoded.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples"><front><div><!-- Table of contents goes here --></div></front></egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+<front><!-- Table of contents goes here --></front>
+  <body>
+   <div>
+       <p><!-- Main text being encoded goes here --></p>
+   </div>
+  </body>
+  <back><!-- Appendix goes here --></back>
+</egXML>
                 </p>
                 <p>
                     <specList>
@@ -586,6 +595,9 @@ mark any information not known as "Unknown" -->
                         <lb/>across two men.
                     </egXML>
                 </p>
+				<p>If line breaks occur in the middle of an addition, do not place <tag>lb/</tag> before the first line of the addition, but do use it to mark the beginning of each subsequent line of the addition:
+                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><add place="marginleft">First line of addition <lb/>second line, <lb/>and third line.</add></egXML>
+				</p>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="lb"/>
                     </specList>
@@ -830,6 +842,23 @@ mark any information not known as "Unknown" -->
                 </p>
             </div>
 
+            <div xml:id="colors">
+                <head>Textual Colors</head>
+			<p>Livingstone occasionally changes the color of his text. In the majority of cases, such changes fall into one of two categories: a change in color for a few words; a change in color for a longer section of a text. Changes of the former sort (a few words) are usally due to an after-the-fact addition, so the color change should be marked with <att>rend</att> and the appropriate color directly on the <gi>add</gi> element:
+<egXML xmlns="http://www.tei-c.org/ns/Examples">We followed <add place="above" rend="blue">the</add> path</egXML>
+</p>
+<p>If Livingstone changes color for a longer section of text (this often happens in his field diaries), use the <gi>div</gi> element plus <att>rend</att> and the appropriate color to mark the different sections of the text:
+			<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+  <div rend="black">
+    <p>First section in black would go here.</p>
+  </div>
+  <div rend="blue">
+    <p>Second section in blue would go here.</p>
+  </div>
+</egXML>
+</p> 
+            </div>
+
             <div xml:id="word-division">
                 <head>A Word Broken Up Over Two Lines</head>
                 <p>Use the <gi>w</gi> element to mark words that Livingstone breaks up over two
@@ -879,11 +908,13 @@ mark any information not known as "Unknown" -->
                     words, do not insert additional space in your transcription. Rather insert only
                     one space plus the following markup:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <space extent="4" unit="chars"/>
+                        a <space extent="4" unit="chars"/>word
                     </egXML>
                 </p>
+				<p>In other words, in the example above the space being marked is actually five characters long. One of these spaces is marked in the normal fashion, the other four are marked with the <gi>space</gi> tag. Please follow this format when marking usual spacing between words.</p>
                 <p>The value for the <att>extent</att> attribute will of course be a bit of a
-                    judgment call. The value "<val>chars</val>" stands for "characters"; you can
+                    judgment call, but a good rule of thumb is to mark only those spaces that extend for more than two characters and/or have some obvious, non-trivial significance in the text. For instance, Livingstone on occasion inserts an unusally large space just before a new sentence and indeed uses this space to indicate that the substance of the sentence that follows the space differs significantly from that of the sentence that precedes the space.</p> 
+				<p>The value "<val>chars</val>" stands for "characters"; you can
                     also use "<val>words</val>". There is a <att>dim</att> attribute on
                         <gi>space</gi> with allowed values of <val>horiztonal</val> or
                         <val>vertical</val>. The default assumption in LEAP is that extra space is
@@ -982,8 +1013,8 @@ mark any information not known as "Unknown" -->
                     <egXML xmlns="http://www.tei-c.org/ns/Examples"> he <add place="inline">saw</add> us </egXML>
                 </p>
                 <p>If a portion of the text has been deleted by the author or someone else, use
-                        <gi>del</gi> to mark up that text. Use the <att>type</att> attribute to
-                    indicate the type of deletion with values like: "<val>strikethrough</val>"
+                        <gi>del</gi> to mark up that text. Optinally, use the <att>type</att> attribute to
+                    indicate the type of deletion with values of "<val>strikethrough</val>"
                     (deleted with a single line) or "<val>cancelled</val>" (deleted with multiple
                     lines). <label rend="italic">Original text:</label>
                     <eg><hi rend="strikethrough">he saw us</hi></eg>
@@ -992,16 +1023,36 @@ mark any information not known as "Unknown" -->
                         <del type="strikethrough">he saw us</del>
                     </egXML>
                 </p>
+				<p>If the deletion makes the character(s) or word(s) being deleted impossible to read, use the <gi>gap</gi> element to indicate this:
+				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><del><gap extent="1" unit="words"/></del></egXML>	
+				</p>
                 <p>Note: For coding additions and deletions that span more than a few lines of text, please consult the project team.</p>
+
+                <p>If it isn't a standalone addition or deletion but you believe a combined deletion
+                    and addition has been done (usually by the author) as a single intervention,
+                    then you may nest the <gi>del</gi> and <gi>add</gi> elements in a <gi>subst</gi>
+                    (substitution) element.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">Then we went <subst><del>towards</del><add place="inline">to</add> the river</subst></egXML>
+                </p>
+                <p>Livingstone often deletes a character or word by writing another character or word over it. For such instances use the following coding formula:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">He <subst><del>gave</del><add place="over-text">handed</add></subst> it to me.</egXML>
+                </p>
+                <p>If such a substitution occurs in the middle of a word, you may use <gi>w</gi> to avoid confusion by indicating the beginning and end of the full word:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">He <w>g<subst><del>i</del><add place="over-text">a</add></subst>ve</w> it to me.</egXML>
+                </p>
 				<p>When Livingstone uses a caret (^) to indicate the place of an addition, use a separate <gi>add</gi> tag for the caret and place a space between the tagged caret and the additional text that Livingstone has added:
 				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><add place="below">^</add> <add place="above">a word</add></egXML>
 				</p>
+                <p> To denote any kind of arrow or other mark (other than a caret) that Livingstone uses to indicate
+                    where a bit of add or deleted text should go, use an empty <gi>metamark</gi>
+                    element.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">Then we went towards <metamark/><add place="inline">home</add>.<!-- Livingstone writes "home" in the margin, then uses a long arrow to indicate it should be placed here. AW --></egXML>
+                </p>
                 <p>In both the cases of added or deleted text, if you believe that the work has been
                     done by someone other than Livingstone but cannot identify who that person is,
                     use the <att>hand</att> attribute with a value of "<val>#U</val>".
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">he <add place="inline" hand="#U">saw</add> us </egXML>
                     The <val>#U</val> is a pointer to a <gi>handNote</gi> element (in a <gi>handDesc</gi> in a <gi>physDesc</gi> in the <gi>msDesc</gi> in <gi>sourceDesc</gi> in the header). 
-                
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
 <!-- in the <sourceDesc> in the header -->
 <physDesc>
@@ -1016,20 +1067,6 @@ mark any information not known as "Unknown" -->
                     <p>If you can identify individual hands, but not to whom they belong, these values
                     could be <val>#hand01</val> or <val>#hand02</val> or similar.
                 </p>
-                
-                
-                <p>If it isn't a standalone addition or deletion but you believe a combined deletion
-                    and addition has been done (usually by the author) as a single intervention,
-                    then you may nest the <gi>del</gi> and <gi>add</gi> elements in a <gi>subst</gi>
-                    (substitution) element.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">Then we went <subst><del>towards</del><add>away</add> from the river</subst></egXML>
-                </p>
-                <p> To denote any kind of arrow or other mark that Livingstone uses to indicate
-                    where a bit of add or deleted text should go, use an empty <gi>metamark</gi>
-                    element.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">Then we went towards <metamark/><add place="inline">home</add>.<!-- Livingstone writes "home" in the margin, then uses a long arrow to indicate it should be placed here. AW --></egXML>
-                </p>
-
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="add" atts="place"/>
                         <specDesc key="del" atts="type"/>
@@ -1046,17 +1083,21 @@ mark any information not known as "Unknown" -->
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">the whole tribe x <add place="marginleft"><note>if it were necessary for me to seek a <q>character</q> I 
 would confidently refer to the <term type="tribe">Bakwains</term> for it</note></add></egXML>
                 </p>
-                <p>The <gi>note</gi> element combined with the <gi>add</gi> element should also be used to mark the dates that Livingstone periodically adds to the left margin of the <hi rend="italic">Unyanyembe Journal</hi>. These should be marked as they occur, even if that happens in the middle of a sentence:
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                    <lb />I was content
-                    <lb /><note place="marginleft"><date when="1871-05-08">8th</date></note> to take the canoe on any terms -</egXML>
+                <p>The <gi>note</gi> element combined <att>place</att> and the "marginleft" value should also be used to mark the dates that Livingstone periodically adds to the left margin of the <hi rend="italic">Unyanyembe Journal</hi>. These should be marked as they occur, even if that happens in the middle of a sentence:
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+<lb/>I was content
+<lb/><note place="marginleft"><date when="1871-05-08">8th</date></note> to take the canoe on any terms -</egXML>
                 </p>
+<p>If the date added to the left margin spans more than one line, use <tag>lb/</tag> as appropriate (see <ptr target="#linebreak"/>):</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+<lb/><note place="marginleft"><date when="1866-04-13">13<hi rend="sup underline">th</hi> 
+April <lb/>1866</date></note> alone but other nations feel</egXML>
                 <p>
                     <specList>
                         <specDesc key="note"/>
                     </specList>
                 </p>
-                
+            
             </div>
 	</div>
 
@@ -1099,8 +1140,7 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                     the addition you have made:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><choice><sic>recieved</sic><corr cert="high">received</corr></choice></egXML>
                 </p>
-                <p><hi rend="bold">Please note: </hi> Livingstone tends to leave off his apostrophes
-                    when it comes to his contractions. The proper way to code this is:
+                <p><hi rend="bold">Please note: </hi> Livingstone tends to leave off apostrophes for contractions and possessives. To mark such instances in the text, do not use <gi>supplied</gi> plus an apostrophe, but rather code with <gi>choice</gi> plus <gi>sic</gi> and <gi>corr</gi>:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><choice><sic>dont</sic><corr>don't</corr></choice></egXML>
                 </p>
                 <p>Definitions of the elements used above are: <specList>
@@ -1306,25 +1346,25 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                 <p>Use <gi>geogName</gi> to denote a specific named geographical entity not covered
                     by the above, using the <att>type</att> attribute with values such as
                         "<val>lake</val>", "<val>river</val>", etc.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName><geogName type="river">Nile</geogName></placeName></egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName>
+<geogName type="river">Nile</geogName>
+</placeName></egXML>
                 </p>
 				<p>You should also use <gi>geogName</gi> when encoding the full reference to a geographical entity that includes any kind of formal name (which itself would also be separately encoded:</p>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName><geogName type="source">sources of the <placeName><geogName type="river">Nile</geogName></placeName></geogName></placeName></egXML>
-				<p>However, if the text refers to a significant or unique geographical entity, but without using a formal name, then you should use <gi>geogFeat</gi> to encode it:</p>
-				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><geogFeat type="fountain">Four fountains</geogFeat> rising so near to each other</egXML>
-				<p><gi>geogFeat</gi> should also be uses in those cases where Livingstone refers to a specific, named geographical entity but opts not to provide the name itself, as in the following example which alludes to Lake Tanganyika:</p>
-				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I looked at the <geogFeat type="lake">Lake</geogFeat></egXML>
-                <p><hi rend="bold">Note: </hi> "Zanzibar", "Cape", and "Interior" should all
+				<p>If Livingstone refers to a specific, named geographical entity (and you know what that entity is), but uses only a generic term such as "the Lake" or "the River," you should identify this entity in a comment that directly follows the relevant term, but not otherwise mark the term used:</p>
+					<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I saw the Lake.<!-- Lake Tanganyika --></egXML>	
+                <p><hi rend="bold">Note: </hi> "Cape" and "Interior" should
                     be encoded with the <gi>region</gi> element (even though technically
-                    incorrect).</p>
+                    incorrect). Code "Zanzibar" as follows:</p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName><geogName type="island">Zanzibar</geogName></placeName></egXML>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="placeName"/>
                         <specDesc key="bloc"/>
                         <specDesc key="region"/>
                         <specDesc key="country"/>
                         <specDesc key="settlement" atts="type"/>
-                        <specDesc key="geogName"/>
-                        <specDesc key="geogFeat"/>						
+                        <specDesc key="geogName"/>						
                     </specList>
                 </p>
 
@@ -1347,7 +1387,7 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
             </div>
 
             <div xml:id="weather">
-                <head>Refereces to Weather</head>
+                <head>References to Weather</head>
 				<p>Use <tag>seg type="weather"</tag> to mark passages in the text where Livingstone refers to the weather.</p>
 				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">We have <seg type="weather">rain in large quantity almost every night</seg></egXML>
 				<p>Such weather references may be loosely made, and it may be difficult to determine where exactly they begin and end. In all cases use the <gi>seg</gi> elment and best judgment to mark such references. Opt for one use of <gi>seg</gi> to mark a longer passage with a series of specific descriptions rather than multiple uses of the <gi>seg</gi> element.</p>
@@ -1364,7 +1404,7 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
 
 
             <div xml:id="animals">
-                <head>Animals (Including Fish), Insects, Plants</head>
+                <head>Animals (Including Fish), Insects, Plants, and Foodstuffs</head>
                 
                 <p>When dealing with animals, including fish, use the <gi>term</gi> element with the
                     <att>type</att> attribute with a value of "<val>animal</val>". The value of "animal" in the singular should be used in all cases, even when the text refers to multiple animals of one kind.
@@ -1377,6 +1417,14 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                 <p>When dealing with specifically named plants, use the <gi>term</gi> element with the
                     <att>type</att> attribute with a value of "<val>plant</val>". The value of "plant" in the singular should be used in all cases, even when the text refers to multiple plants of one kind.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="plant">Euphorbias</term></egXML>
+                </p>
+                <p>When dealing with foodstuffs, use the <gi>term</gi> element with the
+                    <att>type</att> attribute with a value of "<val>foodstuff</val>". The value of "foodstuff" in the singular should be used in all cases.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="foodstuff">bread</term></egXML>
+                </p>
+                <p>If Livingstone refers to a foodstuff that is also a plant, use the <gi>term</gi> element with the
+                    <att>type</att> attribute with the value of "<val>plant_foodstuff</val>" (in that order):
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="plant_foodstuff">maize</term></egXML>
                 </p>
                 <p>
                     <specList>
@@ -1486,11 +1534,15 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
             <div xml:id="organizations">
                 <head>Organizations and Other Groups</head>
                 
-                <p>Use the <gi>orgName</gi> element to mark instances in the text where there is mention of an organization or other type of group (or any reference to an individual as being part of a group) that is not covered by <ptr target="#nationalities"/>, <ptr target="#people"/>, or <ptr target="#tribes"/>. Note that all the following entities should be marked with the <gi>orgName</gi> element: African, Africans, Arab, Arabs, Boer, Boers, Christian (an individual; for use of "Christian" as an adjective, see <ptr target="#faiths"/>), Christians, Moslem (an individual; for use of "Moselm" as an adjective, see <ptr target="#faiths"/>), and Moslems. For references to organized religions (e.g., Christianity, Islam), see <ptr target="#faiths"/>. 
+                <p>Use the <gi>orgName</gi> element to mark instances in the text where there is mention of an organization or other type of group (or any reference to an individual as being part of a group) that is not covered by <ptr target="#nationalities"/>, <ptr target="#people"/>, or <ptr target="#tribes"/>. Note that all the following entities should be marked with the <gi>orgName</gi> element: African, Africans, Arab, Arabs, Boer, Boers, Christian (an individual; for use of "Christian" as an adjective, see <ptr target="#faiths"/>), Christians, Moslem (an individual; for use of "Moselm" as an adjective, see <ptr target="#faiths"/>), and Moslems. For references to organized religions (e.g., Christianity, Islam), see <ptr target="#faiths"/>.</p> 
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">the <orgName>the London Missionary Society</orgName></egXML>
 					<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><orgName>African</orgName> villages</egXML>
 					<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I spoke with the <orgName>Arab</orgName></egXML>
-                </p>
+                <p><hi rend="bold">Note: </hi> All references to "slaves" and "slavery" should also be marked with <gi>orgName</gi>:</p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">He had two <orgName>slaves</orgName> and spoke of <orgName>slavery</orgName></egXML>
+                <p>Please code "Johanna men" and "Nassick boys" (and all variants of these two groups) as follows:</p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><orgName><placeName><geogName type="island">Johanna</geogName></placeName> men</orgName></egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><orgName><placeName><settlement type="city">Nassick</settlement></placeName> boys</orgName></egXML>
                 <p>
                     <specList>
                         <specDesc key="orgName"/>
@@ -1600,10 +1652,16 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                     an empty <tag>figure/</tag> element. However, you can also describe them using
                     the <gi>figDesc</gi> element, which must then be contained by the
                         <gi>figure</gi> element. <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure/></egXML>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><figDesc>Drawing of a lion with it's mouth open towards the viewer</figDesc></figure></egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><figDesc>Livingstone here provides a drawing of a lion with it's mouth open towards the viewer.</figDesc></figure></egXML>
                 </p>
-				<p>If you cite any text that accompanies the figure and that text can be tagged, you can tag it with the <gi>figDesc</gi>:
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><figDesc>Drawing of a lion that Livingstone has labeled "<term type="animal">lion</term>" with it's mouth open towards the viewer</figDesc></figure></egXML>
+				<p>If Livingstone has himself given the figure a title, use the <gi>head</gi> element to record this:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><head>Lion</head><figDesc>Livingstone here provides a drawing of a lion with it's mouth open towards the viewer.</figDesc></figure></egXML>
+				</p>
+				<p>If your description of the figure cites any text that Livingstone himself has provided and that text in turn can be coded, then it should be coded directly in the citation:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><head>Lion</head>
+<figDesc>Livingstone here provides a drawing of a lion with it's mouth open 
+towards the viewer, and notes that he saw this lion "in the <placeName><geogName type="desert">Kalahari</geogName></placeName>."</figDesc>
+</figure></egXML>
 				</p>
             </div>
 
@@ -2177,6 +2235,9 @@ would confidently refer to the <term type="tribe">Bakwains</term> for it</note><
                                     </valItem>
                                     <valItem ident="marginbottom">
                                         <desc>in the bottom margin</desc>
+                                    </valItem>
+                                    <valItem ident="over-text">
+                                        <desc>over pre-existing text</desc>
                                     </valItem>
                                     <valItem ident="top">
                                         <desc>at the top of the page</desc>

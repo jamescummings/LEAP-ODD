@@ -3,12 +3,13 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2014-05-30T09:40:38Z. 
+Schema generated from ODD source 2014-08-17T20:29:59Z. 
 Edition: Version 2.6.0. Last updated on
 	20th January 2014, revision 12802
 Edition Location: http://www.tei-c.org/Vault/P5/Version 2.6.0/
   
---><!--[http://creativecommons.org/licenses/by/3.0/] Creative Commons Attribution 3.0 Unported--><define name="macro.paraContent">
+--><!--[http://creativecommons.org/licenses/by/3.0/] Creative Commons Attribution 3.0 Unported-->
+   <define name="macro.paraContent">
       <zeroOrMore>
          <choice>
             <text/>
@@ -846,6 +847,8 @@ Suggested values include: 1] m(metre) ; 2] kg(kilogram) ; 3] s(second) ; 4] Hz(h
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">in the top margin</a:documentation>
                      <value>marginbottom</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">in the bottom margin</a:documentation>
+                     <value>over-text</value>
+                     <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">over pre-existing text</a:documentation>
                      <value>top</value>
                      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">at the top of the page</a:documentation>
                   </choice>
@@ -1392,6 +1395,24 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="geo"/>
       </oneOrMore>
    </define>
+   <define name="model.egLike">
+      <notAllowed/>
+   </define>
+   <define name="model.egLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="model.egLike_sequence">
+      <empty/>
+   </define>
+   <define name="model.egLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="model.egLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="model.egLike_sequenceRepeatable">
+      <notAllowed/>
+   </define>
    <define name="model.graphicLike">
       <choice>
          <ref name="graphic"/>
@@ -1778,6 +1799,30 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
    <define name="model.gLike">
       <notAllowed/>
    </define>
+   <define name="model.oddDecl">
+      <notAllowed/>
+   </define>
+   <define name="model.oddDecl_alternation">
+      <notAllowed/>
+   </define>
+   <define name="model.oddDecl_sequence">
+      <empty/>
+   </define>
+   <define name="model.oddDecl_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="model.oddDecl_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="model.oddDecl_sequenceRepeatable">
+      <notAllowed/>
+   </define>
+   <define name="model.phrase.xml">
+      <notAllowed/>
+   </define>
+   <define name="model.specDescLike">
+      <notAllowed/>
+   </define>
    <define name="model.biblLike">
       <choice>
          <ref name="bibl"/>
@@ -2048,6 +2093,24 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <oneOrMore>
          <ref name="ab"/>
       </oneOrMore>
+   </define>
+   <define name="model.stageLike">
+      <notAllowed/>
+   </define>
+   <define name="model.stageLike_alternation">
+      <notAllowed/>
+   </define>
+   <define name="model.stageLike_sequence">
+      <empty/>
+   </define>
+   <define name="model.stageLike_sequenceOptional">
+      <empty/>
+   </define>
+   <define name="model.stageLike_sequenceOptionalRepeatable">
+      <empty/>
+   </define>
+   <define name="model.stageLike_sequenceRepeatable">
+      <notAllowed/>
    </define>
    <define name="model.global.edit">
       <choice>
@@ -2392,6 +2455,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="model.divTopPart"/>
       </choice>
    </define>
+   <define name="model.frontPart.drama">
+      <notAllowed/>
+   </define>
    <define name="model.pLike.front">
       <choice>
          <ref name="head"/>
@@ -2610,7 +2676,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       </choice>
    </define>
    <define name="model.frontPart">
-      <notAllowed/>
+      <choice>
+         <ref name="model.frontPart.drama"/>
+      </choice>
    </define>
    <define name="model.addrPart">
       <choice>
@@ -2628,9 +2696,12 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
    </define>
    <define name="model.inter">
       <choice>
+         <ref name="model.egLike"/>
+         <ref name="model.oddDecl"/>
          <ref name="model.biblLike"/>
          <ref name="model.labelLike"/>
          <ref name="model.listLike"/>
+         <ref name="model.stageLike"/>
          <ref name="model.qLike"/>
       </choice>
    </define>
@@ -2649,6 +2720,8 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="model.pPart.edit"/>
          <ref name="model.ptrLike"/>
          <ref name="model.lPart"/>
+         <ref name="model.phrase.xml"/>
+         <ref name="model.specDescLike"/>
          <ref name="model.pPart.data"/>
       </choice>
    </define>
@@ -2659,6 +2732,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="model.pPart.msdesc"/>
          <ref name="model.pPart.editorial"/>
          <ref name="model.ptrLike"/>
+         <ref name="model.phrase.xml"/>
          <ref name="model.pPart.data"/>
       </choice>
    </define>
