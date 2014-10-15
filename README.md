@@ -5,7 +5,7 @@ Repository containing the LEAP ODD (and generated output) for the Livingstone-on
 
 
 File List:
-* [index.html](index.html) -- index file for 
+* [index.html](index.html) -- index file for site that just enables downloading of files 
 * [leap-doc.css](leap-doc.css) -- CSS file for rendering the HTML documentation
 * [leap.html](leap.html) -- HTML documentation generated from leap.odd.xml
 * [leap.odd.xml](leap.odd.xml) -- LEAP TEI P5 ODD customisation and documentation file
