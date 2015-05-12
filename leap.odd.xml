@@ -23,6 +23,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc status="draft">
+			<change when="2015-05-05" who="#AW">Additional corrections</change>
 			<change when="2015-04-07" who="#AW">Additional corrections and expansion</change>
             <change when="2015-03-25" who="#HB">Additional corrections and expansion</change>
 			<change when="2014-08-01" who="#AW">Additional corrections and expansion</change>
@@ -73,7 +74,7 @@
                             </egXML>
                         </item>
                     </list>
-                    <p>(<hi rend="bold">Note: </hi> the colors/formats are provided only to assist
+                    <p>(<hi rend="bold">Note:</hi> the colors/formats are provided only to assist
                         you in distinguishing between tags, attributes, and values. You do not need
                         to change font colors in your transcriptions as you are transcribing. In
                         general these colours mimic those found in the oxygen XML editor.)</p>
@@ -193,99 +194,103 @@ What should I do? DH --></egXML>
                     metadata for the electronic text. A sample full <gi>teiHeader</gi> element looks
                     like:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-<teiHeader>
-<fileDesc>
-    <!-- Change title below-->
-    <titleStmt>
-        <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
-        <author>David Livingstone</author>
-        <principal>Adrian S. Wisnicki</principal>
-        <principal>Christopher Lawrence</principal>
-        <!-- One respStmt below per person who works on the file -->
-        <respStmt xml:id="AW">
-            <name>Adrian S. Wisnicki</name>
-            <!-- One resp below per type of responsiblity-->
-            <resp>Transcription</resp>
-            <resp>Encoding</resp>
-            <resp>Editorial Decisions</resp>
-        </respStmt>
-        <respStmt xml:id="KS">
-            <name>Kate Simpson</name>
-            <resp>Transcription</resp>
-            <resp>Encoding</resp>
-        </respStmt>
-        <respStmt xml:id="CL">
-            <name>Christopher Lawrence</name>
-            <resp>Proofreading</resp>
-        </respStmt>
-    </titleStmt>
-    <publicationStmt>
-        <authority>Livingstone Online</authority>
-        <publisher>UCLA Digital Library</publisher>
-        <pubPlace>Los Angeles, CA, USA</pubPlace>
-        <!-- Possible year update below -->
-        <date>2014</date>
-        <!-- Possible license update below -->
-        <availability>
-            <licence target="https://creativecommons.org/licenses/by-nc/3.0/">
-                All materials are licensed for use under the 
-                <ref target="https://creativecommons.org/licenses/by-nc/3.0/">
-                    Creative Commons Attribution-Noncommercial 3.0 Unported License
-                </ref>. 
-                (c) Dr. Neil Imray Livingstone Wilson, 2011
-            </licence>
-        </availability>                                
-    </publicationStmt>
-    <sourceDesc>
-        <!-- Change msIdentifier information below as relevant -->
-        <!-- Information can usually be found on Livingstone Online or be provided by the project team -->
-        <msDesc>
-            <msIdentifier>
-                <country>United Kingdom</country>
-                <settlement>Blantyre</settlement>
-                <repository>David Livingstone Centre</repository>
-                <idno type="shelfmark">Cat 778</idno>
-                <!-- Add the C and C number below -->
-                <!-- The C and C number can usually be found on Livingstone Online or be provided by the project team -->
-                <altIdentifier>
-                    <idno type="ccnumber">0229</idno>
-                </altIdentifier>
-            </msIdentifier>
-            <!-- more manuscript description could be provided here by project if available -->
-            <!-- for example: handDesc -->
-            <physDesc>
-                <handDesc>
-                    <handNote xml:id="U"><label>Unknown Hand</label> This hand is unknown
-                        but thought not David Livingstone's.</handNote>
-                </handDesc>
-            </physDesc>
-        </msDesc>
-        <bibl type="sourceMetadata">
-            <!-- change bibl information below as relevant; 
-title is usually same as the titleStmt above; 
-mark any information not known as "unknown" -->
-            <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
-            <author xml:id="DL">David Livingstone</author>
-            <date type="composition" when="1850-08-18">18 August
-                1850</date>
-            <placeName type="compositionPlace">Kolobeng</placeName>
-            <persName type="addressee">Rev. D.F. Watt</persName>
-        </bibl>
-    </sourceDesc>
-</fileDesc>
-<profileDesc>
-    <langUsage>
-        <language ident="en">English</language>
-    </langUsage>
-</profileDesc>
-<revisionDesc>
-    <!-- Most recent changes should be at the top; one per major stage of development -->
-    <change when="2013-04-03" who="#AW">Additional encoding</change>
-    <change when="2013-01-06" who="#CL">Proofreading</change>
-    <change when="2012-12-04" who="#KS">Initial transcription and XML
-        encoding</change>
-</revisionDesc>
-</teiHeader>
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+				<!-- Change title below -->
+                <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
+                <author>David Livingstone</author>
+                <principal>Adrian S. Wisnicki</principal>
+                <principal>Christopher Lawrence</principal>
+				<!-- Change xml:id below -->
+                <respStmt xml:id="JM">
+					<!-- Change name below -->
+                    <name>Jared McDonald</name>
+					<!-- Change, remove, or add more <resp> as appropriate below -->
+                    <resp>Transcription</resp>
+                    <resp>Encoding</resp>
+                </respStmt>
+                <respStmt xml:id="AA">
+                    <name>Angela Aliff</name>
+                    <resp>Transcription</resp>
+                    <resp>Encoding</resp>
+                </respStmt>
+                <respStmt xml:id="AW">
+                    <name>Adrian S. Wisnicki</name>
+                    <resp>Coding review</resp>
+                </respStmt>
+            </titleStmt>	
+            <publicationStmt>
+                <authority>Livingstone Online</authority>
+                <publisher>UCLA Digital Library</publisher>
+                <pubPlace>Los Angeles, CA, USA</pubPlace>
+				<!-- Change date below if necessary -->
+                <date>2015</date>
+				<!-- Change base file name below -->
+                <idno type="LEAP-ID">liv_000688</idno>
+				<!-- Change the license below if needed -->
+			    <availability>
+        			<licence target="https://creativecommons.org/licenses/by-nc/3.0/">
+            			All materials are licensed for use under the 
+            			<ref target="https://creativecommons.org/licenses/by-nc/3.0/">
+                		Creative Commons Attribution-Noncommercial 3.0 Unported License
+            			</ref>. (c) Dr. Neil Imray Livingstone Wilson, 2011
+        			</licence>
+    			</availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+						<!-- Change country below as needed -->
+                        <country>South Africa</country>
+						<!-- Change settlement below as needed -->
+                        <settlement>Johannesburg</settlement>
+						<!-- Change repository below as needed -->
+                        <repository>Brenthurst Library</repository>
+						<!-- Change shelfmark below as needed -->
+                        <idno type="shelfmark">778</idno>
+                        <altIdentifier>
+							<!-- Change C&C number below as needed -->
+                            <idno type="ccnumber">Letters, 0229</idno><!-- This the CC number; change, as appropriate -->
+                        </altIdentifier>
+                    </msIdentifier>
+                    <physDesc>
+                        <handDesc>
+							<!-- Add additional <handNote>s below as needed. -->
+                            <handNote xml:id="U"><label>Unknown Hand</label> This hand is unknown
+                                but thought not David Livingstone's.</handNote>
+                        </handDesc>
+                    </physDesc>
+                </msDesc>
+                <bibl type="sourceMetadata">
+					<!-- Change title below -->
+                    <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
+                    <author xml:id="DL">David Livingstone</author>
+					<!-- Change @when and date below -->					
+                    <date type="composition" when="1850-08-18">18 August 1850</date>
+					<!-- Change place below -->
+                    <placeName type="compositionPlace">Kolobeng</placeName>
+					<!-- Change addressee below -->
+                    <persName type="addressee">Rev. D.F. Watt</persName>
+                </bibl>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <langUsage>
+				<!-- See LEAP encoding manual sect. 20 for language abbreviations. 
+				English should be first, then add all other languages, as appropriate, 
+				in alphabetical order. -->
+                <language ident="en">English</language>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc>
+			<!-- Change @when, @who, and work description below. -->
+			<!-- Note that @who initials are taken from <respStmt> above -->
+			<!-- Add new <change> elements below as needed. -->
+			<!-- Note that the most recent <change> should always be placed first, at the top -->
+            <change when="2012-12-04" who="#KS">Initial transcription and XML encoding</change>
+        </revisionDesc>
+    </teiHeader>
                     </egXML>
                 </p>
                 <p>That might look overwhelming, so let's break that down. Notice that there are
@@ -295,7 +300,6 @@ mark any information not known as "unknown" -->
                     (indicated in the comments) each time you start a new file in XML. Please copy
                     the data exactly as found on <hi rend="italic">Livingstone Online</hi>. </p>
 
-                <!-- note: nested div below -->
 
                 <div xml:id="header-titleStmt">
                     <head>The TEI Header: Adding Title and Responsibilities</head>
@@ -308,30 +312,33 @@ mark any information not known as "unknown" -->
                             <gi>respStmt</gi> with an <att>xml:id</att> with their initials as the
                         value. If a person has more than one responsibility the <gi>respStmt</gi>
                         should have more than one <gi>resp</gi> element.
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">    <!-- Change title below -->
-<titleStmt>
-    <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
-    <author>David Livingstone</author>
-    <principal>Adrian S. Wisnicki</principal>
-    <!-- One respStmt below per person who works on the file -->
-    <respStmt xml:id="AW">
-        <name>Adrian S. Wisnicki</name>
-        <!-- One resp below per type of responsiblity-->
-        <resp>Transcription</resp>
-        <resp>Encoding</resp>
-        <resp>Editorial Decisions</resp>
-    </respStmt>
-    <respStmt xml:id="KS">
-        <name>Kate Simpson</name>
-        <resp>Transcription</resp>
-        <resp>Encoding</resp>
-    </respStmt>
-    <respStmt xml:id="CL">
-        <name>Christopher Lawrence</name>
-        <resp>Proofreading</resp>
-    </respStmt>
-</titleStmt>
-</egXML>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">    
+			<!-- Change title below -->
+            <titleStmt>
+				<!-- Change title below -->
+                <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
+                <author>David Livingstone</author>
+                <principal>Adrian S. Wisnicki</principal>
+                <principal>Christopher Lawrence</principal>
+				<!-- Change xml:id below -->
+                <respStmt xml:id="JM">
+					<!-- Change name below -->
+                    <name>Jared McDonald</name>
+					<!-- Change, remove, or add more <resp> as appropriate below -->
+                    <resp>Transcription</resp>
+                    <resp>Encoding</resp>
+                </respStmt>
+                <respStmt xml:id="AA">
+                    <name>Angela Aliff</name>
+                    <resp>Transcription</resp>
+                    <resp>Encoding</resp>
+                </respStmt>
+                <respStmt xml:id="AW">
+                    <name>Adrian S. Wisnicki</name>
+                    <resp>Coding review</resp>
+                </respStmt>
+            </titleStmt>
+		</egXML>
                     </p>
 
                     <p>Definitions of the elements used above are: <specList>
@@ -348,27 +355,27 @@ mark any information not known as "unknown" -->
 
                 <div xml:id="header-publicationStmt">
                     <head>The TEI Header: Publication Statement</head>
-                    <p>You shouldn't normally have to change the <gi>fileDesc</gi>'s publication
-                        statement (other than the date and license), stored in a <gi>publicationStmt</gi>
-                        element:
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><!-- Publication Statement -->
-<publicationStmt>
-    <authority>Livingstone Online</authority>
-    <publisher>UCLA Digital Library</publisher>
-    <pubPlace>Los Angeles, CA, USA</pubPlace>
-    <!-- Possible year update below -->
-    <date>2014</date>
-    <!-- Possible license update below -->
-    <availability>
-        <licence target="https://creativecommons.org/licenses/by-nc/3.0/">
-            All materials are licensed for use under the 
-            <ref target="https://creativecommons.org/licenses/by-nc/3.0/">
-                Creative Commons Attribution-Noncommercial 3.0 Unported License
-            </ref>. 
-            (c) Dr. Neil Imray Livingstone Wilson, 2011
-        </licence>
-    </availability>                                
-</publicationStmt>
+                    <p>Change the parts of the <gi>publicationStmt</gi> as needed:
+            <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+			<!-- Publication Statement -->
+            <publicationStmt>
+                <authority>Livingstone Online</authority>
+                <publisher>UCLA Digital Library</publisher>
+                <pubPlace>Los Angeles, CA, USA</pubPlace>
+				<!-- Change date below if necessary -->
+                <date>2015</date>
+				<!-- Change base file name below -->
+                <idno type="LEAP-ID">liv_000688</idno>
+				<!-- Change the license below if needed -->
+			    <availability>
+        			<licence target="https://creativecommons.org/licenses/by-nc/3.0/">
+            			All materials are licensed for use under the 
+            			<ref target="https://creativecommons.org/licenses/by-nc/3.0/">
+                		Creative Commons Attribution-Noncommercial 3.0 Unported License
+            			</ref>. (c) Dr. Neil Imray Livingstone Wilson, 2011
+        			</licence>
+    			</availability>
+            </publicationStmt>
 </egXML></p>
 
                     <p>Definitions of the elements used above are: <specList>
@@ -377,6 +384,7 @@ mark any information not known as "unknown" -->
                             <specDesc key="publisher"/>
                             <specDesc key="pubPlace"/>
                             <specDesc key="date"/>
+							<specDesc key="idno"/>
                             <specDesc key="availability"/>
                             <specDesc key="licence"/>
                             <specDesc key="ref"/>
@@ -391,28 +399,31 @@ mark any information not known as "unknown" -->
                         First location elements like <gi>country</gi> and <gi>settlement</gi>,
                         followed by institutional data like <gi>institution</gi> and/or
                             <gi>repository</gi>, followed by an <gi>idno</gi> and any alternative
-                        identifiers <gi>altIdentifier</gi>.
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><!-- Change msIdentifier information below as relevant -->
-<!-- Information can usually be found on Livingstone Online or be provided by the project team -->
-<msDesc>
-    <msIdentifier>
-        <country>United Kingdom</country>
-        <settlement>Blantyre</settlement>
-        <repository>David Livingstone Centre</repository>
-        <idno type="shelfmark">Cat 778</idno>
-        <!-- Add the C and C number below -->
-        <!-- The C and C number can usually be found on Livingstone Online or be provided by the project team -->
-        <altIdentifier>
-            <idno type="ccnumber">0229</idno>
-        </altIdentifier>
-    </msIdentifier>
-    <physDesc>
-        <handDesc>
-            <handNote xml:id="U"><label>Unknown Hand</label> This hand is unknown
-                but thought not David Livingstone's.</handNote>
-        </handDesc>
-    </physDesc>
-</msDesc>
+                        identifiers <gi>altIdentifier</gi>, and finally a <gi>physDesc</gi>.
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+                <msDesc>
+                    <msIdentifier>
+						<!-- Change country below as needed -->
+                        <country>South Africa</country>
+						<!-- Change settlement below as needed -->
+                        <settlement>Johannesburg</settlement>
+						<!-- Change repository below as needed -->
+                        <repository>Brenthurst Library</repository>
+						<!-- Change shelfmark below as needed -->
+                        <idno type="shelfmark">778</idno>
+                        <altIdentifier>
+							<!-- Change C&C number below as needed -->
+                            <idno type="ccnumber">Letters, 0229</idno><!-- This the CC number; change, as appropriate -->
+                        </altIdentifier>
+                    </msIdentifier>
+                    <physDesc>
+                        <handDesc>
+							<!-- Add additional <handNote>s below as needed. -->
+                            <handNote xml:id="U"><label>Unknown Hand</label> This hand is unknown
+                                but thought not David Livingstone's.</handNote>
+                        </handDesc>
+                    </physDesc>
+                </msDesc>
                     </egXML>
                     In this case a note of the hands in the manuscript is given in a <gi>handNote</gi> with an <att>xml:id</att> attribute 
                         that can be pointed to from additions or deletions in the text. See <ptr target="#add-del"/>. More than one <gi>handNote</gi> can be recorded in 
@@ -428,20 +439,20 @@ mark any information not known as "unknown" -->
                             <item>place of composition (if known, otherwise 'Unknown')</item>
                             <item>name of the addressee (if known, otherwise 'Unknown')</item>
                         </list>
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><!-- change bibl information below as relevant; 
-title is usually same titleStmt above; 
-mark any information not known as "Unknown" -->
-<bibl type="sourceMetadata">
-    <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
-    <author xml:id="DL">David Livingstone</author>
-    <date type="composition" when="1850-08-18">18 August 1850</date>
-    <placeName type="compositionPlace">Kolobeng</placeName>
-    <persName type="addressee">Rev. D.F. Watt</persName>
-</bibl>  
-</egXML>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+                <bibl type="sourceMetadata">
+					<!-- Change title below -->
+                    <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
+                    <author xml:id="DL">David Livingstone</author>
+					<!-- Change @when and date below -->					
+                    <date type="composition" when="1850-08-18">18 August 1850</date>
+					<!-- Change place below -->
+                    <placeName type="compositionPlace">Kolobeng</placeName>
+					<!-- Change addressee below -->
+                    <persName type="addressee">Rev. D.F. Watt</persName>
+                </bibl>
+				</egXML>
                     </p>
-
-
                     <p>Definitions of the elements used above are: <specList>
                             <specDesc key="msDesc"/>
                             <specDesc key="msIdentifier"/>
@@ -466,12 +477,15 @@ mark any information not known as "Unknown" -->
                     <p>The profile description contains additional metadata about the file. In the
                         case of LEAP files this is used to store the language(s) in the document.
                         Usually this will just be English and so should not be changed.
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><!-- Profile Description  -->
-<profileDesc>
-    <langUsage>
-        <language ident="en">English</language>
-    </langUsage>
-</profileDesc>
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+        <profileDesc>
+            <langUsage>
+				<!-- See LEAP encoding manual sect. 20 for language abbreviations. 
+				English should be first, then add all other languages, as appropriate, 
+				in alphabetical order. -->
+                <language ident="en">English</language>
+            </langUsage>
+        </profileDesc>
                         </egXML>
                         However, multiple <gi>language</gi> elements can be provided if necessary
                         and should have the proper ISO 639 language code for the language. See <ptr
@@ -491,14 +505,14 @@ mark any information not known as "Unknown" -->
                     <head>The TEI Header: The Revision Description</head>
                     <p>A later part of the header, the <gi>revisionDesc</gi>, contains entries that
                         record the major milestones of work completed on, or updates to, the file:
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><!-- Revision Description -->
-<revisionDesc>
-    <!-- Most recent changes should be at the top; one per major stage of changes -->
-    <change when="2013-04-03" who="#AW">Additional encoding</change>
-    <change when="2013-01-06" who="#CL">Proofreading</change>
-    <change when="2012-12-04" who="#KS">Initial transcription and XML
-        encoding</change>
-</revisionDesc>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+        <revisionDesc>
+			<!-- Change @when, @who, and work description below. -->
+			<!-- Note that @who initials are taken from <respStmt> above -->
+			<!-- Add new <change> elements below as needed. -->
+			<!-- Note that the most recent <change> should always be placed first, at the top -->
+            <change when="2012-12-04" who="#KS">Initial transcription and XML encoding</change>
+        </revisionDesc>
                         </egXML> 
                         When working from the encoding template, either change the information in this
                         entry as relevant (if you are the first one working on the given item) or
@@ -632,7 +646,7 @@ mark any information not known as "Unknown" -->
 				<p><hi rend="bold">Note:</hi> It is especially important to use <tag>p rend="no-indent"</tag> when marking new, dated diary entries that Livingstone begins on a new line but does not indent.</p>
                 <p>Also, remember at the end of the paragraph to use the closing paragraph tag
                         <tag>/p</tag>.</p>
-                <p>Finally, note that we capitalize the first word of a new paragraph by default. If it is not capitalized, use the <gi>choice</gi>, <gi>sic</gi>, and <gi>corr</gi> tags to correct this. <!-- Heather --><!-- Slightly modified. AW -->
+                <p>Finally, note that we capitalize the first word of a new paragraph by default. If it is not capitalized, use the <gi>choice</gi>, <gi>sic</gi>, and <gi>corr</gi> tags to correct this.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><p><choice><sic>arrived</sic><corr>Arrived</corr></choice> at the lake.</p></egXML></p>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="p"/>
@@ -661,17 +675,16 @@ mark any information not known as "Unknown" -->
                     but you know from previous entries that this actually means 5th February 1871,
                     then code it as follows:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">We visited last year on <date when="1871-02-05">February 5th</date></egXML>
-                    There are also ways to indicate that you don't know what the year is:
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">We visited on <date when="--02-05">5th February</date></egXML>
-                    but in these cases you should bring it to the project's attention. </p>
-                <p>There are also other dating attributes <att>from</att> and <att>to</att> to
+                    If you don't know the year, bring it to the attention of the project and code it as follows:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">We visited on <date when="--02-05">5th February</date></egXML></p>
+                <p>Finally, use the <att>from</att> and <att>to</att> attributes to
                     provide a start and end date of a range. Use these as needed:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <date from="1871-02-05" to="1871-02-07">5th to 7th February 1871</date> 
-                    </egXML><!-- Adrian -->
+                    </egXML>
 				</p>
 				<p>For B.C. dates code as follows:
-				<egXML xmlns="http://www.tei-c.org/ns/Examples"><date when="-600-03-28">28 March 600 B.C.</date></egXML><!-- Adrian -->
+				<egXML xmlns="http://www.tei-c.org/ns/Examples"><date when="-600-03-28">28 March 600 B.C.</date></egXML>
 				or
 				<egXML xmlns="http://www.tei-c.org/ns/Examples"><date when="-600">600 B.C.</date></egXML>
 				</p>
@@ -687,7 +700,7 @@ mark any information not known as "Unknown" -->
             
             <div xml:id="letters">
                 <head>Letters</head>
-            <div xml:id="openers-closers"><!-- Adrian -->
+            <div xml:id="openers-closers">
                 <head>The Opening and Closing of Letters</head>
                 <p>Note that the opening and closing of letters often have items which
                     aren't strictly paragraphs. The TEI has special elements just for these. The entire beginning of a letter 
@@ -695,17 +708,17 @@ mark any information not known as "Unknown" -->
 					be contained within a single <gi>dateline</gi>. Finally, any personalized greeting, should go inside of 
 					a <gi>salute</gi> tag:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                        <lb/><opener><dateline rend="right"><placeName>Hadley Green</placeName>
-                        <lb/><date when="1857-08-22">22 August<lb/> 1857</date></dateline>
-						<lb/>
-                        <lb/><salute>My Dear Sir,</salute></opener>
+<lb/><opener><dateline rend="right"><placeName>Hadley Green</placeName>
+<lb/><date when="1857-08-22">22 August<lb/> 1857</date></dateline>
+<lb/>
+<lb/><salute>My Dear Sir,</salute></opener>
                     </egXML>
                 </p>
                 <p>Likewise, the end of a letter should be contained within a <gi>closer</gi> tag, within any personalized address 
 				contained within a <gi>salute</gi> tag and any signature within a <gi>signed</gi> tag.:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                        <lb/><closer><salute>Sincerely,</salute>
-                        <lb/><signed><persName>David Livingstone</persName></signed></closer>
+<lb/><closer><salute>Sincerely,</salute>
+<lb/><signed><persName>David Livingstone</persName></signed></closer>
                     </egXML>
                 </p>
                 <p>For both the <gi>opener</gi> and <gi>closer</gi>, linebreaks (see <ptr target="#linebreak"/>) should be marked in
@@ -727,12 +740,12 @@ mark any information not known as "Unknown" -->
                 <div xml:id="postal-addresses">
                     <head>Postal Address of Letter Recipient</head>
                     
-                    <p>The portion of each letter that contains that postal address of the letter recipient should be enclosed in an <gi>address</gi> element. Each line should be marked with <tag>addrLine/</tag>. Note too that when you use <tag>addrLine/</tag>, you should not use <tag>lb/</tag> (see <ptr target="#linebreak"/>). In other words, use <tag>addrLine/</tag> or <tag>lb/</tag>, but not both.<!-- Adrian -->
+                    <p>The portion of each letter that contains that postal address of the letter recipient should be placed inside of the <gi>closer</gi> (if possible; if not, use <gi>div</gi><gi>ab</gi>) and enclosed in an <gi>address</gi> element. Each line should be marked with <tag>addrLine/</tag>. Note too that when you use <tag>addrLine/</tag>, you should <hi rend="underline">not</hi> use <tag>lb/</tag> (see <ptr target="#linebreak"/>). In other words, use <tag>addrLine/</tag> or <tag>lb/</tag>, but not both.
                         <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
 <address>
-<addressLine/><persName>Bevan Braithwaite</persName>
-<addressLine/><placeName>3 New Court</placeName>
-<addressLine/><placeName>Lincoln's Inn</placeName>
+<addrLine/><persName>Bevan Braithwaite</persName>
+<addrLine/><placeName>3 New Court</placeName>
+<addrLine/><placeName>Lincoln's Inn</placeName>
 </address></egXML>
                     </p>
                     <p>
@@ -756,7 +769,7 @@ mark any information not known as "Unknown" -->
 <lb/>to your children.</postscript>
 <lb/><postscript n="2"><label>P.P.S.</label> And greet your parents</postscript></egXML>
                     </p>
-					<p><hi rend="bold">Note:</hi> In order for your use of the postscript to validate, it may be necessary to place empty <tag>opener/</tag> and <tag>closer/</tag> tags before it, if you haven't already used such tags otherwise</p><!-- Adrian -->
+					<p><hi rend="bold">Note:</hi> In order for your use of the postscript to validate, it may be necessary to place empty <tag>opener/</tag> and <tag>closer/</tag> tags before it, if you haven't already used such tags otherwise.</p>
                     <p>
                         <specList>
                             <specDesc key="postscript"/>
@@ -817,7 +830,7 @@ mark any information not known as "Unknown" -->
 
                 <p>If there is more than one type of formatting, for instance both underline and
                     superscript, use the <att>rend</att> attribute only once but provide two values
-                    separated by a space. <!-- note *NOT* a semicolon. -->
+                    separated by a space.
                 </p>
                 <p>
                     <label rend="italic">Original text:</label>
@@ -847,22 +860,22 @@ mark any information not known as "Unknown" -->
             </p>
             <p>If Livingstone changes color for a longer section of text (this often happens in his field diaries), use the <gi>div</gi> element plus <att>rend</att> and the appropriate color to mark the different sections of the text:
 		  	   <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                <div rend="black">
-                    <p>First section in black would go here.</p>
-                </div>
-                <div rend="blue">
-                    <p>Second section in blue would go here.</p>
-                </div>
+	<div rend="black">
+<p>First section in black would go here.</p>
+	</div>
+	<div rend="blue">
+<p>Second section in blue would go here.</p>
+	</div>
             </egXML>
             </p>
-                <p><hi rend="bold">Please note: </hi> Sometimes words appear to be the same color but are darker than their surrounding text. This could be an intentional or unintentional highlight by Livingstone. To be on the safe side, code such darkening as appropriate. If it seems to be an intentional emphasis, code as follows with the appropriate <val>color</val>:
-                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><p rend="black"><hi rend="black"><persName>Mtarika</persName> came at last.</hi></p></egXML>
-                If it seems to be an unintentional highlight, code as:
+                <p><hi rend="bold">Please note: </hi> Sometimes words appear to be the same color but are darker than their surrounding text. This may or may not be an intentional attempt by Livingstone to emphasize a portion of the text. To be on the safe side, code such darkening as appropriate. If it seems to be intentional, code it as follows with <att>hi</att> plus the appropriate color:
+                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><p rend="black"><hi rend="black"><persName>Mtarika</persName></hi> came at last.</p></egXML>
+                If it seems to be unintentional, code it with <att>seg</att> plus the appropriate color:
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                    <lb/><p rend="black">They do not appear to have asked for the
-                    <lb/><seg rend="black">names of places</seg> so much as for those of people</p>
+<lb/><p rend="black">They do not appear to have asked for the
+<lb/><seg rend="black">names of places</seg> so much as for those of people</p>
                 </egXML>
-                </p><!-- Heather -->
+                </p>
             </div>
 
             <div xml:id="word-division">
@@ -931,33 +944,28 @@ mark any information not known as "Unknown" -->
                 </p>
             </div>
 
-                <div xml:id="extra-space-lines"> <!-- Heather - Adrian, not sure if I did this section correctly, but thought it should be separate vs an addition to the previous section. Let me know your thoughts. --><!-- Looks OK. AW -->
+                <div xml:id="extra-space-lines">
                     <head>One or More Spaces between Lines</head>
                     <p>If you are encoding text where the author has left extra spaces between lines,
-                        you can mark up the spaces in one of two ways: 
-					<list type="ordered">
-                        <item>If there is only one space between lines, only an extra <tag>lb/</tag> tag is needed:
+                        you can mark up the spaces in one of two ways:</p>
+					<p>If there is only one space between lines, only an extra <tag>lb/</tag> tag is needed:
                         <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                            <lb/><p>...and he arranges any
-                            <lb/>differences that may
-                            <lb/>arise -</p>
-                            <lb/>
-                            <lb/><p>Called at <persName>Mataka</persName>'s house ...</p>
-                        </egXML></item>
-                            
-                        <item>If there is more than one space between lines, a <tag>space/</tag> tag is used, 
+<lb/><p>...and he arranges any
+<lb/>differences that may
+<lb/>arise -</p>
+<lb/>
+<lb/><p>Called at <persName>Mataka</persName>'s house ...</p>
+                        </egXML>
+						If there is more than one space between lines, a <tag>space/</tag> tag is used, 
 						along with the <att>dim</att>, <att>extent</att>, and
                             <att>unit</att> attributes and their appropriate values.
                             <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                            <lb/><p>...and he arranges any
-                            <lb/>differences that may
-                            <lb/>arise -</p>
-                            <lb/><space dim="vertical" extent="3" unit="lines"/>
-                            <lb/><p>Called at <persName>Mataka</persName>'s house ...</p>
-                        </egXML></item>
-                    </list>
-                    </p>
-                    
+<lb/><p>...and he arranges any
+<lb/>differences that may
+<lb/>arise -</p>
+<lb/><space dim="vertical" extent="3" unit="lines"/>
+<lb/><p>Called at <persName>Mataka</persName>'s house ...</p>
+                        </egXML></p>
                     <p>Definitions of the elements used above are: <specList>
                         <specDesc key="space" atts="extent unit"/>
                     </specList>
@@ -984,21 +992,21 @@ mark any information not known as "Unknown" -->
                         <item> The page text is upside-down. If it is upside-down for only a phrase or a 
 							few lines, use <tag>seg rend="upside-down"</tag> or some other relevant element to contain the text. 
 							If it runs upside-down for a larger amount of text, create a new <gi>div</gi> and 
-							mark the orientation there: <tag>div rend="upside-down"</tag>.</item><!-- Adrian -->
+							mark the orientation there: <tag>div rend="upside-down"</tag>.</item>
 						<item> The page text is horizontal, then it clearly <emph>continues</emph>
-                            to vertical text in the margin. Use <gi>cb</gi> in either one of the two
-                            following ways (line numbering continues in the normal way): <list
-                                type="ordered" rend="alphabetical">
+                            to vertical text in the margin. Use <gi>cb</gi> plus <att>rend</att> with a value of <val>vertical</val> 
+							in either one of the two following ways (line numbering continues in the normal way): 
+								<list type="ordered" rend="alphabetical">
                                 <item>If the vertical text in the margin is really a new paragraph
                                     then mark it as such by ending the current paragraph with
                                         <tag>/p</tag> at the end of the horizontal text, then start
-                                    the vertical text with <tag>cb/</tag><gi>p</gi> and when you
+                                    the vertical text with <tag>cb rend="vertical"/</tag><gi>p</gi> and when you
                                     finish the vertical text close it with <tag>/p</tag> as
                                     normal.</item>
                                 <item> If the vertical text in the margin continues the horizontal
                                     text without a paragraph break, do not end the paragraph but
                                     indicate the place where the text changes to vertical with a
-                                        <tag>cb/</tag> element. When the paragraph ends mark it with
+                                        <tag>cb rend="vertical"/</tag> element. When the paragraph ends mark it with
                                     a closing <tag>/p</tag>.</item>
                             </list></item>
                         <item> The page text is horizontal, but ends at the bottom of the page. You
@@ -1006,15 +1014,15 @@ mark any information not known as "Unknown" -->
                             it seems to be a new "section" (how you define section is a bit
                             subjective). Then close the horizontal text as normal with
                                 <tag>/p</tag><tag>/div</tag>. Begin the vertical text as a new
-                            division with <gi>div</gi><gi>p</gi> then when it is finished close the
-                            vertical text with <tag>/p</tag><tag>/div</tag> and begin the next section with a new <gi>div</gi>. In other words, you're
-                            breaking this up into two sections (with one or more paragraphs inside)
+                            division with <tag>div rend="vertical"</tag><gi>p</gi> then when it is finished close the
+                            vertical text with <tag>/p</tag><tag>/div</tag> and begin the next section with a new <gi>div</gi> tag. 
+							In other words, you're breaking this up into two sections (with one or more paragraphs inside)
                             that you believe are continuous. Line numbering is continuous. </item>
                         <item> The page text is horizontal and may or may not end at the bottom of
                             the page. The vertical text has no clear relationship to the horizontal
                             text. End the page text with <tag>/p</tag> (whether or not it continues
                             to the next page), then begin the vertical text with
-                                <gi>cb</gi><gi>ab</gi> and close the vertical text with
+                                <tag>cb rend="vertical"</tag><gi>ab</gi> and close the vertical text with
                                 <tag>/ab</tag>. Then on the next page, whether or not it's a new
                             paragraph, begin with <gi>p</gi>, etc. Restart the line numbering in
                             this new <gi>ab</gi>section. </item>
@@ -1086,19 +1094,11 @@ mark any information not known as "Unknown" -->
 				<p>When Livingstone uses a caret (^) to indicate the place of an addition, use a separate <gi>add</gi> tag for the caret and place a space between the tagged caret and the additional text that Livingstone has added:
 				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><add place="below">^</add> <add place="above">a word</add></egXML>
 				</p>
-                <p>To denote any kind of arrow or other mark (other than a caret) that Livingstone uses to indicate
-                    where a bit of add or deleted text should go, use an empty <tag>metamark/</tag>
-                    element.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">Then we went towards <metamark/><add place="inline">home</add>.<!-- Livingstone writes "home" in the margin, then uses a long arrow to indicate it should be placed here. AW --></egXML>
-                </p>
-				<p>Optional: As appropriate, you may further define the <tag>metamark/</tag> by adding the <att>type</att> and any of the following values: <val>insertion</val>, <val>deletion</val>, <val>transposition</val>, and <val>newParagraph</val>:
-                <egXML xmlns="http://www.tei-c.org/ns/Examples"><metamark type="deletion"/></egXML>
-				However, such additional coding is not required and should not be done by default.</p><!-- Adrian -->
                 <p>In both the cases of added or deleted text, if you believe that the work has been
                     done by someone other than Livingstone but cannot identify who that person is,
                     use the <att>hand</att> attribute with a value of "<val>#U</val>".
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">he <add place="inline" hand="#U">saw</add> us </egXML>
-                    The <val>#U</val> is a pointer to a <gi>handNote</gi> element (in a <gi>handDesc</gi> in a <gi>physDesc</gi> in the <gi>msDesc</gi> in <gi>sourceDesc</gi> in the header). 
+                    The <val>#U</val> is a pointer to a <gi>handNote</gi> element (in a <gi>handDesc</gi> in a <gi>physDesc</gi> in the <gi>msDesc</gi> in the <gi>sourceDesc</gi> in the header). 
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
 <!-- in the <sourceDesc> in the header -->
 <physDesc>
@@ -1113,6 +1113,14 @@ mark any information not known as "Unknown" -->
                     <p>If you can identify individual hands, but not to whom they belong, these values
                     could be <val>#hand01</val> or <val>#hand02</val> or similar.
                 </p>
+                <p>Finally, to denote any kind of arrow or other mark (other than a caret) that Livingstone uses to indicate
+                    where a bit of add or deleted text should go, use an empty <tag>metamark/</tag>
+                    element.
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">Then we went towards <metamark/><add place="inline">home</add>.<!-- Livingstone writes "home" in the margin, then uses a long arrow to indicate it should be placed here. AW --></egXML>
+                </p>
+				<p><hi rend="bold">Optional:</hi> As appropriate, you may further define the <tag>metamark/</tag> by adding the <att>type</att> and any of the following values: <val>insertion</val>, <val>deletion</val>, <val>transposition</val>, and <val>newParagraph</val>:
+                <egXML xmlns="http://www.tei-c.org/ns/Examples"><metamark type="deletion"/></egXML>
+				However, such additional coding is not required and should not be done by default.</p>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="add" atts="place"/>
                         <specDesc key="del" atts="type"/>
@@ -1187,13 +1195,13 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                     the addition you have made:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><choice><sic>recieved</sic><corr cert="high">received</corr></choice></egXML>
                 </p>
-                <p>If a duplicate word appears in the text, use the <gi>choice</gi>, <gi>sic</gi>, and <gi>corr</gi> elements to remove it: <!-- Heather --><!-- OK. AW -->
+                <p>If a duplicate word appears in the text, use the <gi>choice</gi>, <gi>sic</gi>, and <gi>corr</gi> elements to remove it:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">till the <choice><sic>the</sic><corr/></choice> astringent poison</egXML>
                 </p>
-                <p><hi rend="bold">Note: </hi>Livingstone tends to leave off apostrophes for contractions and possessives. To mark such instances in the text, do not use <gi>supplied</gi> plus an apostrophe, but rather code with <gi>choice</gi> plus <gi>sic</gi> and <gi>corr</gi>:
+                <p><hi rend="bold">Note:</hi> Livingstone tends to leave off apostrophes for contractions and possessives. To mark such instances in the text, do not use <gi>supplied</gi> plus an apostrophe, but rather code with <gi>choice</gi> plus <gi>sic</gi> and <gi>corr</gi>:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><choice><sic>dont</sic><corr>don't</corr></choice></egXML>
                 </p>
-                <p><hi rend="bold">Note: </hi>Be sure to remember that there is a difference between errors and variants. If Livingstone makes an obvious error, then use <gi>choice</gi>, <gi>sic</gi>, and <gi>corr</gi>, as described above. However, if Livingstone uses a variant that would not have been incorrect in his own day (e.g., Mosambique) and/or that exists in a more common, alternate form now (Mozambique), use <gi>choice</gi>, <gi>orig</gi>, and <gi>reg</gi> to normalize this (see <ptr target="#normalized-text"/>).</p><!-- Adrian -->
+                <p><hi rend="bold">Important Note:</hi> Be sure to remember that there is a difference between errors and variants. If Livingstone makes an obvious error, then use <gi>choice</gi>, <gi>sic</gi>, and <gi>corr</gi>, as described above. However, if Livingstone uses a variant that would not have been incorrect in his own day (e.g., Mosambique) and/or that exists in a more common, alternative form now (Mozambique), use <gi>choice</gi>, <gi>orig</gi>, and <gi>reg</gi> to normalize this (see <ptr target="#normalized-text"/>).</p>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="choice"/>
                         <specDesc key="sic"/>
@@ -1220,7 +1228,8 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
             <div xml:id="variant-readings">
                 <head>Variant Readings</head>
                 <p>Use the <gi>app</gi> element plus at least two or more instances of the <gi>rdg</gi> element to mark valid alternate readings of a single word or textual passage. If needed, <att>cert</att> may be used with values of "<val>low</val>", "<val>medium</val>", "<val>high</val>" to denote the degree of confidence in a given reading.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples"><app><rdg cert="high">will</rdg><rdg>well</rdg></app></egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+<app><rdg cert="high">will</rdg><rdg>well</rdg></app></egXML>
                 </p>
                 <p>
                     <specList>
@@ -1260,8 +1269,8 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                     <eg>He saw man</eg>
                     <label rend="italic">Marked up:</label>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">he saw <supplied cert="high">the</supplied> man</egXML></p>
-				<p>You should be very conservative in your use of the <gi>supplied</gi> tag and only supply text of which you are 100% certain. Otherwise, use <tag>gap/</tag>. In other words, avoid guessing at Livingstone's meaning unnecessarily.</p><!-- Adrian -->
-                <p>Note: The <gi>supplied</gi> tag is never nested in the <gi>gap</gi> tag.
+				<p><hi rend="bold">Important Note:</hi> You should be <hi rend="underline">very conservative</hi> in your use of the <gi>supplied</gi> tag and only supply text of which you are 100% certain. Otherwise, use <tag>gap/</tag>. In other words, avoid guessing at Livingstone's meaning unnecessarily.</p>
+                <p><hi rend="bold">Note:</hi> The <gi>supplied</gi> tag is never nested in the <gi>gap</gi> tag.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">he saw <gap reason="damage" extent="3" unit="letters"/><supplied cert="high">the</supplied> man</egXML>
                 </p>
                 <p>Definitions of the elements used above are: <specList>
@@ -1277,7 +1286,7 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><choice><orig>shew</orig><reg>show</reg></choice></egXML>
                 </p>
                 <p><hi rend="bold">Note:</hi> this also includes the normalization of proper nouns:
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">The <term type="tribe"><choice><orig>Suaheli</orig><reg>Swahili</reg></choice></term></egXML><!-- Heather --><!-- OK. AW -->
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">The <term type="tribe"><choice><orig>Suaheli</orig><reg>Swahili</reg></choice></term></egXML>
                 </p>
                 <p>
                     <specList>
@@ -1304,8 +1313,8 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                 </p>
 
                 <p>If you come across any other unusual characters that are not found within the
-                    "Edit—Insert from Character Map" option from the editing toolbar in oXygen, add
-                    a comment to draw the attention of the project to this location.
+                    "Insert from Character Map" option from the "Edit" dropdown menu in oXygen, add
+                    a comment to draw the attention of the project to this.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples"><!-- Adrian, there is a weird character you need to insert here. DH -->
                     </egXML>
                 </p>
@@ -1315,8 +1324,8 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                 <head>Quotation from Another Source</head>
                 
                 <p>When dealing with a quotation from another source, use the <gi>quote</gi> element.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">As it is stated in the Bible, "<quote>Neither do men light a candle, and put it under a bushel...</quote>."</egXML> <!-- Heather - Adrian, I took out the q tag as we do not use anymore. --><!-- OK. AW -->
-                </p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">As it is stated in the Bible, "<quote>Neither do men light a candle, and put it under a bushel...</quote>."</egXML>
+				<hi rend="bold">Note:</hi> As in the example above, the <gi>quote</gi>element goes inside of the quotation marks that surround the given quotation. In other words, do not mark the quotation marks as part of the quotation.</p>
                 <p>
                     <specList>
                         <specDesc key="quote"/>
@@ -1405,16 +1414,16 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
 				<p>You should also use <gi>geogName</gi> when encoding the full reference to a geographical entity that includes any kind of formal name (which itself would also be separately encoded:</p>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName><geogName type="source">sources of the <placeName><geogName type="river">Nile</geogName></placeName></geogName></placeName></egXML>
 				<p>If Livingstone refers to a specific, named geographical entity (and you know what that entity is), but uses only a generic term such as "the Lake" or "the River," you should identify this entity in a comment that directly follows the relevant term, but not otherwise mark the term used:</p>
-					<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I saw the Lake.<!-- geog: Tanganyika --></egXML> <!-- Heather - I switched original 'Lake' to geog --><!-- OK. AW -->
-                <p><hi rend="bold">Important: </hi> Livingstone uses "Metamba" to reference the Central African rainforest, although the term is really a local word for "forest." To account for this usage, please code as follows:</p> <!-- Heather --><!-- OK. AW -->
+					<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">I saw the Lake.<!-- geog: Tanganyika --></egXML>
+                <p><hi rend="bold">Note:</hi> Livingstone uses "Metamba" to reference the Central African rainforest, although the term is really a local word for "forest." To account for this usage, please code as follows:</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><foreign xml:lang="und"><placeName><region><geogName type="forest">Metamba</geogName></region></placeName></foreign></egXML>
-                <p><hi rend="bold">Note: </hi> "Cape" and "Interior" should
-                    be encoded with the <gi>region</gi> element (even though technically
+                <p><hi rend="bold">Note:</hi> "Cape" and "Interior" should
+                    be coded with the <gi>region</gi> element (even though technically
                     incorrect). Code "Zanzibar" as follows:</p>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName><geogName type="island">Zanzibar</geogName></placeName></egXML>
-                <p><hi rend="bold">Also: </hi> Directional words (North, South, East, and West) are only to be tagged when referring to regions:</p>
+                <p>Directional words (North, South, East, and West) should only be tagged when referring to regions:</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                <placeName><settlement type="town">Cape Maclear</settlement></placeName> in the <placeName><region>South</region></placeName>
+<placeName><settlement type="town">Cape Maclear</settlement></placeName> in the <placeName><region>South</region></placeName>
                 </egXML>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="placeName"/>
@@ -1429,14 +1438,16 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
             <div xml:id="measurements">
                 <head>Geographical Measurements</head>
                 
-                <p>Use the <gi>measure</gi> element to mark any geographical quantities (including geographical coordinates) that Livingstone cites in the text. This includes distances measured in days or hours as well (most often used in reference to the party's marches). <!-- Heather --><!-- OK. AW -->
+                <p>Use the <gi>measure</gi> element to mark any geographical quantities (including geographical coordinates) that Livingstone cites in the text. This includes distances measured in days or hours as well (most often used in reference to the party's marches).
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">The village was <measure>a few days' march</measure> from here</egXML>
                     If Livingstone provides an obvious group of geographical quantities, an additional <gi>measure</gi> element should be used to encapsulate the group.</p>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">The river was <measure><measure>30 feet deep</measure> and <measure>1000 yards across</measure></measure></egXML> <!-- Heather --><!-- OK. AW -->
-				<p><hi rend="bold">Note:</hi> if Livingstone introduces a larger set of geographical coordinates, these should normally not be transcribed, but rather be noted with the <gi>figure</gi> and <gi>figDes</gi> elements. See <ptr target="#figures"/>.</p> <!-- Heather --><!-- Fixed. AW -->
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+The river was <measure><measure>30 feet deep</measure> 
+and <measure>1000 yards across</measure></measure></egXML>
+				<p><hi rend="bold">Note:</hi> If Livingstone introduces a larger set of geographical coordinates, these should normally <hi rend="underline">not be transcribed</hi>, but rather be noted with the <gi>figure</gi> and <gi>figDes</gi> elements. See <ptr target="#figures"/>.</p>
                 <p>
                     <specList>
-                        <specDesc key="measure"/> <!-- Heather - Adrian, I took out the measureGrp reference. --><!-- OK. AW -->
+                        <specDesc key="measure"/>
                     </specList>
                 </p>
                 
@@ -1449,7 +1460,7 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
 				<p>Use <tag>seg type="weather"</tag> to mark passages in the text where Livingstone refers to the weather.</p>
 				<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">We have <seg type="weather">rain in large quantity almost every night</seg></egXML>
 				<p>Such weather references may be loosely made, and it may be difficult to determine where exactly they begin and end. In all cases use the <gi>seg</gi> elment and best judgment to mark such references. Opt for one use of <gi>seg</gi> to mark a longer passage with a series of specific descriptions rather than multiple uses of the <gi>seg</gi> element.</p>
-                <p><hi rend="bold">Note:</hi>When Livingstone provides the outside temperature, this should be be coded with only <tag>seg type="weather"</tag>, and not the <gi>measure</gi> element.</p> <!-- Heather --><!-- Fixed. AW -->
+                <p><hi rend="bold">Note:</hi> When Livingstone provides the outside temperature, this should be be coded with only <tag>seg type="weather"</tag>, and not the <gi>measure</gi> element.</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">6 AM <seg type="weather">98°</seg></egXML>
                 <p>
                     <specList>
@@ -1467,44 +1478,35 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                 <head>Animals (Including Fish), Insects, Plants, and Foodstuffs</head>
                 
                 <p>When dealing with animals, including fish, use the <gi>term</gi> element with the
-                    <att>type</att> attribute with a value of "<val>animal</val>". The value of "animal" in the singular should be used in all cases, even when the text refers to multiple animals of one kind. General terms such as "animal" or "beast" need not be tagged. <!-- Heather --><!-- OK. -->
+                    <att>type</att> attribute with a value of "<val>animal</val>". The value of "<val>animal</val>" in the singular should be used in all cases, even when the text refers to multiple animals of one kind. Livingstone's uses of general terms such as "animal" or "beast" need not be tagged.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="animal">elephants</term></egXML>
                 </p>
                 <p>When dealing with insects, use the <gi>term</gi> element with the
-                    <att>type</att> attribute with a value of "<val>insect</val>". The value of "insect" in the singular should be used in all cases, even when the text refers to multiple insects of one kind.
+                    <att>type</att> attribute with a value of "<val>insect</val>". The value of "<val>insect</val>" in the singular should be used in all cases, even when the text refers to multiple insects of one kind. Livingstone's uses of general terms such as "insects" or "bugs" need not be tagged.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="insect">tetse</term></egXML>
                 </p>
                 <p>When dealing with specifically named plants, use the <gi>term</gi> element with the
-                    <att>type</att> attribute with a value of "<val>plant</val>". The value of "plant" in the singular should be used in all cases, even when the text refers to multiple plants of one kind. General terms such as "trees", "bushes", or "grass" need not be tagged. <!-- Heather --><!-- OK. AW -->
+                    <att>type</att> attribute with a value of "<val>plant</val>". The value of "<val>plant</val>" in the singular should be used in all cases, even when the text refers to multiple plants of one kind. Livingstone's uses of general terms such as "trees", "bushes", or "grass" need not be tagged.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="plant">Euphorbias</term></egXML>
                 </p>
                 <p>When dealing with foodstuffs, use the <gi>term</gi> element with the
-                    <att>type</att> attribute with a value of "<val>foodstuff</val>". The value of "foodstuff" in the singular should be used in all cases.
+                    <att>type</att> attribute with a value of "<val>foodstuff</val>". The value of "<val>foodstuff</val>" in the singular should be used in all cases. Livingstone's uses of general terms such as "food" need not be tagged.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="foodstuff">bread</term></egXML>
                 </p>
                 <p>If Livingstone refers to a foodstuff that is also a plant, use the <gi>term</gi> element with the
                     <att>type</att> attribute with the value of "<val>plant_foodstuff</val>" (in that order):
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="plant_foodstuff">maize</term></egXML>
-				This format should be used regardless of the state in which the given item appears in the text.<!-- Adrian -->
-                </p>
-                <p><hi rend="bold underline">Note:</hi> <!-- Heather --><!-- OK. AW -->
-                    <list type="simple"><item>Terms relating to meals (such as breakfast, lunch, supper) <hi rend="underline">should not</hi> be coded as "foodstuff."</item>
-                    <item>Beverages, both alcoholic and non-alcoholic, <hi rend="underline">will</hi> be tagged as foodstuff and follow previously stated formats.
-                    <list type="bulleted">
-                        <item><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="plant_foodstuff">coffee</term></egXML></item>
-                        
-                        <item><egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><term type="foodstuff">brandy</term></egXML></item>
-                    </list></item>
-                    </list>
-                </p>
+				This format should be used regardless of the state in which the given item appears in the text.
+					<egXML xmlns="http://www.tei-c.org/ns/Examples"><term type="plant_foodstuff">coffee</term></egXML>
+				Beverages, both alcoholic and non-alcoholic, <hi rend="underline">should be coded</hi> as foodstuff and follow previously stated formats.
+					<egXML xmlns="http://www.tei-c.org/ns/Examples"><term type="foodstuff">brandy</term></egXML></p>
+				<p><hi rend="bold underline">Note:</hi> Terms relating to meals (such as breakfast, lunch, supper) <hi rend="underline">should not be coded</hi> as "foodstuff."</p>
                 <p>
                     <specList>
                         <specDesc key="term" atts="type"/>
                     </specList>
                 </p>
-                
             </div>
-            
 
 
             <div xml:id="nationalities">
@@ -1612,21 +1614,18 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                 <p>"Johanna men" and "Nassick boys" (and all variants of these two groups) to be coded as follows:</p>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><orgName><placeName><geogName type="island">Johanna</geogName></placeName> men</orgName></egXML>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><orgName><placeName><settlement type="city">Nassick</settlement></placeName> boys</orgName></egXML>
-                <p><hi rend="bold">Note: </hi> All references to "slaves" and "slavery" should also be marked with <gi>orgName</gi>, as well as references to "caste", "natives", and "cannibals":</p> <!-- Heather --><!-- OK. AW -->
+                <p><hi rend="bold">Note:</hi> All references to "slaves" and "slavery" should also be marked with <gi>orgName</gi>, as well as references to "caste", "natives", and "cannibals":</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">He had two <orgName>slaves</orgName> and spoke of <orgName>slavery</orgName></egXML>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">It is believed by the <orgName>natives</orgName>.</egXML>
-                <p><hi rend="bold">Please note: </hi> Havildar and Sepoy (singular and plural) should be marked with both <gi>orgName</gi> and <gi>term</gi> with the <att>type</att> attribute and a value of "<val>occupation</val>":</p><!-- Heather --><!-- OK. AW -->
+                <p><hi rend="bold">Please note: </hi> Havildar and Sepoy (singular and plural) should be marked with both <gi>orgName</gi>, and <gi>term</gi> with the <att>type</att> attribute and a value of "<val>occupation</val>":</p>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><orgName><term type="occupation">Havildar</term></orgName></egXML>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><orgName><term type="occupation">Sepoys</term></orgName></egXML>
-                <p>Groups relating to a specific person should also be marked with <gi>orgName</gi>:</p> <!-- Heather --><!-- OK. AW -->
+                <p>Groups relating to a specific person should also be marked with <gi>orgName</gi>:</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                    <lb/><orgName><persName>Emboro</persName>'s men</orgName>
+<lb/><orgName><persName>Emboro</persName>'s men</orgName>
 					</egXML>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                    <lb/>one of <orgName><persName>Koorje</persName>'s people</orgName>
-					</egXML>
-                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                    <lb/>from depositions of survivors of <orgName><persName>Baron</persName>'s party</orgName>
+<lb/>from depositions of survivors of <orgName><persName>Baron</persName>'s party</orgName>
                 </egXML>
                 <p>
                     <specList>
@@ -1642,18 +1641,16 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                 <head>Bibliographical Elements</head>
 			<p>Use <gi>bibl</gi> to encode any elements of a book, including the title, that Livingstone references:</p>
 			<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><bibl>Genesis</bibl></egXML>
-                <p>Also use <gi>bibl</gi> to encode any mention of Livingstone's own letters, or bundles received:</p> <!-- Heather --><!-- OK. AW -->
+                <p>Also use <gi>bibl</gi> to encode any mention of Livingstone's own letters or manuscripts:
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-                <lb/><bibl>Letters from <placeName><settlement type="city">Mecca</settlement></placeName></bibl> told of its coming
+<lb/><bibl>Letters from <placeName><settlement type="city">Mecca</settlement></placeName></bibl> told of its coming</egXML>
                     or
-                <lb/>it assures me that my <bibl>packet of letters</bibl> was not destroyed
-                </egXML>
-                <p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><lb/>it assures me that my <bibl>packet of letters</bibl> was not destroyed</egXML></p>
+				<p>
                     <specList>
                         <specDesc key="bibl"/>
                     </specList>
                 </p>                
-
             </div>
 
             <div xml:id="foreign-words">
@@ -1666,7 +1663,7 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                                 >https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry</ref>
                         </item>
                         <item>In the header, add in a <gi>langUsage</gi> for the foreign language
-                            under the one for English as follows:
+                            under the one for English as follows. Put English first, then all other languages in alphabetical order:
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                 <langUsage>
                                     <language ident="en">English</language>
@@ -1679,7 +1676,7 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                 <foreign xml:lang="la">et id genus omne</foreign>
                             </egXML>
-                            <hi rend="bold">Please note: </hi> The <gi>foreign</gi> tag goes outside of any other tags used relating to the word or phrase:
+                            <hi rend="bold">Please note: </hi> The <gi>foreign</gi> tag should go outside of any other tags used relating to the word or phrase:
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                 <foreign xml:lang="nym"><term type="occupation">Pagazi</term></foreign>
                             </egXML>
@@ -1687,8 +1684,8 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                     </list>
                 </p>
                 <p><hi rend="bold">Please note: </hi> If you are unsure of the language/dialect, but
-                    know that it is not English, <hi rend="underline">simply mark it as undetermined
-                        using the code "<val>und</val>".</hi> Also, we do not tag references to languages (Spanish, French, etc.) in any way.</p><!-- Adrian -->
+                    know that it is not English, simply mark it as "Undetermined"
+                        using the code "<val>und</val>". Also, we do not tag references to languages (Spanish, French, etc.) in any way.</p>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="langUsage"/>
                         <specDesc key="language" atts="ident"/>
@@ -1702,40 +1699,14 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                 <head>Lists within the Text</head>
                 
                 <p>Use the <gi>list</gi> element to contain any lists that appear in the text. 
-                    The title of any such list should be marked with the <gi>head</gi> element, while <gi>item</gi> should be used for each item within the list. Note that numbering items in the list, as in the example below, is wholly optional and should not be done by default.<!-- Adrian -->
+                    The title of any such list should be marked with the <gi>head</gi> element, while <gi>item</gi> should be used for each item within the list. Note that numbering items in the list, as in the example below, is wholly optional and should not be done by default.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><list><head>Villages:</head> <item n="1">Bambarre</item>, <item n="2">Nyangwe</item>, and <item n="3">Ujiji</item></list></egXML>
                 </p>
-<p>If the list has a label or heading before each item then it is a <val>gloss</val> list. Use the <att>type</att> attribute to provide this as a value.
-    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-        <list type="gloss">
-            <label>A word</label>
-            <item>Its definition</item>
-            <label>Another word</label>
-            <item>Its definition</item>
-        </list>
-        </egXML>
-    
-</p>
-
-                <p>In addition, if the list is formatted as a table, it can be contained by the <gi>table</gi> element and the <gi>row</gi> and <gi>cell</gi> elements can be introduced as appropriate. 
-                    
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <table>
-                            <row><cell>Things I like</cell> <cell>Things I don't like</cell></row>
-                            <row><cell>Ice Cream</cell><cell>Cream Cheese</cell></row>
-                            <row><cell>Tea</cell><cell>Coffee</cell></row>
-                        </table>
-                    </egXML>
-                    </p><p>
-                    Elements such as <gi>item</gi>, <gi>row</gi>, and <gi>cell</gi> can be numbered with <att>n</att>.</p>
                 <p>
                     <specList>
                         <specDesc key="list"/>
-                        <specDesc key="label"/>
+                        <specDesc key="head"/>
                         <specDesc key="item"/>
-                        <specDesc key="table"/>
-                        <specDesc key="row"/>
-                        <specDesc key="cell"/>
                     </specList>
                 </p>
                 
@@ -1749,7 +1720,7 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                     the <gi>figDesc</gi> element, which must then be contained by the
                         <gi>figure</gi> element. <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure/></egXML>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><figDesc>A drawing of a lion with it's mouth open towards the viewer.</figDesc></figure></egXML>
-				The description of the figure should be short and to the point, as in the example above. In the description, you should not as a rule describe the extent of the figure (i.e, "for three lines," etc.), but rather should focus only on its content. Also, assume that phrases like "Livingstone has here..." are a given and do not need to be used explicitly.</p><!-- Adrian -->
+				The description of the figure should be short and to the point, as in the example above. In the description, you should not as a rule describe the extent of the figure (i.e, "for three lines," etc.), but rather should focus only on its content. Also, assume that phrases like "Livingstone has here..." are a given and do not need to be used explicitly.</p>
 				<p>If Livingstone has himself given the figure a title, use the <gi>head</gi> element to record this:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><head>Lion</head><figDesc>Livingstone here provides a drawing of a lion with it's mouth open towards the viewer.</figDesc></figure></egXML>
 				</p>

@@ -1,98 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://raw.githubusercontent.com/jamescummings/LEAP-ODD/master/leap.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://raw.githubusercontent.com/jamescummings/LEAP-ODD/master/leap.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="liv_000699">
-    <!-- xml:id attribute value above should be same as the LEAP file name (without .xml suffix) -->
+<?xml-model href="http://jamescummings.github.io/LEAP/leap.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://jamescummings.github.io/LEAP/leap.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-stylesheet type="text/xsl" href="http://jamescummings.github.io/LEAP/transcription.xsl"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="liv_000699"><!-- Change @xml:id -->
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <!-- Electronic edition's title and author; change title-->
+				<!-- Change title below -->
                 <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
                 <author>David Livingstone</author>
                 <principal>Adrian S. Wisnicki</principal>
                 <principal>Christopher Lawrence</principal>
-                <!-- One respStmt per person who works on the file -->
+				<!-- Change xml:id below -->
+                <respStmt xml:id="JM">
+					<!-- Change name below -->
+                    <name>Jared McDonald</name>
+					<!-- Change, remove, or add more <resp> as appropriate below -->
+                    <resp>Transcription</resp>
+                    <resp>Encoding</resp>
+                </respStmt>
+                <respStmt xml:id="AA">
+                    <name>Angela Aliff</name>
+                    <resp>Transcription</resp>
+                    <resp>Encoding</resp>
+                </respStmt>
                 <respStmt xml:id="AW">
                     <name>Adrian S. Wisnicki</name>
-                    <!-- One resp per type of responsiblity they do-->
-                    <resp>Transcription</resp>
-                    <resp>Encoding</resp>
-                    <resp>Editorial Decisions</resp>
+                    <resp>Coding review</resp>
                 </respStmt>
-                <respStmt xml:id="KS">
-                    <name>Kate Simpson</name>
-                    <resp>Transcription</resp>
-                    <resp>Encoding</resp>
-                </respStmt>
-                <respStmt xml:id="CL">
-                    <name>Christopher Lawrence</name>
-                    <resp>Proofreading</resp>
-                </respStmt>
-            </titleStmt>
+            </titleStmt>	
             <publicationStmt>
                 <authority>Livingstone Online</authority>
                 <publisher>UCLA Digital Library</publisher>
                 <pubPlace>Los Angeles, CA, USA</pubPlace>
-                <!-- possible update year -->
-                <date>2014</date>
-                <availability>
-                <!-- possible update license -->
-                    <licence target="https://creativecommons.org/licenses/by-nc/3.0/">
-                        All materials are licensed for use under the 
-                        <ref target="https://creativecommons.org/licenses/by-nc/3.0/">
-                            Creative Commons Attribution-Noncommercial 3.0 Unported License
-                        </ref>. 
-                        (c) Dr. Neil Imray Livingstone Wilson, 2014
-                    </licence>
-                </availability>
+				<!-- Change date below if necessary -->
+                <date>2015</date>
+				<!-- Change base file name below -->
+                <idno type="LEAP-ID">liv_000688</idno>
+				<!-- Change the license below if needed -->
+			    <availability>
+        			<licence target="https://creativecommons.org/licenses/by-nc/3.0/">
+            			All materials are licensed for use under the 
+            			<ref target="https://creativecommons.org/licenses/by-nc/3.0/">
+                		Creative Commons Attribution-Noncommercial 3.0 Unported License
+            			</ref>. (c) Dr. Neil Imray Livingstone Wilson, 2011
+        			</licence>
+    			</availability>
             </publicationStmt>
             <sourceDesc>
-                <!-- Add manuscript description with msIdentifier for location and any shelf marks -->
-                <!-- Location and shelf marks can usually be found on Livingstone Online or provided by the project team -->
                 <msDesc>
                     <msIdentifier>
-                        <country>United Kingdom</country>
-                        <settlement>Blantyre</settlement>
-                        <repository>David Livingstone Centre</repository>
-                        <idno type="shelfmark">Cat 778</idno>
-                        <!-- Add the C and C number below -->
-                        <!-- The C and C number can usually be found on Livingstone Online or provided by the project team -->
+						<!-- Change country below as needed -->
+                        <country>South Africa</country>
+						<!-- Change settlement below as needed -->
+                        <settlement>Johannesburg</settlement>
+						<!-- Change repository below as needed -->
+                        <repository>Brenthurst Library</repository>
+						<!-- Change shelfmark below as needed -->
+                        <idno type="shelfmark">778</idno>
                         <altIdentifier>
-                            <idno type="ccnumber">0229</idno>
+							<!-- Change C&C number below as needed -->
+                            <idno type="ccnumber">Letters, 0229</idno><!-- This the CC number; change, as appropriate -->
                         </altIdentifier>
                     </msIdentifier>
-                    <!-- more manuscript description could be provided here by project if available -->
-                    <!-- for example: handDesc -->
                     <physDesc>
                         <handDesc>
+							<!-- Add additional <handNote>s below as needed. -->
                             <handNote xml:id="U"><label>Unknown Hand</label> This hand is unknown
                                 but thought not David Livingstone's.</handNote>
                         </handDesc>
                     </physDesc>
                 </msDesc>
-                <!-- Add bibliographic source metadata  -->
                 <bibl type="sourceMetadata">
-                    <!-- Add title and author; usually the same as the electronic version in titleStmt -->
+					<!-- Change title below -->
                     <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
                     <author xml:id="DL">David Livingstone</author>
-                    <!-- date of composition, if known, in machine and human readable format -->
+					<!-- Change @when and date below -->					
                     <date type="composition" when="1850-08-18">18 August 1850</date>
-                    <!-- place of composition if known, otherwise 'unknown' -->
+					<!-- Change place below -->
                     <placeName type="compositionPlace">Kolobeng</placeName>
-                    <!-- addressee and their location if known, otherwise 'unknown' -->
+					<!-- Change addressee below -->
                     <persName type="addressee">Rev. D.F. Watt</persName>
                 </bibl>
             </sourceDesc>
         </fileDesc>
         <profileDesc>
             <langUsage>
+				<!-- See LEAP encoding manual sect. 20 for language abbreviations. 
+				English should be first, then add all other languages, as appropriate, 
+				in alphabetical order. -->
                 <language ident="en">English</language>
             </langUsage>
         </profileDesc>
         <revisionDesc>
-            <!-- Most recent changes should be at the top; one per major stage of changes -->
-            <change when="2013-04-03" who="#AW">Additional encoding</change>
-            <change when="2013-01-06" who="#CL">Proofreading</change>
+			<!-- Change @when, @who, and work description below. -->
+			<!-- Note that @who initials are taken from <respStmt> above -->
+			<!-- Add new <change> elements below as needed. -->
+			<!-- Note that the most recent <change> should always be placed first, at the top -->
             <change when="2012-12-04" who="#KS">Initial transcription and XML encoding</change>
         </revisionDesc>
     </teiHeader>
@@ -100,24 +104,34 @@
     <text>
         <body>
             <div>
-                <!-- Start each page with pagebreak -->
-                <pb facs="liv_000699_0001.jpg" n="0001"/>
-                <!-- Start each line with linebreak -->
-                <!-- If this is a letter or similar with an opener (with content such as dateline and/or salute) add it. For example: -->
-                <lb n="1"/><opener><dateline rend="right"><placeName>Hadley Green</placeName> <date when="1857-08-22">22 August 
-                <lb n="2"/> 1857</date></dateline>
-                <lb n="3"/>    
-                <lb n="4"/><salute>My Dear Sir,</salute>
-                </opener>
-              
-                <p><!-- Begin transcribed text here --></p>
 
-                <!-- more paragraphs -->
+	<!-- Change both @facs and @n below -->
+	<!-- Start each page with a <pb> formatted as below -->               
+	<pb facs="liv_000699_0001.jpg" n="0001"/>
 
-                <!-- If there is a letter or similar with a closer with content such as salute or signed -->
-                <!-- Change the line numbers and information below as appropriate -->
-                <lb n="X"/><closer><salute>I am &amp;</salute>
-                <lb n="X"/><signed><persName>David Livingstone</persName></signed></closer> 
+<!-- If this is a letter or similar with an opener (with content such as dateline and/or salute) add it. For example: -->
+<opener>
+<lb/><dateline rend="right"><placeName>Hadley Green</placeName> <date when="1857-08-22">22 August<!-- Change line info as appropriate --><!-- Begin each line with <lb/> as here --> 
+<lb/> 1857</date></dateline><!-- Change line info as appropriate -->
+<lb/>    
+<lb/><salute>My Dear Sir,</salute><!-- Change line info as appropriate -->
+</opener>
+
+<lb/><p><!-- Begin transcribed text here --></p>
+
+<!-- More transcribed text -->
+
+<!-- If there is a letter or similar with a closer with content such as salute or signed -->
+<closer>
+<lb/><salute>I am &amp;</salute><!-- Change as appropriate -->
+<lb/><signed><persName>David Livingstone</persName></signed><!-- Change as appropriate --> 
+
+<address><!-- Note place the <address> inside the closer if possible. If not, enclose the address in a <div> and <ab>.-->
+<addrLine/><persName>Rev. D.G. Watt</persName><!-- Change, and add <addrLine>s as appropriate -->
+<addrLine/><placeName>London</placeName>
+</address>
+</closer>
+
             </div>
         </body>
     </text>
