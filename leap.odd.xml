@@ -1425,7 +1425,7 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                     be coded with the <gi>region</gi> element (even though technically
                     incorrect). Code "Zanzibar" as follows:</p>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName><geogName type="island">Zanzibar</geogName></placeName></egXML>
-                <p>Directional words (North, South, East, and West) should not be tag when referring to directions. Rather tag directional words only when Livingstone uses them to designate a region:</p>
+                <p>Directional words (North, South, East, and West) should not be tagged when referring to directions. Rather tag directional words only when Livingstone uses them to designate a region:</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
 <placeName><region>South of <placeName><geogName type="lake">Lake Nyassa</geogName></placeName></region></placeName>                
 </egXML>
