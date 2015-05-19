@@ -23,6 +23,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc status="draft">
+			<change when="2015-05-13" who="#AW">Additional corrections</change>
 			<change when="2015-05-05" who="#AW">Additional corrections</change>
 			<change when="2015-04-07" who="#AW">Additional corrections and expansion</change>
             <change when="2015-03-25" who="#HB">Additional corrections and expansion</change>
@@ -202,6 +203,7 @@ What should I do? DH --></egXML>
                 <author>David Livingstone</author>
                 <principal>Adrian S. Wisnicki</principal>
                 <principal>Christopher Lawrence</principal>
+				<!-- Add or remove <respStmt> as appropriate below -->
 				<!-- Change xml:id below -->
                 <respStmt xml:id="JM">
 					<!-- Change name below -->
@@ -228,7 +230,7 @@ What should I do? DH --></egXML>
                 <date>2015</date>
 				<!-- Change base file name below -->
                 <idno type="LEAP-ID">liv_000688</idno>
-				<!-- Change the license below if needed -->
+				<!-- Change the license below if necessary -->
 			    <availability>
         			<licence target="https://creativecommons.org/licenses/by-nc/3.0/">
             			All materials are licensed for use under the 
@@ -250,13 +252,13 @@ What should I do? DH --></egXML>
 						<!-- Change shelfmark below as needed -->
                         <idno type="shelfmark">778</idno>
                         <altIdentifier>
-							<!-- Change C&C number below as needed -->
-                            <idno type="ccnumber">Letters, 0229</idno><!-- This the CC number; change, as appropriate -->
+							<!-- Change CC number below as needed -->
+                            <idno type="ccnumber">Letters, 0229</idno>
                         </altIdentifier>
                     </msIdentifier>
                     <physDesc>
                         <handDesc>
-							<!-- Add additional <handNote>s below as needed. -->
+							<!-- Add additional <handNote> elements below as needed. -->
                             <handNote xml:id="U"><label>Unknown Hand</label> This hand is unknown
                                 but thought not David Livingstone's.</handNote>
                         </handDesc>
@@ -320,6 +322,7 @@ What should I do? DH --></egXML>
                 <author>David Livingstone</author>
                 <principal>Adrian S. Wisnicki</principal>
                 <principal>Christopher Lawrence</principal>
+				<!-- Add or remove <respStmt> as appropriate below -->
 				<!-- Change xml:id below -->
                 <respStmt xml:id="JM">
 					<!-- Change name below -->
@@ -366,7 +369,7 @@ What should I do? DH --></egXML>
                 <date>2015</date>
 				<!-- Change base file name below -->
                 <idno type="LEAP-ID">liv_000688</idno>
-				<!-- Change the license below if needed -->
+				<!-- Change the license below if necessary -->
 			    <availability>
         			<licence target="https://creativecommons.org/licenses/by-nc/3.0/">
             			All materials are licensed for use under the 
@@ -412,13 +415,13 @@ What should I do? DH --></egXML>
 						<!-- Change shelfmark below as needed -->
                         <idno type="shelfmark">778</idno>
                         <altIdentifier>
-							<!-- Change C&C number below as needed -->
-                            <idno type="ccnumber">Letters, 0229</idno><!-- This the CC number; change, as appropriate -->
+							<!-- Change CC number below as needed -->
+                            <idno type="ccnumber">Letters, 0229</idno>
                         </altIdentifier>
                     </msIdentifier>
                     <physDesc>
                         <handDesc>
-							<!-- Add additional <handNote>s below as needed. -->
+							<!-- Add additional <handNote> elments below as needed. -->
                             <handNote xml:id="U"><label>Unknown Hand</label> This hand is unknown
                                 but thought not David Livingstone's.</handNote>
                         </handDesc>
@@ -714,7 +717,7 @@ What should I do? DH --></egXML>
 <lb/><salute>My Dear Sir,</salute></opener>
                     </egXML>
                 </p>
-                <p>Likewise, the end of a letter should be contained within a <gi>closer</gi> tag, within any personalized address 
+                <p>Likewise, the end of a letter should be contained within a <gi>closer</gi> tag, with any personalized address 
 				contained within a <gi>salute</gi> tag and any signature within a <gi>signed</gi> tag.:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
 <lb/><closer><salute>Sincerely,</salute>
@@ -740,7 +743,7 @@ What should I do? DH --></egXML>
                 <div xml:id="postal-addresses">
                     <head>Postal Address of Letter Recipient</head>
                     
-                    <p>The portion of each letter that contains that postal address of the letter recipient should be placed inside of the <gi>closer</gi> (if possible; if not, use <gi>div</gi><gi>ab</gi>) and enclosed in an <gi>address</gi> element. Each line should be marked with <tag>addrLine/</tag>. Note too that when you use <tag>addrLine/</tag>, you should <hi rend="underline">not</hi> use <tag>lb/</tag> (see <ptr target="#linebreak"/>). In other words, use <tag>addrLine/</tag> or <tag>lb/</tag>, but not both.
+                    <p>The portion of each letter that contains that postal address of the letter recipient should be placed inside both the <gi>closer</gi> and  <gi>address</gi> elements. If the placement of the address within the letter does not allow for the address to be added to the <gi>closer</gi>, then place the address in a separate set of <gi>div</gi> and <gi>ab</gi> elements. Each line of the address should be marked with <tag>addrLine/</tag>. Note too that when you use <tag>addrLine/</tag>, you should <hi rend="underline">not</hi> use <tag>lb/</tag> (see <ptr target="#linebreak"/>). In other words, use <tag>addrLine/</tag> or <tag>lb/</tag>, but not both.
                         <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
 <address>
 <addrLine/><persName>Bevan Braithwaite</persName>
@@ -769,7 +772,7 @@ What should I do? DH --></egXML>
 <lb/>to your children.</postscript>
 <lb/><postscript n="2"><label>P.P.S.</label> And greet your parents</postscript></egXML>
                     </p>
-					<p><hi rend="bold">Note:</hi> In order for your use of the postscript to validate, it may be necessary to place empty <tag>opener/</tag> and <tag>closer/</tag> tags before it, if you haven't already used such tags otherwise.</p>
+					<p><hi rend="bold">Note:</hi> In order for your use of the <gi>postscript</gi> to validate, it may be necessary to place empty <tag>opener/</tag> and <tag>closer/</tag> tags before it, if you haven't already otherwise used such tags.</p>
                     <p>
                         <specList>
                             <specDesc key="postscript"/>
@@ -1325,7 +1328,7 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                 
                 <p>When dealing with a quotation from another source, use the <gi>quote</gi> element.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">As it is stated in the Bible, "<quote>Neither do men light a candle, and put it under a bushel...</quote>."</egXML>
-				<hi rend="bold">Note:</hi> As in the example above, the <gi>quote</gi>element goes inside of the quotation marks that surround the given quotation. In other words, do not mark the quotation marks as part of the quotation.</p>
+				<hi rend="bold">Note:</hi> As in the example above, the <gi>quote</gi> element goes inside of the quotation marks that surround the given quotation. In other words, do not mark the quotation marks as part of the quotation.</p>
                 <p>
                     <specList>
                         <specDesc key="quote"/>
@@ -1641,11 +1644,11 @@ and <measure>1000 yards across</measure></measure></egXML>
                 <head>Bibliographical Elements</head>
 			<p>Use <gi>bibl</gi> to encode any elements of a book, including the title, that Livingstone references:</p>
 			<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><bibl>Genesis</bibl></egXML>
-                <p>Also use <gi>bibl</gi> to encode any mention of Livingstone's own letters or manuscripts:
+                <p>Also use <gi>bibl</gi> to encode any mention of letters or manuscripts, including Livingstone's own:
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
 <lb/><bibl>Letters from <placeName><settlement type="city">Mecca</settlement></placeName></bibl> told of its coming</egXML>
                     or
-<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><lb/>it assures me that my <bibl>packet of letters</bibl> was not destroyed</egXML></p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><lb/>he assures me that my <bibl>packet of letters</bibl> was not destroyed</egXML></p>
 				<p>
                     <specList>
                         <specDesc key="bibl"/>
@@ -1719,15 +1722,15 @@ and <measure>1000 yards across</measure></measure></egXML>
                     an empty <tag>figure/</tag> element. However, you can also describe them using
                     the <gi>figDesc</gi> element, which must then be contained by the
                         <gi>figure</gi> element. <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure/></egXML>
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><figDesc>A drawing of a lion with it's mouth open towards the viewer.</figDesc></figure></egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><figDesc>Drawing of a lion with it's mouth open towards the viewer.</figDesc></figure></egXML>
 				The description of the figure should be short and to the point, as in the example above. In the description, you should not as a rule describe the extent of the figure (i.e, "for three lines," etc.), but rather should focus only on its content. Also, assume that phrases like "Livingstone has here..." are a given and do not need to be used explicitly.</p>
 				<p>If Livingstone has himself given the figure a title, use the <gi>head</gi> element to record this:
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><head>Lion</head><figDesc>Livingstone here provides a drawing of a lion with it's mouth open towards the viewer.</figDesc></figure></egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><head>Lion</head><figDesc>Drawing of a lion with it's mouth open towards the viewer.</figDesc></figure></egXML>
 				</p>
 				<p>If your description of the figure cites any text that Livingstone himself has provided and that text in turn can be coded, then it should be coded directly in the citation:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">The <term type="animal">lion</term> looked like this: <figure><head>Lion</head>
-<figDesc>Livingstone here provides a drawing of a lion with it's mouth open 
-towards the viewer, and notes that he saw this lion "in the <placeName><geogName type="desert">Kalahari</geogName></placeName>."</figDesc>
+<figDesc>Drawing of a lion with it's mouth open 
+towards the viewer, with a note from Livingstone that he saw this lion "in the <placeName><geogName type="desert">Kalahari</geogName></placeName>."</figDesc>
 </figure></egXML>
 				</p>
             </div>
@@ -2108,18 +2111,17 @@ towards the viewer, and notes that he saw this lion "in the <placeName><geogName
                     </elementSpec>
 
 
-                    
                     <!-- delete those global attributes we don't need, rename others -->
                     <classSpec ident="att.global" type="atts" mode="change" module="tei">
                         <attList>
+                            <attDef ident="rendition" mode="delete"/>
                             <attDef ident="xml:base" mode="delete"/>
                             <attDef ident="xml:space" mode="delete"/>
+                            
                         </attList>
                     </classSpec>
-                    
                     <classSpec ident="att.global.rendition" type="atts" mode="change" module="tei">
                         <attList>
-                            <attDef ident="rendition" mode="delete"/>
                             <attDef ident="rend" mode="change">
                                 <!-- Provide a closed value list for @rend -->
                                 <valList mode="replace" type="closed" xml:id="rend-valList">
