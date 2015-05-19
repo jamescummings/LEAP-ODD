@@ -10,7 +10,7 @@
 
     <!-- import base conversion style -->
 
-    <xsl:import href="/home/jamesc/git/TEIC/Stylesheets/html/html.xsl"/>
+    <xsl:import href="/home/jamesc/git/Stylesheets/html/html.xsl"/>
 
   <xsl:param name="cssFileInclude">true</xsl:param>
   <xsl:param name="cssFile" as="xs:string">leap-doc.css</xsl:param>
