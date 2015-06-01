@@ -662,23 +662,21 @@ What should I do? DH --></egXML>
             <div xml:id="dates">
                 <head>Dates</head>
                 <p>For marking up dates use the <gi>date</gi> element with the <att>when</att>
-                    attribute:
+                    attribute. The value of the <att>when</att> attribute should always be given in this YYYY-MM-DD format 
+					(four-digit year, two-digit month, two-digit day). This is an important
+                    international standard for representing dates and stops people and computers
+                    getting confused as to whether '05/02/71' means the second of May or the fifth
+                    of February:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <date when="1871-02-05">5th February 1871</date>
                     </egXML>
-                    The value of the attribute should always be given in this YYYY-MM-DD format:
-                    namely four-digit year, two-digit month, two-digit day. This is an important
-                    international standard for representing dates and stops people and computers
-                    getting confused as to whether '05/02/71' means the second of May or the fifth
-                    of February.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">We visited on <date when="1871-02-05">5 February 1871</date></egXML>
-                    Or if the day isn't given:
+                    If only the month and year (and not the day) are given, code as follows:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">We visited in <date when="1871-02">February 1871</date></egXML>
                     However, if the day (and month) are given, but not the year, yet you know the
                     year provide it. For instance, if Livingstone begins a diary entry with "5th"
                     but you know from previous entries that this actually means 5th February 1871,
                     then code it as follows:
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">We visited last year on <date when="1871-02-05">February 5th</date></egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">We visited last year on the <date when="1871-02-05">5th</date></egXML>
                     If you don't know the year, bring it to the attention of the project and code it as follows:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">We visited on <date when="--02-05">5th February</date></egXML></p>
                 <p>Finally, use the <att>from</att> and <att>to</att> attributes to
@@ -1122,9 +1120,9 @@ What should I do? DH --></egXML>
                     element.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">Then we went towards <metamark/><add place="inline">home</add>.<!-- Livingstone writes "home" in the margin, then uses a long arrow to indicate it should be placed here. AW --></egXML>
                 </p>
-				<p><hi rend="bold">Optional:</hi> As appropriate, you may further define the <tag>metamark/</tag> by adding the <att>type</att> and any of the following values: <val>insertion</val>, <val>deletion</val>, <val>transposition</val>, and <val>newParagraph</val>:
+				<p><hi rend="bold">Optional:</hi> In some cases, such as the manuscript of Livingstone's <label rend="italic">Missionary Travels</label>, you may be working with more specialized metamarks. To code these, you can use the <tag>metamark/</tag> tag plus the <att>type</att> attribute and any of the following values: <val>insertion</val>, <val>deletion</val>, <val>transposition</val>, and <val>newParagraph</val>:
                 <egXML xmlns="http://www.tei-c.org/ns/Examples"><metamark type="deletion"/></egXML>
-				However, such additional coding is not required and should not be done by default.</p>
+				However, such additional coding is not required and should only be done in consultation with the project team.</p>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="add" atts="place"/>
                         <specDesc key="del" atts="type"/>
@@ -1327,7 +1325,7 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
             <div xml:id="quotations">
                 <head>Quotation from Another Source</head>
                 
-                <p>When dealing with a quotation from another source, use the <gi>quote</gi> element.
+                <p>When dealing with a quotation from another source, usually a printed source (which may or may not be explicitly identified in Livingstone's text) use the <gi>quote</gi> element.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">As it is stated in the Bible, "<quote>Neither do men light a candle, and put it under a bushel...</quote>."</egXML>
 				<hi rend="bold">Note:</hi> As in the example above, the <gi>quote</gi> element goes inside of the quotation marks that surround the given quotation. In other words, do not mark the quotation marks as part of the quotation.</p>
                 <p>
@@ -1700,11 +1698,32 @@ and <measure>1000 yards across</measure></measure></egXML>
 
             
             <div xml:id="lists">
-                <head>Lists within the Text</head>
+                <head>Using Lists and Tables</head>
                 
                 <p>Use the <gi>list</gi> element to contain any lists that appear in the text. 
-                    The title of any such list should be marked with the <gi>head</gi> element, while <gi>item</gi> should be used for each item within the list. Note that numbering items in the list, as in the example below, is wholly optional and should not be done by default.
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><list><head>Villages:</head> <item n="1">Bambarre</item>, <item n="2">Nyangwe</item>, and <item n="3">Ujiji</item></list></egXML>
+                    The title of any such list should be marked with the <gi>head</gi> element, while <gi>item</gi> should be used for each item within the list:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><list><head>Villages:</head> <item n="1">Bambarre,</item> <item n="2">Nyangwe,</item> <item n="3">Ujiji</item></list></egXML>
+				Lists may also be broken up with line breaks (<tag>lb/</tag>) and marked with other tags as needed:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+<list><head><hi rend="underline">Villages</hi></head> 
+<lb/><item>Bambarre</item>
+<lb/><item>Nyangwe</item>
+<lb/><item>Ujiji</item></list>
+					</egXML>
+				Livingstone's texts sometimes also contain tables or have information laid out in a such a way that the table format seems appropriate. Code tables and similar text (as seems appropriate -- such use may be subjective) with the <gi>table</gi> tag plus the <gi>head</gi> (for any title that the table may have), <gi>row</gi>, and <gi>cell</gi> tags:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+<table><head>Villages</head> 
+<lb/><row><cell>Bambarre</cell> <cell>West of Lake Tanganyika</cell></row>
+<lb/><row><cell>Nyangwe</cell> <cell>West of Lake Tanganyika</cell></row>
+<lb/><row><cell>Ujiji</cell> <cell>East of Lake Tanganyika</cell></row></table>
+					</egXML>
+				<hi rend="bold">Note:</hi> Headings, lists, items, tables, rows, and cells may all be assigned various attributes and values as relevant, as in the following example where color is marked, rows are numbered, and cells are coded for placement on the page:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+<table rend="blue"><head rend="black">Villages</head> 
+<lb/><row n="1"><cell rend="left">Bambarre</cell> <cell rend="right">West of Lake Tanganyika</cell></row>
+<lb/><row n="2"><cell rend="left">Nyangwe</cell> <cell rend="right">West of Lake Tanganyika</cell></row>
+<lb/><row n="3"><cell rend="left">Ujiji</cell> <cell rend="right">East of Lake Tanganyika</cell></row></table>
+					</egXML>
                 </p>
                 <p>
                     <specList>
