@@ -1325,7 +1325,7 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
             <div xml:id="quotations">
                 <head>Quotation from Another Source</head>
                 
-                <p>When dealing with a quotation from another source, usually a printed source (which may or may not be explicitly identified in Livingstone's text) use the <gi>quote</gi> element.
+                <p>When dealing with a quotation from another source, usually a printed source (which may or may not be explicitly identified in Livingstone's text), use the <gi>quote</gi> element.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">As it is stated in the Bible, "<quote>Neither do men light a candle, and put it under a bushel...</quote>."</egXML>
 				<hi rend="bold">Note:</hi> As in the example above, the <gi>quote</gi> element goes inside of the quotation marks that surround the given quotation. In other words, do not mark the quotation marks as part of the quotation.</p>
                 <p>
@@ -1702,10 +1702,10 @@ and <measure>1000 yards across</measure></measure></egXML>
                 
                 <p>Use the <gi>list</gi> element to contain any lists that appear in the text. 
                     The title of any such list should be marked with the <gi>head</gi> element, while <gi>item</gi> should be used for each item within the list:
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><list><head>Villages:</head> <item n="1">Bambarre,</item> <item n="2">Nyangwe,</item> <item n="3">Ujiji</item></list></egXML>
-				Lists may also be broken up with line breaks (<tag>lb/</tag>) and marked with other tags as needed:
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><list><head>Villages:</head> <item>Bambarre,</item> <item>Nyangwe,</item> <item>Ujiji</item></list></egXML>
+				Lists may also be broken up with line breaks (<tag>lb/</tag>)as needed:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
-<list><head><hi rend="underline">Villages</hi></head> 
+<list><head>Villages</head> 
 <lb/><item>Bambarre</item>
 <lb/><item>Nyangwe</item>
 <lb/><item>Ujiji</item></list>
