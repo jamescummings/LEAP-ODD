@@ -2229,6 +2229,9 @@ towards the viewer, with a note from Livingstone that he saw this lion "in the <
                                     <valItem ident="underline">
                                         <desc>underlined</desc>
                                     </valItem>
+                                    <valItem ident="diagonal">
+                                        <desc>rendered diagonally</desc>
+                                    </valItem>
                                     <valItem ident="upside-down">
                                         <desc>rendered upside-down</desc>
                                     </valItem>
