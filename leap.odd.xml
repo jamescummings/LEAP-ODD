@@ -1723,9 +1723,9 @@ and <measure>1000 yards across</measure></measure></egXML>
 <table rend="blue"><head rend="black">Villages</head> 
 <lb/><row n="1"><cell rend="left">Bambarre</cell> <cell rend="right">West of Lake Tanganyika</cell></row>
 <lb/><row n="2"><cell rend="left">Nyangwe</cell> <cell rend="right">West of Lake Tanganyika</cell></row>
-<lb/><row n="3"><cell rend="left">Ujiji</cell> <cell rend="right">East of Lake Tanganyika</cell></row></table>
-				<hi rend="bold">Note on all the above</hi> Normally, in the examples above, the various settlements, regions, and geographical entities would be coded as per the instructions set out elsewhere in this manual. However, such coding has here been omitted for the sake of simplicity and clarity in the examples given. Additionally, in the last example, the numbering of rows is done only for illustrative purposes. Such numbering is optional and should normally not be undertaken.
-					</egXML>
+<lb/><row n="3"><cell rend="left">Ujiji</cell> <cell rend="right">East of Lake Tanganyika</cell></row></table></egXML>
+				<hi rend="bold">Note on all the above:</hi> Normally, in the examples above, the various settlements, regions, and geographical entities would be coded as per the instructions set out elsewhere in this manual. However, such coding has here been omitted for the sake of simplicity and clarity in the examples given. Additionally, in the last example, the numbering of rows is done only for illustrative purposes. Such numbering is optional and should normally not be undertaken.
+					
                 </p>
                 <p>
                     <specList>
