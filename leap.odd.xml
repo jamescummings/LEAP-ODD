@@ -23,6 +23,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc status="draft">
+			<change when="2015-06-02" who="#AW">Additional corrections</change>
 			<change when="2015-05-19" who="#AW">Additional corrections</change>
 			<change when="2015-05-13" who="#AW">Additional corrections</change>
 			<change when="2015-05-05" who="#AW">Additional corrections</change>
@@ -1710,7 +1711,7 @@ and <measure>1000 yards across</measure></measure></egXML>
 <lb/><item>Nyangwe</item>
 <lb/><item>Ujiji</item></list>
 					</egXML>
-				Livingstone's texts sometimes also contain tables or have information laid out in a such a way that the table format seems appropriate. Code tables and similar text (as seems appropriate -- such use may be subjective) with the <gi>table</gi> tag plus the <gi>head</gi> (for any title that the table may have), <gi>row</gi>, and <gi>cell</gi> tags:
+				Livingstone's texts sometimes also contain tables or have information laid out in a such a way that the table format seems appropriate. Code tables and similar text (as seems appropriate -- such use may be subjective) with the <gi>table</gi> tag plus the <gi>head</gi> (for any title that the table may have), <gi>row</gi>, and <gi>cell</gi> tags. 
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
 <table><head>Villages</head> 
 <lb/><row><cell>Bambarre</cell> <cell>West of Lake Tanganyika</cell></row>
@@ -1723,6 +1724,7 @@ and <measure>1000 yards across</measure></measure></egXML>
 <lb/><row n="1"><cell rend="left">Bambarre</cell> <cell rend="right">West of Lake Tanganyika</cell></row>
 <lb/><row n="2"><cell rend="left">Nyangwe</cell> <cell rend="right">West of Lake Tanganyika</cell></row>
 <lb/><row n="3"><cell rend="left">Ujiji</cell> <cell rend="right">East of Lake Tanganyika</cell></row></table>
+				<hi rend="bold">Note on all the above</hi> Normally, in the examples above, the various settlements, regions, and geographical entities would be coded as per the instructions set out elsewhere in this manual. However, such coding has here been omitted for the sake of simplicity and clarity in the examples given. Additionally, in the last example, the numbering of rows is done only for illustrative purposes. Such numbering is optional and should normally not be undertaken.
 					</egXML>
                 </p>
                 <p>
