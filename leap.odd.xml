@@ -2070,7 +2070,7 @@ towards the viewer, with a note from Livingstone that he saw this lion "in the <
                         adminInfo altIdentifier collection condition   custEvent custodialHist
                         decoDesc decoNote depth dim dimensions foliation   handDesc height history
                         institution layout layoutDesc locus locusGrp   material msContents msDesc
-                        msIdentifier msItem msName objectDesc   objectType origDate origPlace origin
+                        msIdentifier msItem msName msPart objectDesc   objectType origDate origPlace origin
                         physDesc provenance recordHist   repository scriptDesc seal sealDesc
                         signatures stamp summary support   supportDesc surrogates width      "/>
                     <moduleRef key="namesdates"
