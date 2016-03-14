@@ -6,15 +6,13 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-				<!-- Change title below -->
-                <title>Field Diary XV, 7 July 1872-1 December 1872</title>
+                <title>Field Diary XV, 7 July 1872-1 December 1872</title><!-- Change -->
                 <author>David Livingstone</author>
                 <principal>Adrian S. Wisnicki</principal>
                 <principal>Christopher Lawrence</principal>
-				<!-- Change and add items below as appropriate -->
-                <respStmt xml:id="AW">
-                    <name>Adrian S. Wisnicki</name>
-                    <resp>Transcription</resp>
+                <respStmt xml:id="AW"><!-- Add or remove individuals from the list as appropriate -->
+                    <name>Adrian S. Wisnicki</name><!-- Change -->
+                    <resp>Transcription</resp><!-- Change, remove, or add more <resp> as appropriate -->
                     <resp>TEI Encoding</resp>
                     <resp>Editorial Decisions</resp>
 					<resp>Proofing</resp>
@@ -85,43 +83,34 @@
             </titleStmt>
             <publicationStmt>
                 <authority>Livingstone Online</authority>
-                <publisher>UCLA Digital Library</publisher>
-                <pubPlace>Los Angeles, CA, USA</pubPlace>
-                <date>2015</date><!-- Change -->
-                <availability><!-- Change as appropriate -->
-                    <licence target="https://creativecommons.org/licenses/by-nc/3.0/">
-                        All materials are licensed for use under the 
-                        <ref target="https://creativecommons.org/licenses/by-nc/3.0/">
-                        Creative Commons Attribution-Noncommercial 3.0 Unported License</ref>. 
-                        (c) Dr. Neil Imray Livingstone Wilson, 2015
-                    </licence>
-                </availability>
+                <publisher>University of Maryland Libraries</publisher>
+                <pubPlace>College Park, MD, USA</pubPlace>
+                <date>2016</date><!-- Change if necessary -->
+                <idno type="LEAP-ID">liv_000015</idno><!-- Change -->
             </publicationStmt>
             <sourceDesc>
                 <msDesc>
                     <msIdentifier>
-						<!-- Change items below as appropriate -->
-                        <country>United Kingdom</country>
-                        <settlement>Blantyre</settlement>
-                        <repository>David Livingstone Centre</repository>
-                        <idno type="shelfmark">Cat 1131</idno>
+                        <country>United Kingdom</country><!-- Change as needed -->
+                        <settlement>Blantyre</settlement><!-- Change as needed -->
+                        <repository>David Livingstone Centre</repository><!-- Change as needed -->
+                        <idno type="shelfmark">Cat 1131</idno><!-- Change as needed -->
                         <altIdentifier>
-                            <idno type="ccnumber">Field Diaries, 028</idno>
+                            <idno type="ccnumber">Field Diaries, 028</idno><!-- This the CC number; change, as appropriate -->
                         </altIdentifier>
                     </msIdentifier>
                     <physDesc>
-                        <handDesc>
-							<!-- Add <handNote>s if needed. -->
+                        <handDesc><!-- Add <handNote>s if needed. -->
                             <handNote xml:id="U"><label>Unknown Hand</label> This hand is unknown
                                 but thought not David Livingstone's.</handNote>
                         </handDesc>
                     </physDesc>
                 </msDesc>
                 <bibl type="sourceMetadata">
-					<!-- Change info below as needed -->
-                    <title>Field Diary XV, 7 July 1872 - 1 December 1872</title>
+                    <title>Field Diary XV, 7 July 1872 - 1 December 1872</title><!-- Change -->
                     <author xml:id="DL">David Livingstone</author>
-                    <date type="composition" from="1872-07-07" to="1872-12-01">7 July 1872 - 1 December 1872</date>
+                    <date type="composition" from="1872-07-07" to="1872-12-01">7 July 1872 - 1 December 1872</date><!-- Change -->
+                    <placeName type="compositionPlace">East Africa</placeName><!-- Change -->
                 </bibl>
             </sourceDesc>
         </fileDesc>
@@ -144,7 +133,7 @@
 
     <text>
 		<front>
-		<!-- Create this section if necessary -->
+		<!-- Create the <front> section if necessary. Otherwise remove. -->
 		</front>
 
        	<body>
@@ -160,7 +149,7 @@
 		</body>
 
 		<back>
-		<!-- Create this section if necessary -->
+		<!-- Create the <back> section if necessary. Otherwise remove. -->
 		</back>		
 
     </text>

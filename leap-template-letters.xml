@@ -2,26 +2,26 @@
 <?xml-model href="http://jamescummings.github.io/LEAP/leap.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://jamescummings.github.io/LEAP/leap.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <?xml-stylesheet type="text/xsl" href="http://jamescummings.github.io/LEAP/transcription.xsl"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="liv_000699"><!-- Change @xml:id -->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="liv_000877"><!-- Change @xml:id -->
     <teiHeader>
         <fileDesc>
             <titleStmt>
-				<!-- Change title below -->
-                <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
+                <title>Letter to Thomas Maclear, 15 February, 2 March 1856</title><!-- Change -->
                 <author>David Livingstone</author>
                 <principal>Adrian S. Wisnicki</principal>
                 <principal>Christopher Lawrence</principal>
-				<!-- Add or remove <respStmt> as appropriate below -->
-				<!-- Change xml:id below -->
-                <respStmt xml:id="JM">
-					<!-- Change name below -->
-                    <name>Jared McDonald</name>
-					<!-- Change, remove, or add more <resp> as appropriate below -->
-                    <resp>Transcription</resp>
+                <respStmt xml:id="JM"><!-- Add or remove individuals from the list as appropriate -->
+                    <name>Jared McDonald</name><!-- Change -->
+                    <resp>Transcription</resp><!-- Change, remove, or add more <resp> as appropriate -->
                     <resp>Encoding</resp>
                 </respStmt>
                 <respStmt xml:id="AA">
                     <name>Angela Aliff</name>
+                    <resp>Transcription</resp>
+                    <resp>Encoding</resp>
+                </respStmt>
+                <respStmt xml:id="AM">
+                    <name>Anne Martin</name>
                     <resp>Transcription</resp>
                     <resp>Encoding</resp>
                 </respStmt>
@@ -32,83 +32,58 @@
             </titleStmt>	
             <publicationStmt>
                 <authority>Livingstone Online</authority>
-                <publisher>UCLA Digital Library</publisher>
-                <pubPlace>Los Angeles, CA, USA</pubPlace>
-				<!-- Change date below if necessary -->
-                <date>2015</date>
-				<!-- Change base file name below -->
-                <idno type="LEAP-ID">liv_000688</idno>
-				<!-- Change the license below if necessart -->
-			    <availability>
-        			<licence target="https://creativecommons.org/licenses/by-nc/3.0/">
-            			All materials are licensed for use under the 
-            			<ref target="https://creativecommons.org/licenses/by-nc/3.0/">
-                		Creative Commons Attribution-Noncommercial 3.0 Unported License
-            			</ref>. (c) Dr. Neil Imray Livingstone Wilson, 2011
-        			</licence>
-    			</availability>
+                <publisher>University of Maryland Libraries</publisher>
+                <pubPlace>College Park, MD, USA</pubPlace>
+                <date>2016</date><!-- Change if necessary -->
+                <idno type="LEAP-ID">liv_000877</idno><!-- Change -->
             </publicationStmt>
             <sourceDesc>
                 <msDesc>
                     <msIdentifier>
-						<!-- Change country below as needed -->
-                        <country>South Africa</country>
-						<!-- Change settlement below as needed -->
-                        <settlement>Johannesburg</settlement>
-						<!-- Change repository below as needed -->
-                        <repository>Brenthurst Library</repository>
-						<!-- Change shelfmark below as needed -->
-                        <idno type="shelfmark">778</idno>
+                        <country>South Africa</country><!-- Change as needed -->
+                        <settlement>Cape Town</settlement><!-- Change as needed -->
+                        <repository>National Library of South Africa</repository><!-- Change as needed -->
+                        <idno type="shelfmark"></idno><!-- Change as needed -->
                         <altIdentifier>
-							<!-- Change CC number below as needed -->
-                            <idno type="ccnumber">Letters, 0229</idno>
+                            <idno type="ccnumber">Letters, 0394</idno><!-- This the CC number; change, as appropriate -->
                         </altIdentifier>
                     </msIdentifier>
                     <physDesc>
                         <handDesc>
-							<!-- Add additional <handNote> elements below as needed. -->
                             <handNote xml:id="U"><label>Unknown Hand</label> This hand is unknown
                                 but thought not David Livingstone's.</handNote>
                         </handDesc>
                     </physDesc>
                 </msDesc>
                 <bibl type="sourceMetadata">
-					<!-- Change title below -->
-                    <title>Letter to Rev. D.G. Watt, 18 August 1850</title>
+                    <title>Letter to Thomas Maclear, 15 February, 2 March 1856</title><!-- Change -->
                     <author xml:id="DL">David Livingstone</author>
-					<!-- Change @when and date below -->					
-                    <date type="composition" when="1850-08-18">18 August 1850</date>
-					<!-- Change place below -->
-                    <placeName type="compositionPlace">Kolobeng</placeName>
-					<!-- Change addressee below -->
-                    <persName type="addressee">Rev. D.F. Watt</persName>
+                    <date type="composition" when="1856-03-02">2 March 1856</date><!-- Change -->
+                    <placeName type="compositionPlace">Near Tete or Nyunkwe-Tete</placeName><!-- Change -->
+                    <persName type="addressee">Thomas Maclear</persName><!-- Change -->
                 </bibl>
             </sourceDesc>
         </fileDesc>
         <profileDesc>
             <langUsage>
-				<!-- See LEAP encoding manual sect. 20 for language abbreviations. 
-				English should be first, then add all other languages, as appropriate, 
-				in alphabetical order. -->
                 <language ident="en">English</language>
+				<!-- See LEAP encoding manual sect. 20 for language abbreviations. English should be first,
+				then add all other languages, as appropriate, in alphabetical order. -->
             </langUsage>
         </profileDesc>
         <revisionDesc>
-			<!-- Change @when, @who, and work description below. -->
+            <change when="2016-02-14" who="#AM">Initial transcription and XML encoding</change>
 			<!-- Note that @who initials are taken from <respStmt> above -->
-			<!-- Add new <change> elements below as needed. -->
-			<!-- Note that the most recent <change> should always be placed first, at the top -->
-            <change when="2012-12-04" who="#KS">Initial transcription and XML encoding</change>
+			<!-- Most recent <change> should always be placed first -->
         </revisionDesc>
     </teiHeader>
 
     <text>
         <body>
             <div>
-
-	<!-- Change both @facs and @n below -->
-	<!-- Start each page with a <pb> formatted as below -->               
-	<pb facs="liv_000699_0001.jpg" n="0001"/>
+               
+	<pb facs="liv_000877_0001" n="0001"/><!-- Change both @facs and @n -->
+	<!-- Start each page with a <pb> formatted as above -->
 
 <!-- If this is a letter or similar with an opener (with content such as dateline and/or salute) add it. For example: -->
 <opener>
@@ -118,20 +93,18 @@
 <lb/><salute>My Dear Sir,</salute><!-- Change line info as appropriate -->
 </opener>
 
+
 <lb/><p><!-- Begin transcribed text here --></p>
 
 <!-- More transcribed text -->
+
 
 <!-- If there is a letter or similar with a closer with content such as salute or signed -->
 <closer>
 <lb/><salute>I am &amp;</salute><!-- Change as appropriate -->
 <lb/><signed><persName>David Livingstone</persName></signed><!-- Change as appropriate --> 
-
-<address><!-- Note place the <address> inside the closer if possible. If not, enclose the address in a <div> and <ab>.-->
-<addrLine/><persName>Rev. D.G. Watt</persName><!-- Change, and add <addrLine>s as appropriate -->
-<addrLine/><placeName>London</placeName>
-</address>
 </closer>
+
 
             </div>
         </body>
