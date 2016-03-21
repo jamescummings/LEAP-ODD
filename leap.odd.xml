@@ -25,6 +25,7 @@
             </sourceDesc>
         </fileDesc>
         <revisionDesc status="draft">
+			<change when="2015-03-25" who="#HB">Additional corrections and expansion</change>
             <change when="2015-03-14" who="#JL">Additional corrections</change>
 			<change when="2015-03-12" who="#AW">Additional corrections</change>
             <change when="2016-03-10" who="#JL">Additional corrections and expansion</change>
@@ -1425,6 +1426,7 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                 </p>
                 <p><hi rend="bold">Note:</hi> this also includes the normalization of proper nouns:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">The <term type="tribe"><choice><orig>Suaheli</orig><reg>Swahili</reg></choice></term></egXML>
+					<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">The <placeName><geogName type="river"><choice><orig>Chambeze</orig><reg>Chambezi</reg></choice></geogName></placeName></egXML>
                 </p>
 				<p>Definitions of the elements used above are: <specList>
                         <specDesc key="choice"/>
@@ -1547,6 +1549,11 @@ April <lb/>1866</date></note> alone but other nations feel</egXML>
                         "<val>lake</val>", "<val>river</val>", etc.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName><geogName type="river">Nile</geogName></placeName></egXML>
                 </p>
+				<p><hi rend="bold">Note:</hi> Livingstone uses distinct abbreviations to denote "river" and "rivulet." He abbreviates "river" as either "R." or "R", while he abbreviates "rivulet" as "Rt" or "R<hi rend="sup">t</hi>". In the latter case, the superscript "t" may resemble a superscript "r" but should nonetheless be treated as a "t". Code these abbreviations as follows:</p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">the <placeName><geogName type="river">Lualaba <choice><abbr>R.</abbr>
+<expan>River</expan></choice></geogName></placeName></egXML>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">the <placeName><geogName type="rivulet">Lipande <choice><abbr>R<hi rend="sup">t</hi></abbr>
+<expan>Rivulet</expan></choice></geogName></placeName></egXML>
 				<p>You should also use <gi>geogName</gi> when encoding the full reference to a geographical entity that includes any kind of formal name (which itself would also be separately encoded:</p>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><placeName><geogName type="source">sources of the <placeName><geogName type="river">Nile</geogName></placeName></geogName></placeName></egXML>
 				<p>If Livingstone refers to a specific, named geographical entity (and you know what that entity is), but uses only a generic term such as "the Lake" or "the River," you should identify this entity in a comment that directly follows the relevant term, but not otherwise mark the term used:</p>
@@ -1645,7 +1652,7 @@ and <measure>1000 yards across</measure></measure></egXML>
             <div xml:id="nationalities">
                 <head>Nationalities</head>
 
-                <p>When dealing with nationalities, use the <gi>term</gi> element with the
+                <p>When dealing with nationalities used adjectivally, use the <gi>term</gi> element with the
                         <att>type</att> attribute with a value of "<val>nationality</val>".
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">the <term type="nationality">English</term> settlements</egXML>
                 </p>
@@ -1746,7 +1753,7 @@ and <measure>1000 yards across</measure></measure></egXML>
                 <p>"Johanna men" and "Nassick boys" (and all variants of these two groups) to be coded as follows:</p>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><orgName><placeName><geogName type="island">Johanna</geogName></placeName> men</orgName></egXML>
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><orgName><placeName><settlement type="city">Nassick</settlement></placeName> boys</orgName></egXML>
-                <p><hi rend="bold">Note:</hi> All references to "slaves" and "slavery" should also be marked with <gi>orgName</gi>, as well as references to "caste," "natives," and "cannibals":</p>
+                <p><hi rend="bold">Note:</hi> All references to "slaves" and "slavery" should also be marked with <gi>orgName</gi> as should references to "caste," "freemen," "free men," "natives," "cannibals," and "flesh eaters":</p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">He had two <orgName>slaves</orgName> and spoke of <orgName>slavery</orgName></egXML>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">It is believed by the <orgName>natives</orgName>.</egXML>
                 <p><hi rend="bold">Please note: </hi> Havildar and Sepoy (singular and plural) should be marked with both <gi>orgName</gi>, and <gi>term</gi> with the <att>type</att> attribute and a value of "<val>occupation</val>":</p>
@@ -1762,8 +1769,23 @@ and <measure>1000 yards across</measure></measure></egXML>
                         <specDesc key="term" atts="type"/>
                     </specList>
                 </p>                
-    
-    
+
+            <div xml:id="orgname-usage"> 
+                <head>Additional Notes on Coding Organizations</head>
+            <p>In some cases, one or more entities encoded with the <gi>orgName</gi> or <tag>term type="occupation"</tag> tags may themselves, in combination, constitute a larger organization or group. In such cases, nestle the individual entities within one additonal <gi>orgName</gi> as follows:</p>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">An <orgName><orgName>Arab</orgName> <term type="occupation">trader</term></orgName>.</egXML>
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">A <orgName><term type="nationality">Portuguese</term> <term type="occupation">sailor</term></orgName>.</egXML>
+			<p>In the above examples, "Arab" and "trader" (first example) and "Portuguese" and "sailor" (second example) are coded per normal practice, but are also collectively encapsulated, in each case, in an additional <gi>orgName</gi> tag.</p>
+			<p><hi rend="bold">Note:</hi> All variants of "slave trader" should be coded in the following <hi rend="underline">unique</hi> manner:</p> 
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><orgName><term type="occupation"><orgName>slave</orgName> trader</term></orgName></egXML>
+			<p>In other words code "slave" with <gi>orgName</gi> per usual practice. Then code the whole phrase "slave trader" as a <tag>term type="occupation"</tag>. Finally, wrap the fully coded phrase "slave trader" in an additional <gi>orgName</gi> tag.</p>
+                <p>Definitions of the elements used above are: <specList>
+                    <specDesc key="orgName"/>
+					<specDesc key="term" atts="type"/>
+                </specList>
+                </p>                
+            </div>
+
             </div>
 
             <div xml:id="bibliographical">
