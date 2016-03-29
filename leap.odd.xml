@@ -4,7 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>TEI P5 Customization For The LEAP Project </title>
+                <title>The Livingstone Online TEI P5 Encoding Guidelines</title>
                 <editor xml:id="JC">James Cummings</editor>
                 <principal xml:id="AW">Adrian S. Wisnicki</principal>
 				<editor xml:id="HFB">Heather F. Ball</editor>
@@ -39,8 +39,7 @@
             <change when="2014-05-21" who="#AW">Additional corrections and expansion</change>
             <change when="2014-04-29" who="#JC">Additional corrections and regeneration of schemas</change>
             <change when="2014-04-10" who="#AW">Corrections and expansion</change>
-            <change when="2014-04-09" who="#JC">Updating header section and making
-                corrections</change>
+            <change when="2014-04-09" who="#JC">Updating header section and making corrections</change>
             <change when="2014-03-22" who="#JC">Adding documentation</change>
             <change when="2014-02-12" who="#JC">Initial creation</change>
         </revisionDesc>
@@ -49,12 +48,11 @@
         <body>
             <divGen type="toc" xml:id="toc"/>
             <div xml:id="about">
-                <head>About This LEAP TEI P5 Customization</head>
-
-                <p> This TEI P5 ODD Customization was created by James Cummings with assistance from
-                    Adrian S. Wisnicki, with the initial prose based on the <hi rend="italic"
-                        >Livingstone Online</hi>'s TEI P5 Tagging Guidelines written by Adrian S.
-                    Wisnicki and Heather F. Ball. The TEI P5 ODD is released under a <ref target="https://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 Unported license</ref>. </p>
+                <head>About the Livingstone Online TEI P5 Encoding Guidelines</head>
+                <p>These guidelines (TEI P5 ODD Customization) summarize Livingstone Online project practices for encoding in TEI P5 the manuscripts of David Livingstone (1813-1873), the Victorian explorer, abolitionist, and missionary. The guidelines also offer a fairly comprehensive overview of Livingstone's practices and idiosyncrasies as a writer.</p>
+				<p>The guidelines are a product of the Livingstone Online Enrichment and Access Project (LEAP), a three-year initiative (2013-2016) funded by the National Endowment for the Humanities (USA). James Cummings with assistance from Adrian S. Wisnicki, Heather F. Ball, and Justin Livingstone created the guidelines, with the initial prose based on Livingstone Online's TEI P5 Tagging Guidelines written by Adrian S. Wisnicki and Heather F. Ball.</p>
+				<p>Significant contributions to the development of the guidelines have also come from the LEAP critical encoding team: Angela Aliff, Mary Borgo, Erin Cheatham, Samantha Fitch, Ashanka Kumari, Chris Lawrence, Anne Martin, Jared McDonald, Alexander Munson, Kate Simpson, and Megan Ward (critical encoding director).</p>
+				<p>The guidelines are released under a <ref type="newWindow" target="https://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 Unported license</ref>, and we encourage broad, non-commercial use of the guidelines per the open educational remit of <ref type="newWindow" target="http://livingstoneonline.org">Livingstone Online</ref>.</p>
             </div>
 
 
