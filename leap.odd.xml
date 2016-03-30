@@ -551,12 +551,36 @@ What should I do? DH --></egXML>
                     so in most cases a transcription will only have 
                     one <gi>div</gi> elment that opens and closes the text. 
                     However, there are some cases where a second <gi>div</gi> element should be used. 
-                    See <ptr target="#front-back"/>, <ptr target="#colors"/>, and <ptr target="#text-direction"/>.</p>
+                    See <ptr target="#front-back"/>, <ptr target="#colors"/>, and <ptr target="#text-direction"/>. In
+					other cases, it may be necessary to mark the beginning of a new gathering with <tag>gb/</tag> 
+					(see <ptr target="#gatherings"/>).</p>
                 <p>Definitions of the elements used above are: <specList>
                         <specDesc key="div"/>
+                        <specDesc key="gb"/>
                     </specList>
                 </p>
                 
+			<div xml:id="gatherings">
+				<head>New Gatherings</head>
+
+			<p>We record the beginning of a new gathering, if a document consists of <hi rend="italics">more than one</hi>, using the <tag>gb/</tag> tag.  The specification of an <att>type</att> is optional, while the value of <att>type</att> will often be improvised based on the source material.</p>
+			 			
+			<egXML xmlns="http://www.tei-c.org/ns/Examples"><gb type="square-sheets"/><!-- Livingstone here begins writing on square sheets rather than rectangular ones. AW --></egXML>
+			
+			<p><hi rend="bold">Note:</hi> If <tag>gb/</tag> is used, every gathering in the document should be marked, including the opening one.</p>
+
+			<p><hi rend="bold">Note:</hi> Using the <tag>gb/</tag> tag with the <gi>div</gi> is allowed, but not required. One would normally use both in combination only when a new gathering begins a new divison or section of text.</p>		
+
+			<p><hi rend="bold">Note:</hi> The <tag>gb/</tag> tag should not normally be used without consulting the project directors</p>
+			
+		<p>Definitions of the elements used above are: <specList>
+			<specDesc key="gb" atts="type"/>
+			<specDesc key="div"/>
+		</specList>
+	</p>
+			
+			</div>
+
             </div>
             
             <div xml:id="front-back">
@@ -1046,6 +1070,47 @@ What should I do? DH --></egXML>
                 </p>
 
             </div>
+
+
+<div xml:id="columns">
+<head>Text in Columns</head>
+
+<p>Occassionaly Livingstone breaks up his text into one or more columns. We mark this shift using the <tag>cb/</tag> tag plus the <att>rend</att> attribute with the appropriate value of <val>left</val>, <val>center</val>, or <val>right</val>, <hi rend="italics">or</hi> the <att>n</att> attribute with the appropriate value of <val>1</val>, <val>2</val>, <val>3</val>, etc. Either of these attribute/value combinations is acceptable; it is left open to the judgment of the transcriber to choose the one most appropriate for the context. However, one should use <att>n</att> plus a series of numbers for instances of four or more columns.</p>
+
+<p>If Livingstone breaks his writing up into more than one column, please code as follows. First, use <tag>cb rend="left/</tag> (or <tag>cb n="1"/</tag>) to mark the beginning of the first column to the left. Then transcribe the first column. Then, as appropriate, use <tag>cb rend="center/</tag> or <tag>cb rend="right/</tag> (or <tag>cb n="2"/</tag>) to mark the beginning of the next column to the right. Then transcribe the next column (if there is one). And so on. Finally, use <tag>cb/</tag> without any attribute to mark the return to normal text.</p>
+
+<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">	<cb n="1"/>
+<lb/><p>First 
+<lb/>column
+<lb/>of text
+
+	<cb n="2"/>
+<lb/>and
+<lb/>second
+<lb/>column.</p>
+
+	<cb n="3"/>
+<lb/><p>Third
+<lb/>column.</p>
+
+	<cb/>
+<lb/><p>Additional text that is not
+<lb/>broken up into columns.</p>
+
+</egXML>
+
+<p><hi rend="bold">Note:</hi> As in the example above, <tag>cb</tag> may be used inside or outside of the <gi>p</gi> tag (or the <gi>ab</gi> tag).</p>
+
+<p><hi rend="bold">Note:</hi> <tag>cb</tag> is the assumed default, so should not normally be marked except in instances, as above, where there have been multiple columns, but the text is now returning to normal.</p>
+
+<p><hi rend="bold">Note:</hi> In some instances it may be better to use the <gi>table</gi> tag plus the <gi>row</gi> and <gi>cell</gi> tags or, alternately, to use the <gi>list</gi> and <gi>item</gi> tags (see <ptr target="#lists"/>). However, there is no fast rule; often it will be a judgment call. If in doubt, please consult the project directors.</p>
+
+                <p>Definitions of the elements used above are: <specList>
+			<specDesc key="cb" atts="rend n"/>
+                </specList>
+			</p>
+
+		</div>
 
             <div xml:id="anonymous-blocks">
                 <head>Text with No Clear Relationship to the Surrounding Text</head>
@@ -1855,13 +1920,14 @@ and <measure>1000 yards across</measure></measure></egXML>
 <lb/><item>Nyangwe</item>
 <lb/><item>Ujiji</item></list>
 					</egXML>
-				Livingstone's texts sometimes also contain tables or have information laid out in a such a way that the table format seems appropriate. Code tables and similar text (as seems appropriate -- such use may be subjective) with the <gi>table</gi> tag plus the <gi>head</gi> (for any title that the table may have), <gi>row</gi>, and <gi>cell</gi> tags. 
+				Livingstone's texts sometimes also contain tables or have information laid out in a such a way that the table format seems appropriate. Code tables and similar text (as seems appropriate -- such use may be subjective) with the <gi>table</gi> tag plus the <gi>head</gi> (for any title that the table may have), <gi>row</gi>, and <gi>cell</gi> tags.
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
 <table><head>Villages</head> 
 <lb/><row><cell>Bambarre</cell> <cell>West of Lake Tanganyika</cell></row>
 <lb/><row><cell>Nyangwe</cell> <cell>West of Lake Tanganyika</cell></row>
 <lb/><row><cell>Ujiji</cell> <cell>East of Lake Tanganyika</cell></row></table>
 					</egXML>
+				Finally, if it turns out that marking columns is most appropriate, please use the <tag>cb/</tag> tag (see <ptr target="#columns"/>).
 				<hi rend="bold">Note:</hi> Headings, lists, items, tables, rows, and cells may all be assigned various attributes and values as relevant, as in the following example where color is marked, rows are numbered, and cells are coded for placement on the page:
                     <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
 <table rend="blue"><head rend="black">Villages</head> 
