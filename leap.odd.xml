@@ -2274,6 +2274,7 @@ This hand belongs to Charles Livingstone.</handNote>
                         <specDesc key="label"/>
                         <specDesc key="lb"/>
                         <specDesc key="list"/>
+						<specDesc key="listBibl"/>
                         <specDesc key="measure"/>
                         <specDesc key="milestone"/>
                         <specDesc key="monogr"/>
